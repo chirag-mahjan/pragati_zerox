@@ -82,7 +82,8 @@
         "id": "labor",
         "title": "Labor",
         "items": [
-          "E-Shram card registration"
+          "E-Shram card registration",
+          "PF work"
         ]
       },
       {
@@ -110,7 +111,11 @@
           "UDYAM / MSME",
           "FSSAI",
           "Driving licence form assistance",
-          "Vehicle insurance"
+          "Vehicle insurance",
+          "All types of insurance",
+          "Atal Pension Yojana",
+          "PMSBY",
+          "PMJJBY"
         ]
       }
     ],

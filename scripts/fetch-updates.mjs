@@ -13,7 +13,7 @@ const months = [
 
 const schemeGroups = [
   { id: "health", title: "Health", items: ["Ayushman card activation and printing"] },
-  { id: "labor", title: "Labor", items: ["E-Shram card registration"] },
+  { id: "labor", title: "Labor", items: ["E-Shram card registration", "PF work"] },
   { id: "family", title: "Family", items: ["New ration card", "Duplicate ration card"] },
   {
     id: "certificates",
@@ -33,6 +33,10 @@ const schemeGroups = [
       "FSSAI",
       "Driving licence form assistance",
       "Vehicle insurance",
+      "All types of insurance",
+      "Atal Pension Yojana",
+      "PMSBY",
+      "PMJJBY",
     ],
   },
 ];
