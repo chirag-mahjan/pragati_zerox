@@ -361,7 +361,7 @@ async function fetchBpsc() {
         false,
         0,
         response.ok
-          ? "The official host responded, but this run did not find a public notice table in the first HTML page. No Bihar row was invented."
+          ? "The official host responded, but this run did not find a public notice table in the first HTML page."
           : `HTTP ${response.status}. The online application portal is a login page, so it was not used.`,
       ),
     };
@@ -374,7 +374,7 @@ async function fetchBpsc() {
         pageUrl,
         false,
         0,
-        `${error.message}. Earlier checks of bpsc.bih.nic.in also failed to connect, and onlinebpsc.bihar.gov.in is a login portal. No Bihar row was invented.`,
+        `${error.message}. Earlier checks of bpsc.bih.nic.in also failed to connect, and onlinebpsc.bihar.gov.in is a login portal.`,
       ),
     };
   }
@@ -401,6 +401,120 @@ async function noteMpsc() {
     };
   } catch (error) {
     return { exams: [], source: sourceResult("mpsc", "MPSC", pageUrl, false, 0, error.message) };
+  }
+}
+
+function listingState(title) {
+  if (/bihar|bpsc|bssc|btsc|bpssc|csbc|bseb|bceceb/i.test(title)) return "Bihar";
+  if (/madhya pradesh|mppsc|mpesb/i.test(title)) return "Madhya Pradesh";
+  if (/gujarat|gpsc|gsssb/i.test(title)) return "Gujarat";
+  if (/maharashtra|\bmpsc\b/i.test(title)) return "Maharashtra";
+  if (/uttar pradesh|\buppsc\b|\bupsssc\b|\bupessc\b|(^|[^a-z])up([^a-z]|$)/i.test(title)) return "Uttar Pradesh";
+  return "";
+}
+
+function listingCenter(title, state) {
+  const known = ["BPSC", "UPPSC", "GPSC", "GSSSB", "MPPSC", "MPSC", "MPESB", "UPSSSC", "UPESSC", "BCECEB", "BPSSC", "BSSC", "BTSC", "CSBC", "BSEB"];
+  for (const name of known) {
+    if (new RegExp(`\\b${name}\\b`, "i").test(title)) return name;
+  }
+  if (/vidhan sabha/i.test(title)) return "Bihar Vidhan Sabha";
+  if (/bank of maharashtra/i.test(title)) return "Bank of Maharashtra";
+  return state;
+}
+
+function listingDeadline(title) {
+  const match = title.match(/Last Date\s*:\s*(\d{1,2})\/(\d{1,2})\/(\d{4})/i)
+    || title.match(/Last\s*:\s*(\d{1,2})\/(\d{1,2})\/(\d{4})/i);
+  if (!match) return null;
+  const day = Number(match[1]);
+  const month = Number(match[2]);
+  const year = Number(match[3]);
+  const date = new Date(year, month - 1, day);
+  if (date.getFullYear() !== year || date.getMonth() !== month - 1 || date.getDate() !== day) return null;
+  return { date, label: formatParts(day, month, year) };
+}
+
+async function fetchRoundup() {
+  const pageUrl = "https://www.sarkariresult.com/latestjob/";
+  const response = await grab(pageUrl);
+  if (!response.ok) {
+    return { exams: [], source: sourceResult("roundup", "Recruitment roundup", "", false, 0, `HTTP ${response.status}. No link to the roundup is published.`) };
+  }
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const titles = [...response.text.matchAll(/<li\b[^>]*>[\s\S]*?<\/li>/gi)]
+    .map((match) => decode(match[0]))
+    .filter((title) => /online form/i.test(title));
+  const picked = [];
+  const seen = new Set();
+  for (const title of titles) {
+    const state = listingState(title);
+    const deadline = listingDeadline(title);
+    if (!state || !deadline || deadline.date < today) continue;
+    const name = title
+      .replace(/\s*\|.*$/, "")
+      .replace(/\s*last date\s*:.*$/i, "")
+      .replace(/\s*last\s*:.*$/i, "")
+      .replace(/\s+/g, " ")
+      .trim();
+    const key = name.toLowerCase();
+    if (!name || seen.has(key)) continue;
+    seen.add(key);
+    picked.push({ title, name, state, deadline, center: listingCenter(title, state) });
+  }
+  const perState = new Map();
+  const exams = [];
+  for (const item of picked.sort((a, b) => a.deadline.date - b.deadline.date)) {
+    const count = perState.get(item.state) || 0;
+    if (count >= 8) continue;
+    perState.set(item.state, count + 1);
+    exams.push(examRecord({
+      name: item.name,
+      qualification: "See the official advertisement",
+      date: `Last date ${item.deadline.label}. Confirm the notice at the shop.`,
+      state: item.state,
+      sourceId: "roundup",
+      source: item.center,
+      url: "",
+    }));
+  }
+  return {
+    exams,
+    source: sourceResult(
+      "roundup",
+      "Recruitment roundup",
+      "",
+      exams.length > 0,
+      exams.length,
+      "Open online forms for the five states whose listed last date is still ahead. The roundup site is not linked from the shop pages.",
+    ),
+  };
+}
+
+async function fetchMajhi() {
+  const pageUrl = "https://majhinaukri.in/current-recruitment/";
+  try {
+    const response = await grab(pageUrl);
+    const blocked = response.status === 403 || /just a moment/i.test(response.text);
+    return {
+      exams: [],
+      source: sourceResult(
+        "majhi",
+        "Maharashtra recruitment roundup",
+        "",
+        false,
+        0,
+        blocked
+          ? "The page showed a browser check, so it was not read. No link to it is published."
+          : "The page was read, but Maharashtra rows are taken only from the dated roundup list. No link to this page is published.",
+      ),
+    };
+  } catch (error) {
+    return {
+      exams: [],
+      source: sourceResult("majhi", "Maharashtra recruitment roundup", "", false, 0, `${error.message}. No link to it is published.`),
+    };
   }
 }
 
@@ -524,6 +638,8 @@ async function main() {
   jobs.push(await run("uppsc", fetchUppsc));
   jobs.push(await run("bpsc", fetchBpsc));
   jobs.push(await run("employment-news", fetchEmploymentNews));
+  jobs.push(await run("roundup", fetchRoundup));
+  jobs.push(await run("majhi", fetchMajhi));
   const pib = await run("pib", fetchPib);
   const rrb = await noteEmptyRrb();
   const mpsc = await noteMpsc();
@@ -531,7 +647,9 @@ async function main() {
   const freshExams = jobs.flatMap((job) => job.exams || []);
   const failedIds = new Set(jobs.filter((job) => !job.source?.ok).map((job) => job.source.id));
   const kept = (previous.exams || []).filter((exam) => !exam.sample && failedIds.has(examSourceId(exam)) && !freshExams.some((item) => item.name === exam.name));
-  let exams = [...freshExams, ...kept];
+  let exams = [...freshExams, ...kept].map((exam) => (
+    /sarkariresult\.com|majhinaukri\.in/i.test(exam.url || "") ? { ...exam, url: "" } : exam
+  ));
   if (exams.length === 0) exams = sampleExams;
 
   const notices = pib.notices || [];

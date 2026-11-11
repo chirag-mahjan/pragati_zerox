@@ -36,7 +36,7 @@ Each kept row stores the source name and URL.
 - **myScheme.** `https://api.myscheme.gov.in/search/v6/schemes` answers Unauthorized without a client key. The updater does not send a spoofed Origin to get around that.
 - **MPSC (Maharashtra).** `https://mpsc.gov.in/` is a JavaScript application. Its public content API answers that a CRC header is missing. That check is not bypassed, so Maharashtra stays empty until the board publishes a plain list.
 - **BPSC (Bihar).** `https://bpsc.bihar.gov.in/` did not connect from this network. `onlinebpsc.bihar.gov.in` is a login portal and is not used. No Bihar row is invented.
-- **Job aggregators** such as Sarkari Result and FreeJobAlert are not read. A wrong date copied from a third party is worse than a shorter official list.
+- **Sarkari Result latest jobs** and **Majhi Naukri current recruitment** are read only as a dated checklist for Gujarat, Maharashtra, Uttar Pradesh, Bihar, and Madhya Pradesh. A row is kept when the title says Online Form and the printed last date is today or later. The shop pages do not link to either site. Majhi Naukri currently returns a browser check, so nothing is copied from it.
 
 Employment News rows are the short facts on the public highlights table. The paid e-paper is not copied. Highlight links that point at `eneversion.nic.in` are not followed; the row links to the highlights page instead.
 

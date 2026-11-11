@@ -23,6 +23,11 @@ function centerName(exam: { sourceId?: string; source?: string }) {
   return centerNames[exam.sourceId || ""] || exam.source || "Notice";
 }
 
+function safeUrl(url?: string) {
+  if (!url || /sarkariresult\.com|majhinaukri\.in/i.test(url)) return "";
+  return url;
+}
+
 const stateChoices = ["Gujarat", "Maharashtra", "Uttar Pradesh", "Bihar", "Madhya Pradesh", "National"];
 const states = [
   ...stateChoices,
@@ -106,8 +111,8 @@ const centers = [...new Set(updates.exams.map((exam) => centerName(exam)))].sort
                   <td>
                     {exam.name}
                     {exam.sample && <span class="sample-tag">sample</span>}
-                    {exam.url ? (
-                      <Outbound class="source-link" href={exam.url}>{exam.source}</Outbound>
+                    {safeUrl(exam.url) ? (
+                      <Outbound class="source-link" href={safeUrl(exam.url)}>{exam.source}</Outbound>
                     ) : (
                       <span class="source-link">{exam.source}</span>
                     )}

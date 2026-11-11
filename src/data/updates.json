@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-11T08:44:19.777Z",
+  "fetchedAt": "2026-11-11T10:57:46.440Z",
   "ticker": [
     {
       "text": "Gujarat: GPSC 60/2026-27: Executive Engineer (Civil), Class-1, (GMB) — 20 November 2026",
@@ -11,6 +11,12 @@
       "text": "Uttar Pradesh: UPPSC ADVT.NO. A-5/E-1/2026,ASSISTANT ARCHITECT PLANNER EXAMINATION-2026 / SPORTS OFFICER EXAMINATION-2026 / PROGRAMMER GRADE-2 EXAMINATION-2026",
       "source": "Uttar Pradesh Public Service Commission",
       "url": "https://uppsc.up.nic.in/",
+      "sample": false
+    },
+    {
+      "text": "Bihar: BCECEB Senior Resident and Tutor Online Form 2026 — Last date 23 November 2026. Confirm the notice at the shop.",
+      "source": "BCECEB",
+      "url": "",
       "sample": false
     },
     {
@@ -44,21 +50,15 @@
       "sample": false
     },
     {
-      "text": "Gujarat: GPSC 64/2026-27: Assistant Engineer (Electrical), Class-2, Sports Authority Of Gujarat — 20 November 2026",
-      "source": "Gujarat Public Service Commission",
-      "url": "https://gpsc.gujarat.gov.in/AdvertisementDetail?no=2389&tab=Advertisement",
+      "text": "कैबिनेट ने स्टैंड-अप इंडिया योजना को जारी रखने की मंजूरी दी",
+      "source": "Press Information Bureau",
+      "url": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2335026",
       "sample": false
     },
     {
-      "text": "चिकित्सा उपकरणों के उत्पादन से जुड़ी प्रोत्साहन योजना के तहत नए आवेदन आमंत्रित",
+      "text": "कैबिनेट ने स्टैंड-अप इंडिया योजना को जारी रखने की मंजूरी दी",
       "source": "Press Information Bureau",
-      "url": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2334792",
-      "sample": false
-    },
-    {
-      "text": "सूक्ष्म, लघु और मध्यम उद्यम मंत्रालय (एमएसएमई) ने एससी/एसटी सूक्ष्म और लघु उद्यमों से खरीद बढ़ाने के लिए सीपीएसई के साथ एक गोलमेज चर्चा का आयोजन किया",
-      "source": "Press Information Bureau",
-      "url": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2334795",
+      "url": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2335024",
       "sample": false
     }
   ],
@@ -116,17 +116,17 @@
     ],
     "notices": [
       {
-        "title": "चिकित्सा उपकरणों के उत्पादन से जुड़ी प्रोत्साहन योजना के तहत नए आवेदन आमंत्रित",
+        "title": "कैबिनेट ने स्टैंड-अप इंडिया योजना को जारी रखने की मंजूरी दी",
         "state": "National",
         "source": "Press Information Bureau",
-        "url": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2334792",
+        "url": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2335026",
         "sample": false
       },
       {
-        "title": "सूक्ष्म, लघु और मध्यम उद्यम मंत्रालय (एमएसएमई) ने एससी/एसटी सूक्ष्म और लघु उद्यमों से खरीद बढ़ाने के लिए सीपीएसई के साथ एक गोलमेज चर्चा का आयोजन किया",
+        "title": "कैबिनेट ने स्टैंड-अप इंडिया योजना को जारी रखने की मंजूरी दी",
         "state": "National",
         "source": "Press Information Bureau",
-        "url": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2334795",
+        "url": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2335024",
         "sample": false
       }
     ]
@@ -146,15 +146,15 @@
     },
     {
       "state": "Uttar Pradesh",
-      "count": 2,
+      "count": 9,
       "ok": true,
       "note": "Live advertisement lines on the public homepage"
     },
     {
       "state": "Bihar",
-      "count": 0,
-      "ok": false,
-      "note": "fetch failed. Earlier checks of bpsc.bih.nic.in also failed to connect, and onlinebpsc.bihar.gov.in is a login portal. No Bihar row was invented."
+      "count": 2,
+      "ok": true,
+      "note": "fetch failed. Earlier checks of bpsc.bih.nic.in also failed to connect, and onlinebpsc.bihar.gov.in is a login portal."
     },
     {
       "state": "Madhya Pradesh",
@@ -493,6 +493,105 @@
       "sourceId": "employment-news",
       "source": "Employment News",
       "url": "https://employmentnews.gov.in/newemp/home.aspx"
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "UPESSC UP Primary Teacher (Super TET) Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 11 November 2026. Confirm the notice at the shop.",
+      "state": "Uttar Pradesh",
+      "sourceId": "roundup",
+      "source": "UPESSC",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "UP Bulandshahar ECCE Educator Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 18 November 2026. Confirm the notice at the shop.",
+      "state": "Uttar Pradesh",
+      "sourceId": "roundup",
+      "source": "Uttar Pradesh",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "UPESSC UP Principal Inter Level Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 22 November 2026. Confirm the notice at the shop.",
+      "state": "Uttar Pradesh",
+      "sourceId": "roundup",
+      "source": "UPESSC",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "UPESSC UP Headmaster Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 22 November 2026. Confirm the notice at the shop.",
+      "state": "Uttar Pradesh",
+      "sourceId": "roundup",
+      "source": "UPESSC",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "BCECEB Senior Resident and Tutor Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 23 November 2026. Confirm the notice at the shop.",
+      "state": "Bihar",
+      "sourceId": "roundup",
+      "source": "BCECEB",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "UPESSC UP TGT Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 23 November 2026. Confirm the notice at the shop.",
+      "state": "Uttar Pradesh",
+      "sourceId": "roundup",
+      "source": "UPESSC",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "UPPSC Review Officer RO ARO Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 26 November 2026. Confirm the notice at the shop.",
+      "state": "Uttar Pradesh",
+      "sourceId": "roundup",
+      "source": "UPPSC",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "UPSSSC 10+2 Inter Level Various Post (Lower PCS) Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 1 December 2026. Confirm the notice at the shop.",
+      "state": "Uttar Pradesh",
+      "sourceId": "roundup",
+      "source": "UPSSSC",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "Bihar Vidhan Sabha JSA and Office Attendant Post Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 6 December 2026. Confirm the notice at the shop.",
+      "state": "Bihar",
+      "sourceId": "roundup",
+      "source": "Bihar Vidhan Sabha",
+      "url": ""
     }
   ],
   "sources": [
@@ -534,7 +633,7 @@
       "url": "https://bpsc.bihar.gov.in/",
       "ok": false,
       "count": 0,
-      "note": "fetch failed. Earlier checks of bpsc.bih.nic.in also failed to connect, and onlinebpsc.bihar.gov.in is a login portal. No Bihar row was invented."
+      "note": "fetch failed. Earlier checks of bpsc.bih.nic.in also failed to connect, and onlinebpsc.bihar.gov.in is a login portal."
     },
     {
       "id": "employment-news",
@@ -543,6 +642,22 @@
       "ok": true,
       "count": 8,
       "note": "Public job-highlights table only. The paid e-paper is not copied."
+    },
+    {
+      "id": "roundup",
+      "name": "Recruitment roundup",
+      "url": "",
+      "ok": true,
+      "count": 9,
+      "note": "Open online forms for the five states whose listed last date is still ahead. The roundup site is not linked from the shop pages."
+    },
+    {
+      "id": "majhi",
+      "name": "Maharashtra recruitment roundup",
+      "url": "",
+      "ok": false,
+      "count": 0,
+      "note": "The page showed a browser check, so it was not read. No link to it is published."
     },
     {
       "id": "pib",

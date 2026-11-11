@@ -6,6 +6,11 @@ const items = updates.ticker.length
   ? updates.ticker
   : [{ text: "Notices appear here after the update script runs.", source: "", url: "", sample: true }];
 const loop = [...items, ...items];
+
+function safeUrl(url) {
+  if (!url || /sarkariresult\.com|majhinaukri\.in/i.test(url)) return "";
+  return url;
+}
 ---
 
 <div class="live-bar" aria-label="Live updates">
@@ -15,7 +20,7 @@ const loop = [...items, ...items];
       {
         loop.map((item) => (
           <span>
-            {item.url ? <Outbound href={item.url}>{item.text}</Outbound> : item.text}
+            {safeUrl(item.url) ? <Outbound href={safeUrl(item.url)}>{item.text}</Outbound> : item.text}
             {item.sample ? " (sample)" : ""}
           </span>
         ))
