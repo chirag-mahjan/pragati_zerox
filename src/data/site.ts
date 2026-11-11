@@ -11,7 +11,7 @@ export const site = {
   phoneAltTel: "tel:+918200736673",
   callLabel: "Call Now 9016769144",
   location: "Shop 8, Rohini Park, Andada, Ankleshwar, Bharuch, Gujarat, 393010",
-  mapUrl: "https://www.google.com/maps/search/?api=1&query=Shop%208%20Rohini%20Park%20Andada%20Ankleshwar%20Bharuch%20Gujarat%20393010",
+  mapUrl: "https://maps.app.goo.gl/LUBiyUzFzqSS99td8?g_st=aw",
   hours: "Mon–Sat 8:30 AM to 8:30 PM",
   hoursLong: "Monday–Saturday, 8:30 AM to 8:30 PM",
   tagline: "અમારે ત્યાં દરેક પ્રકારના કામ સચોટ અને ઝડપી કરવામાં આવે છે.",
