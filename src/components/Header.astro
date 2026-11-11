@@ -47,12 +47,17 @@ const path = Astro.url.pathname.replace(/\/$/, "") || "/";
     );
   }
 
-  function translateCookie(lang) {
+  function clearTranslateCookie() {
     const expired = "expires=Thu, 01 Jan 1970 00:00:00 GMT";
-    if (lang === "en") {
-      document.cookie = "googtrans=;path=/;" + expired;
-      return;
-    }
+    const host = location.hostname;
+    document.cookie = "googtrans=;" + expired + ";path=/";
+    document.cookie = "googtrans=;" + expired + ";path=/;domain=" + host;
+    document.cookie = "googtrans=;" + expired + ";path=/;domain=." + host;
+  }
+
+  function translateCookie(lang) {
+    clearTranslateCookie();
+    if (lang === "en") return;
     document.cookie = "googtrans=/en/" + lang + ";path=/";
   }
 
@@ -77,6 +82,10 @@ const path = Astro.url.pathname.replace(/\/$/, "") || "/";
 
   function setPageLanguage(lang) {
     translateCookie(lang);
+    if (lang === "en") {
+      location.replace(location.pathname + location.search);
+      return;
+    }
     markLanguage(lang);
     if (applyLanguage(lang)) return;
     let tries = 0;
