@@ -1,0 +1,35 @@
+---
+import { site, nav } from "../data/site";
+
+const path = Astro.url.pathname.replace(/\/$/, "") || "/";
+---
+
+<a class="skip" href="#content">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-bar">
+    <a class="lockup" href="/">
+      <span class="lockup-mark" aria-hidden="true">P</span>
+      <span>
+        <span class="lockup-name">{site.lockupTop}</span>
+        <span class="lockup-sub">{site.lockupBottom}</span>
+      </span>
+    </a>
+    <input class="nav-toggle" id="nav-toggle" type="checkbox" />
+    <label class="nav-burger" for="nav-toggle">Menu</label>
+    <ul class="nav-links">
+      {
+        nav.map((item) => {
+          const current = (item.href === "/" ? path === "/" : path === item.href) ? "page" : undefined;
+          return (
+            <li>
+              <a href={item.href} aria-current={current}>
+                {item.label}
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+    <a class="call-now" href={site.phoneTel}>{site.callLabel}</a>
+  </div>
+</header>

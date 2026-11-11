@@ -1,0 +1,27 @@
+---
+import Base from "../layouts/Base.astro";
+import { serviceGroups } from "../data/site";
+---
+
+<Base title="Xerox & Digital Services" description="Printing, typing, tickets, SIM, and bill payment at Pragati Digital & Xerox Center.">
+  <div class="wrap">
+    <header class="page-head">
+      <h1>Xerox & Digital Services</h1>
+      <p>The full list is on this page. Come to the shop, or call, and we will do the work with you.</p>
+    </header>
+    <div class="groups">
+      {
+        serviceGroups.map((group) => (
+          <section class:list={["group", group.tone]} id={group.id}>
+            <h2>{group.title}</h2>
+            <ul>
+              {group.items.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </section>
+        ))
+      }
+    </div>
+  </div>
+</Base>

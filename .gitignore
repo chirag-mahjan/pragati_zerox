@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.astro/
+scripts/_probe.mjs
+scripts/_probe2.mjs
+scripts/_probe3.mjs
+scripts/_probe-out/

@@ -1,0 +1,15 @@
+{
+  "name": "pragati-zerox",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1 --port 4321",
+    "build": "astro build",
+    "preview": "astro preview --host 127.0.0.1 --port 4321",
+    "update": "node scripts/fetch-updates.mjs"
+  },
+  "dependencies": {
+    "astro": "^5.14.1"
+  }
+}

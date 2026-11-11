@@ -1,0 +1,40 @@
+---
+import Base from "../layouts/Base.astro";
+import { site } from "../data/site";
+---
+
+<Base title="Contact Us" description="Call or visit Pragati Digital & Xerox Center at Rohini Park, Andada.">
+  <div class="wrap">
+    <header class="page-head">
+      <h1>Contact Us</h1>
+      <p class="tagline" lang="gu">{site.tagline}</p>
+    </header>
+    <div class="contact-grid">
+      <section class="contact-card">
+        <h2>Visit or call</h2>
+        <dl class="facts">
+          <div>
+            <dt>Phone</dt>
+            <dd><a href={site.phoneTel}>{site.phoneDisplay}</a></dd>
+          </div>
+          <div>
+            <dt>Location</dt>
+            <dd>{site.location}</dd>
+          </div>
+          <div>
+            <dt>Hours</dt>
+            <dd>{site.hoursLong}</dd>
+          </div>
+        </dl>
+        <div class="actions" style="margin-top: 1.2rem">
+          <a class="button" href={site.phoneTel}>{site.callLabel}</a>
+        </div>
+      </section>
+      <aside class="contact-card">
+        <h2>{site.name}</h2>
+        <p>Bring your papers to the counter. We print, type, and help with scheme and exam forms in the shop.</p>
+        <p>A map pin is not shown until the shop confirms the exact location.</p>
+      </aside>
+    </div>
+  </div>
+</Base>

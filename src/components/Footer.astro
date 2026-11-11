@@ -1,0 +1,17 @@
+---
+import { site } from "../data/site";
+---
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <h2>{site.name}</h2>
+      <p class="footer-tagline" lang="gu">{site.tagline}</p>
+    </div>
+    <div>
+      <p><a href={site.phoneTel}>{site.callLabel}</a></p>
+      <p>{site.location}</p>
+      <p>{site.hours}</p>
+    </div>
+  </div>
+</footer>

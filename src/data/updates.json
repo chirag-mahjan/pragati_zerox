@@ -1,0 +1,383 @@
+{
+  "fetchedAt": "2026-11-11T08:29:23.855Z",
+  "ticker": [
+    {
+      "text": "GPSC 60/2026-27: Executive Engineer (Civil), Class-1, (GMB) — 20 November 2026",
+      "source": "Gujarat Public Service Commission",
+      "url": "https://gpsc.gujarat.gov.in/AdvertisementDetail?no=2385&tab=Advertisement",
+      "sample": false
+    },
+    {
+      "text": "GPSC 61/2026-27: Executive Engineer (Mechanical), Class-1, GMB — 20 November 2026",
+      "source": "Gujarat Public Service Commission",
+      "url": "https://gpsc.gujarat.gov.in/AdvertisementDetail?no=2386&tab=Advertisement",
+      "sample": false
+    },
+    {
+      "text": "GPSC 62/2026-27: Deputy Executive Engineer (Civil), Class-2, Sports Authority Of Gujarat — 20 November 2026",
+      "source": "Gujarat Public Service Commission",
+      "url": "https://gpsc.gujarat.gov.in/AdvertisementDetail?no=2387&tab=Advertisement",
+      "sample": false
+    },
+    {
+      "text": "GPSC 63/2026-27: Assistant Engineer (Civil), Class-2, Sports Authority Of Gujarat — 20 November 2026",
+      "source": "Gujarat Public Service Commission",
+      "url": "https://gpsc.gujarat.gov.in/AdvertisementDetail?no=2388&tab=Advertisement",
+      "sample": false
+    },
+    {
+      "text": "GPSC 64/2026-27: Assistant Engineer (Electrical), Class-2, Sports Authority Of Gujarat — 20 November 2026",
+      "source": "Gujarat Public Service Commission",
+      "url": "https://gpsc.gujarat.gov.in/AdvertisementDetail?no=2389&tab=Advertisement",
+      "sample": false
+    },
+    {
+      "text": "GPSC 65/2026-27: Assistant Engineer (Electrical), Class-2, (GMB) — 20 November 2026",
+      "source": "Gujarat Public Service Commission",
+      "url": "https://gpsc.gujarat.gov.in/AdvertisementDetail?no=2390&tab=Advertisement",
+      "sample": false
+    },
+    {
+      "text": "TGT (COMPUTER SCIENCE) & OTHERS, SAINIK SCHOOL NAGROTA, SAINIK SCHOOLS SOCIETY, MINISTRY OF DEFENCE — 21 November 2026",
+      "source": "Employment News",
+      "url": "https://employmentnews.gov.in/newemp/home.aspx",
+      "sample": false
+    },
+    {
+      "text": "LOWER DIVISION CLERK, INSTITUTE OF HOTEL MANAGEMENT AND CATERING TECHNOLOGY, MINISTRY OF TOURISM — 30 November 2026",
+      "source": "Employment News",
+      "url": "https://employmentnews.gov.in/newemp/home.aspx",
+      "sample": false
+    },
+    {
+      "text": "चिकित्सा उपकरणों के उत्पादन से जुड़ी प्रोत्साहन योजना के तहत नए आवेदन आमंत्रित",
+      "source": "Press Information Bureau",
+      "url": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2334792",
+      "sample": false
+    },
+    {
+      "text": "सूक्ष्म, लघु और मध्यम उद्यम मंत्रालय (एमएसएमई) ने एससी/एसटी सूक्ष्म और लघु उद्यमों से खरीद बढ़ाने के लिए सीपीएसई के साथ एक गोलमेज चर्चा का आयोजन किया",
+      "source": "Press Information Bureau",
+      "url": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2334795",
+      "sample": false
+    }
+  ],
+  "schemes": {
+    "groups": [
+      {
+        "id": "health",
+        "title": "Health",
+        "items": [
+          "Ayushman card activation and printing"
+        ]
+      },
+      {
+        "id": "labor",
+        "title": "Labor",
+        "items": [
+          "E-Shram card registration"
+        ]
+      },
+      {
+        "id": "family",
+        "title": "Family",
+        "items": [
+          "New ration card",
+          "Duplicate ration card"
+        ]
+      },
+      {
+        "id": "certificates",
+        "title": "Certificates",
+        "items": [
+          "Income certificate (આવક દાખલો)",
+          "Caste certificate (જ્ઞાતિ દાખલો)",
+          "Residence certificate (રહેઠાણ દાખલો)"
+        ]
+      },
+      {
+        "id": "business",
+        "title": "Business",
+        "items": [
+          "GST registration and filing",
+          "UDYAM / MSME",
+          "FSSAI",
+          "Driving licence form assistance",
+          "Vehicle insurance"
+        ]
+      }
+    ],
+    "notices": [
+      {
+        "title": "चिकित्सा उपकरणों के उत्पादन से जुड़ी प्रोत्साहन योजना के तहत नए आवेदन आमंत्रित",
+        "source": "Press Information Bureau",
+        "url": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2334792",
+        "sample": false
+      },
+      {
+        "title": "सूक्ष्म, लघु और मध्यम उद्यम मंत्रालय (एमएसएमई) ने एससी/एसटी सूक्ष्म और लघु उद्यमों से खरीद बढ़ाने के लिए सीपीएसई के साथ एक गोलमेज चर्चा का आयोजन किया",
+        "source": "Press Information Bureau",
+        "url": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2334795",
+        "sample": false
+      }
+    ]
+  },
+  "exams": [
+    {
+      "name": "GPSC 60/2026-27: Executive Engineer (Civil), Class-1, (GMB)",
+      "qualification": "Class-1 post. Other conditions are in the official advertisement.",
+      "date": "20 November 2026 11:59 PM",
+      "action": "Apply At Shop",
+      "sample": false,
+      "source": "Gujarat Public Service Commission",
+      "url": "https://gpsc.gujarat.gov.in/AdvertisementDetail?no=2385&tab=Advertisement"
+    },
+    {
+      "name": "GPSC 61/2026-27: Executive Engineer (Mechanical), Class-1, GMB",
+      "qualification": "Class-1 post. Other conditions are in the official advertisement.",
+      "date": "20 November 2026 11:59 PM",
+      "action": "Apply At Shop",
+      "sample": false,
+      "source": "Gujarat Public Service Commission",
+      "url": "https://gpsc.gujarat.gov.in/AdvertisementDetail?no=2386&tab=Advertisement"
+    },
+    {
+      "name": "GPSC 62/2026-27: Deputy Executive Engineer (Civil), Class-2, Sports Authority Of Gujarat",
+      "qualification": "Class-2 post. Other conditions are in the official advertisement.",
+      "date": "20 November 2026 11:59 PM",
+      "action": "Apply At Shop",
+      "sample": false,
+      "source": "Gujarat Public Service Commission",
+      "url": "https://gpsc.gujarat.gov.in/AdvertisementDetail?no=2387&tab=Advertisement"
+    },
+    {
+      "name": "GPSC 63/2026-27: Assistant Engineer (Civil), Class-2, Sports Authority Of Gujarat",
+      "qualification": "Class-2 post. Other conditions are in the official advertisement.",
+      "date": "20 November 2026 11:59 PM",
+      "action": "Apply At Shop",
+      "sample": false,
+      "source": "Gujarat Public Service Commission",
+      "url": "https://gpsc.gujarat.gov.in/AdvertisementDetail?no=2388&tab=Advertisement"
+    },
+    {
+      "name": "GPSC 64/2026-27: Assistant Engineer (Electrical), Class-2, Sports Authority Of Gujarat",
+      "qualification": "Class-2 post. Other conditions are in the official advertisement.",
+      "date": "20 November 2026 11:59 PM",
+      "action": "Apply At Shop",
+      "sample": false,
+      "source": "Gujarat Public Service Commission",
+      "url": "https://gpsc.gujarat.gov.in/AdvertisementDetail?no=2389&tab=Advertisement"
+    },
+    {
+      "name": "GPSC 65/2026-27: Assistant Engineer (Electrical), Class-2, (GMB)",
+      "qualification": "Class-2 post. Other conditions are in the official advertisement.",
+      "date": "20 November 2026 11:59 PM",
+      "action": "Apply At Shop",
+      "sample": false,
+      "source": "Gujarat Public Service Commission",
+      "url": "https://gpsc.gujarat.gov.in/AdvertisementDetail?no=2390&tab=Advertisement"
+    },
+    {
+      "name": "TGT (COMPUTER SCIENCE) & OTHERS, SAINIK SCHOOL NAGROTA, SAINIK SCHOOLS SOCIETY, MINISTRY OF DEFENCE",
+      "qualification": "See the official notice. Appointment method on the listing: Recruitment.",
+      "date": "21 November 2026",
+      "action": "Apply At Shop",
+      "sample": false,
+      "source": "Employment News",
+      "url": "https://employmentnews.gov.in/newemp/home.aspx"
+    },
+    {
+      "name": "LOWER DIVISION CLERK, INSTITUTE OF HOTEL MANAGEMENT AND CATERING TECHNOLOGY, MINISTRY OF TOURISM",
+      "qualification": "See the official notice. Appointment method on the listing: Recruitment.",
+      "date": "30 November 2026",
+      "action": "Apply At Shop",
+      "sample": false,
+      "source": "Employment News",
+      "url": "https://employmentnews.gov.in/newemp/home.aspx"
+    },
+    {
+      "name": "ACCOUNTANT & OTHERS, MINERAL EXPLORATION AND CONSULTANCY LIMITED",
+      "qualification": "See the official notice. Appointment method on the listing: Recruitment.",
+      "date": "11 October 2026",
+      "action": "Apply At Shop",
+      "sample": false,
+      "source": "Employment News",
+      "url": "https://employmentnews.gov.in/newemp/home.aspx"
+    },
+    {
+      "name": "LECTURER, DNS REGIONAL INSTITUTE OF COOPERATIVE MANAGEMENT",
+      "qualification": "See the official notice. Appointment method on the listing: Recruitment.",
+      "date": "27 September 2026",
+      "action": "Apply At Shop",
+      "sample": false,
+      "source": "Employment News",
+      "url": "https://employmentnews.gov.in/newemp/home.aspx"
+    },
+    {
+      "name": "TEACHING POSITIONS, NALANDA UNIVERSITY",
+      "qualification": "See the official notice. Appointment method on the listing: Recruitment.",
+      "date": "15 September 2026",
+      "action": "Apply At Shop",
+      "sample": false,
+      "source": "Employment News",
+      "url": "https://employmentnews.gov.in/newemp/home.aspx"
+    },
+    {
+      "name": "ENGINEER & OTHERS, RAMAGUNDAM FERTILIZERS AND CHEMICALS LIMITED",
+      "qualification": "See the official notice. Appointment method on the listing: Recruitment.",
+      "date": "24 September 2026",
+      "action": "Apply At Shop",
+      "sample": false,
+      "source": "Employment News",
+      "url": "https://employmentnews.gov.in/newemp/home.aspx"
+    },
+    {
+      "name": "PROFESSOR, NATIONAL INSTITUTE OF PHARMACEUTICAL EDUCATION AND RESEARCH KOLKATA, M/O CHEMICAL AND FERTILIZERS",
+      "qualification": "See the official notice. Appointment method on the listing: Recruitment.",
+      "date": "17 September 2026",
+      "action": "Apply At Shop",
+      "sample": false,
+      "source": "Employment News",
+      "url": "https://employmentnews.gov.in/newemp/home.aspx"
+    },
+    {
+      "name": "YOUNG CONSULTANT (FOREST FIRE RISK MANAGEMENT), NATIONAL DISASTER MANAGEMENT AUTHORITY",
+      "qualification": "See the official notice. Appointment method on the listing: Deputation.",
+      "date": "18 October 2026",
+      "action": "Apply At Shop",
+      "sample": false,
+      "source": "Employment News",
+      "url": "https://employmentnews.gov.in/newemp/home.aspx"
+    },
+    {
+      "name": "GSSSB 468/202627: ગુજરાત ગૌણ સેવા, વર્ગ -૩ (ગૃપ-A તથા ગૃપ-B)",
+      "qualification": "See the official advertisement",
+      "date": "Published 4 November 2026. Last date is on the notice.",
+      "action": "Apply At Shop",
+      "sample": false,
+      "source": "Gujarat Subordinate Service Selection Board",
+      "url": "https://gsssb.gujarat.gov.in/Notification"
+    },
+    {
+      "name": "GSSSB 441/202627: મલ્ટી પર્પઝ હેલ્થ વર્કર (પુરૂષ), વર્ગ-૩",
+      "qualification": "See the official advertisement",
+      "date": "Published 4 November 2026. Last date is on the notice.",
+      "action": "Apply At Shop",
+      "sample": false,
+      "source": "Gujarat Subordinate Service Selection Board",
+      "url": "https://gsssb.gujarat.gov.in/Notification"
+    },
+    {
+      "name": "GSSSB 467/202627: સર્વેયર",
+      "qualification": "See the official advertisement",
+      "date": "Published 30 October 2026. Last date is on the notice.",
+      "action": "Apply At Shop",
+      "sample": false,
+      "source": "Gujarat Subordinate Service Selection Board",
+      "url": "https://gsssb.gujarat.gov.in/Notification"
+    },
+    {
+      "name": "GSSSB 466/202627: ફુડ સેફટી ઓફિસર, વર્ગ-૩ (PwD SRD)",
+      "qualification": "See the official advertisement",
+      "date": "Published 27 October 2026. Last date is on the notice.",
+      "action": "Apply At Shop",
+      "sample": false,
+      "source": "Gujarat Subordinate Service Selection Board",
+      "url": "https://gsssb.gujarat.gov.in/Notification"
+    },
+    {
+      "name": "GSSSB 465/202627: ફુડ સેફટી ઓફિસર, વર્ગ-૩",
+      "qualification": "See the official advertisement",
+      "date": "Published 27 October 2026. Last date is on the notice.",
+      "action": "Apply At Shop",
+      "sample": false,
+      "source": "Gujarat Subordinate Service Selection Board",
+      "url": "https://gsssb.gujarat.gov.in/Notification"
+    },
+    {
+      "name": "GSSSB 464/202627: અધિક મદદનીશ ઇજનેર (યાંત્રિક), વર્ગ-૩ (PwD SRD)",
+      "qualification": "See the official advertisement",
+      "date": "Published 26 October 2026. Last date is on the notice.",
+      "action": "Apply At Shop",
+      "sample": false,
+      "source": "Gujarat Subordinate Service Selection Board",
+      "url": "https://gsssb.gujarat.gov.in/Notification"
+    },
+    {
+      "name": "GSSSB 463/202627: અધિક મદદનીશ ઇજનેર (યાંત્રિક), વર્ગ-૩",
+      "qualification": "See the official advertisement",
+      "date": "Published 26 October 2026. Last date is on the notice.",
+      "action": "Apply At Shop",
+      "sample": false,
+      "source": "Gujarat Subordinate Service Selection Board",
+      "url": "https://gsssb.gujarat.gov.in/Notification"
+    },
+    {
+      "name": "GSSSB 383/202526: સર્વેયર, વર્ગ-૩",
+      "qualification": "See the official advertisement",
+      "date": "Published 23 October 2026. Last date is on the notice.",
+      "action": "Apply At Shop",
+      "sample": false,
+      "source": "Gujarat Subordinate Service Selection Board",
+      "url": "https://gsssb.gujarat.gov.in/Notification"
+    }
+  ],
+  "sources": [
+    {
+      "id": "gpsc",
+      "name": "GPSC",
+      "url": "https://gpsc.gujarat.gov.in/RecruitmentOpen",
+      "ok": true,
+      "count": 6,
+      "note": "Open recruitment table"
+    },
+    {
+      "id": "employment-news",
+      "name": "Employment News",
+      "url": "https://employmentnews.gov.in/newemp/home.aspx",
+      "ok": true,
+      "count": 8,
+      "note": "Public job-highlights table only. The paid e-paper is not copied."
+    },
+    {
+      "id": "gsssb",
+      "name": "GSSSB",
+      "url": "https://gsssb.gujarat.gov.in/Notification",
+      "ok": true,
+      "count": 8,
+      "note": "Public notification search, first page"
+    },
+    {
+      "id": "pib",
+      "name": "Press Information Bureau",
+      "url": "https://www.pib.gov.in/RssMain.aspx?ModId=6&Lang=2&Regid=3&reg=48",
+      "ok": true,
+      "count": 2,
+      "note": "The official feed redirected to Hindi from this network."
+    },
+    {
+      "id": "rrb",
+      "name": "RRB",
+      "url": "https://rrb.indianrailways.gov.in/mumbai",
+      "ok": false,
+      "count": 0,
+      "note": "The public Mumbai notice endpoint returned an empty body, so no railway row was imported. rrbcdg.gov.in did not connect on an earlier check."
+    },
+    {
+      "id": "gprb",
+      "name": "Gujarat Police Recruitment Board",
+      "url": "https://gprb.gujarat.gov.in/",
+      "ok": false,
+      "count": 0,
+      "note": "The public homepage repeats undated template lines and does not expose a stable notice table. No police row was invented."
+    },
+    {
+      "id": "myscheme",
+      "name": "myScheme",
+      "url": "https://api.myscheme.gov.in/search/v6/schemes",
+      "ok": false,
+      "count": 0,
+      "note": "The JSON endpoint answers Unauthorized without a client key. The key is not used here, and the request is not sent with a spoofed Origin."
+    }
+  ]
+}

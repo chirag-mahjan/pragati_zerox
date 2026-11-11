@@ -1,0 +1,50 @@
+---
+import Base from "../layouts/Base.astro";
+import { site } from "../data/site";
+import updates from "../data/updates.json";
+---
+
+<Base title="Government Schemes Hub" description="Scheme help at Pragati Digital & Xerox Center in Andada.">
+  <div class="wrap">
+    <header class="page-head">
+      <h1>Government Schemes Hub</h1>
+      <p>We help you prepare and submit these applications at the center. This page does not apply online.</p>
+    </header>
+    <div class="groups">
+      {
+        updates.schemes.groups.map((group) => (
+          <section class="group teal">
+            <h2>{group.title}</h2>
+            <ul>
+              {group.items.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </section>
+        ))
+      }
+    </div>
+    {
+      updates.schemes.notices.length > 0 && (
+        <section class="section">
+          <h2>Recent public notices</h2>
+          <ul class="notice-list">
+            {updates.schemes.notices.map((notice) => (
+              <li>
+                <a href={notice.url}>{notice.title}</a>
+                <div class="source-link">{notice.source}</div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+    <aside class="cta">
+      <p>{site.schemeCta}</p>
+      <div class="actions">
+        <a class="button" href={site.phoneTel}>{site.callLabel}</a>
+        <span>{site.location}</span>
+      </div>
+    </aside>
+  </div>
+</Base>

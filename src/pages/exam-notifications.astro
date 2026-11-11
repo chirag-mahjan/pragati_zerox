@@ -1,0 +1,72 @@
+---
+import Base from "../layouts/Base.astro";
+import { site } from "../data/site";
+import updates from "../data/updates.json";
+
+const hasSample = updates.exams.some((exam) => exam.sample);
+const readFrom = updates.sources.filter((source) => source.ok && source.count > 0);
+---
+
+<Base title="Exam Notifications" description="Exam notices for visitors of Pragati Digital & Xerox Center. Apply at the shop.">
+  <div class="wrap">
+    <header class="page-head">
+      <h1>Exam Notifications</h1>
+      <p>Read the notice, then apply with us at the shop. There is no online form on this site.</p>
+    </header>
+    {
+      hasSample && (
+        <p class="sample-note">
+          Rows marked sample are layout examples. Their dates are not confirmed notices. A successful fetch replaces them.
+        </p>
+      )
+    }
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Qualification</th>
+            <th>Last date</th>
+            <th>Apply At Shop</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            updates.exams.map((exam) => (
+              <tr>
+                <td>
+                  {exam.name}
+                  {exam.sample && <span class="sample-tag">sample</span>}
+                  {exam.url && (
+                    <a class="source-link" href={exam.url}>
+                      {exam.source}
+                    </a>
+                  )}
+                  {!exam.url && exam.source && <div class="source-link">{exam.source}</div>}
+                </td>
+                <td>{exam.qualification}</td>
+                <td>{exam.date}</td>
+                <td>
+                  <div class="apply-box">
+                    <strong>Apply At Shop</strong>
+                    <a href={site.phoneTel}>{site.phoneDisplay}</a>
+                    <span>{site.location}</span>
+                  </div>
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    <p class="source-line">
+      {
+        readFrom.length
+          ? `Read from ${readFrom.map((source) => source.name).join(", ")}.`
+          : "Waiting for the update script. Sample rows are on screen until then."
+      }
+      {" "}
+      {site.phoneDisplay}. {site.location}. {site.hoursLong}.
+    </p>
+  </div>
+</Base>

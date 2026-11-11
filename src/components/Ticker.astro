@@ -1,0 +1,26 @@
+---
+import updates from "../data/updates.json";
+
+const items = updates.ticker.length
+  ? updates.ticker
+  : [{ text: "Notices appear here after the update script runs.", source: "", url: "", sample: true }];
+const loop = [...items, ...items];
+---
+
+<div class="ticker" aria-label="Live updates">
+  <div class="wrap ticker-inner">
+    <div class="ticker-label">LIVE UPDATES</div>
+    <div class="ticker-window">
+      <div class="ticker-track">
+        {
+          loop.map((item) => (
+            <span>
+              {item.url ? <a href={item.url}>{item.text}</a> : item.text}
+              {item.sample ? " (sample)" : ""}
+            </span>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</div>

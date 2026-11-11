@@ -1,0 +1,48 @@
+---
+import Base from "../layouts/Base.astro";
+import { site, homeCategories } from "../data/site";
+---
+
+<Base title={site.name}>
+  <div class="wrap">
+    <section class="hero">
+      <div>
+        <h1>Your One-Stop Digital & Document Service Hub</h1>
+        <p class="lede">
+          Quick, accurate, and reliable services for all your printing, registration, and scheme application needs in Andada.
+        </p>
+        <div class="actions">
+          <a class="button" href="/services">Browse Services</a>
+          <a class="button secondary" href="/government-schemes">View Latest Schemes</a>
+        </div>
+      </div>
+      <figure class="shop-photo">
+        <svg viewBox="0 0 320 220" aria-hidden="true">
+          <rect x="36" y="48" width="248" height="128" rx="10" fill="#14365f" stroke="#d4a017" stroke-width="4" />
+          <rect x="58" y="68" width="150" height="70" rx="4" fill="#0c2340" stroke="#f8e7b8" stroke-width="3" />
+          <rect x="222" y="78" width="40" height="18" rx="3" fill="#d4a017" />
+          <rect x="70" y="154" width="70" height="36" fill="#f4f0e6" />
+          <rect x="148" y="160" width="70" height="8" fill="#0f6e6b" />
+          <circle cx="250" cy="128" r="10" fill="none" stroke="#d4a017" stroke-width="3" />
+        </svg>
+        <figcaption>Shop photo</figcaption>
+      </figure>
+    </section>
+
+    <section class="section" aria-labelledby="categories-title">
+      <h2 id="categories-title">What we help with</h2>
+      <div class="cards">
+        {
+          homeCategories.map((category) => (
+            <article class:list={["card", category.tone]}>
+              <span class="seal">{category.seal}</span>
+              <h2>{category.title}</h2>
+              <p>{category.text}</p>
+              <a class="more" href={category.href}>READ MORE</a>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+  </div>
+</Base>
