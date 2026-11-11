@@ -30,6 +30,17 @@ const path = Astro.url.pathname.replace(/\/$/, "") || "/";
           );
         })
       }
+      <li class="lang-switch">
+        <a data-translate="hi" href="https://translate.google.com/translate?sl=auto&tl=hi" target="_blank" rel="noopener noreferrer">हिंदी</a>
+        <a data-translate="gu" href="https://translate.google.com/translate?sl=auto&tl=gu" target="_blank" rel="noopener noreferrer">ગુજરાતી</a>
+      </li>
     </ul>
   </div>
 </header>
+<script is:inline>
+  const page = encodeURIComponent(location.href);
+  for (const link of document.querySelectorAll("[data-translate]")) {
+    const lang = link.getAttribute("data-translate");
+    link.href = "https://translate.google.com/translate?sl=auto&tl=" + lang + "&u=" + page;
+  }
+</script>

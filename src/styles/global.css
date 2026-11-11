@@ -171,6 +171,22 @@ a {
   color: var(--gold);
 }
 
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.lang-switch a {
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  padding: 0.18rem 0.55rem;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.78rem;
+  line-height: 1.2;
+}
+
 .hero {
   background:
     radial-gradient(circle at 78% 40%, rgb(20 163 161 / 10%), transparent 18rem),
