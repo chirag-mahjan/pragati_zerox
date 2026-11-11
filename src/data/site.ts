@@ -1,8 +1,8 @@
 export const site = {
   name: "PRAGATI DIGITAL & XEROX CENTER",
   lockupTop: "PRAGATI",
-  lockupBottom: "XEROX & GOVT. SCHEMES CENTER",
-  heroTitle: "Pragati Xerox & Govt. Schemes Center",
+  lockupBottom: "XEROX & ONLINE CENTER",
+  heroTitle: "Pragati Xerox & Online Center",
   heroSub: "Your trusted partner for all digital services & government applications",
   owners: ["Pravinbhai Jire", "Gururaj Jire"],
   phoneDisplay: "9016769144",
@@ -11,7 +11,6 @@ export const site = {
   phoneAltTel: "tel:+918200736673",
   callLabel: "Call Now 9016769144",
   location: "Shop 8, Rohini Park, near Sai Temple, Andada, Ankleshwar, Bharuch, Gujarat, 393010",
-  cscId: "662624120013",
   mapUrl: "https://maps.app.goo.gl/LUBiyUzFzqSS99td8?g_st=aw",
   hours: "Mon–Sat 8:30 AM to 8:30 PM",
   hoursLong: "Monday–Saturday, 8:30 AM to 8:30 PM",

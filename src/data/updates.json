@@ -87,6 +87,14 @@
         ]
       },
       {
+        "id": "portals",
+        "title": "Portals",
+        "items": [
+          "Sanman Portal",
+          "iKhedut"
+        ]
+      },
+      {
         "id": "family",
         "title": "Family",
         "items": [

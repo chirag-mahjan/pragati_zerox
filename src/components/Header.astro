@@ -1,5 +1,5 @@
 ---
-import { nav } from "../data/site";
+import { nav, site } from "../data/site";
 import Icon from "./Icon.astro";
 
 const path = Astro.url.pathname.replace(/\/$/, "") || "/";
@@ -12,7 +12,7 @@ const path = Astro.url.pathname.replace(/\/$/, "") || "/";
       <span class="lockup-mark" aria-hidden="true"><Icon name="print" /></span>
       <span>
         <span class="lockup-name">PRAGATI</span>
-        <span class="lockup-sub">XEROX & GOVT. SCHEMES CENTER</span>
+        <span class="lockup-sub">{site.lockupBottom}</span>
       </span>
     </a>
     <input class="nav-toggle" id="nav-toggle" type="checkbox" />

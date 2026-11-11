@@ -14,6 +14,7 @@ const months = [
 const schemeGroups = [
   { id: "health", title: "Health", items: ["Ayushman card activation and printing"] },
   { id: "labor", title: "Labor", items: ["E-Shram card registration", "PF work"] },
+  { id: "portals", title: "Portals", items: ["Sanman Portal", "iKhedut"] },
   { id: "family", title: "Family", items: ["New ration card", "Duplicate ration card"] },
   {
     id: "certificates",
