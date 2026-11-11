@@ -67,6 +67,18 @@ function decode(value) {
     .trim();
 }
 
+function startOfToday() {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return today;
+}
+
+function dateIsOpen(day, month, year) {
+  const date = new Date(Number(year), Number(month) - 1, Number(day));
+  if (date.getFullYear() !== Number(year) || date.getMonth() !== Number(month) - 1 || date.getDate() !== Number(day)) return false;
+  return date >= startOfToday();
+}
+
 function formatParts(day, month, year, extra = "") {
   const d = Number(day);
   const m = Number(month);
@@ -127,11 +139,12 @@ async function fetchGpsc() {
     return { exams: [], source: sourceResult("gpsc", "GPSC", pageUrl, false, 0, `HTTP ${response.status}`) };
   }
   const rows = [...response.text.matchAll(/<tr>\s*<td>\s*([^<]+?)\s*<\/td>\s*<td>\s*<a href="([^"]+)"[^>]*>\s*([\s\S]*?)<\/a>\s*<\/td>\s*<td>\s*([^<]*?)\s*<\/td>\s*<td[^>]*>\s*([^<]*?)\s*<\/td>/gi)];
-  const exams = rows.slice(0, 12).map((row) => {
+  const exams = rows.flatMap((row) => {
     const name = decode(row[3]);
     const href = row[2].startsWith("http") ? row[2] : new URL(row[2], pageUrl).href;
     const dateMatch = decode(row[5]).match(/(\d{1,2})-(\d{1,2})-(\d{4})(?:\s+(.+))?/);
-    return examRecord({
+    if (dateMatch && !dateIsOpen(dateMatch[1], dateMatch[2], dateMatch[3])) return [];
+    return [examRecord({
       name: `GPSC ${decode(row[1])}: ${name}`,
       qualification: qualificationFrom(name),
       date: dateMatch ? formatParts(dateMatch[1], dateMatch[2], dateMatch[3], dateMatch[4] || "") : "See the official advertisement",
@@ -139,7 +152,7 @@ async function fetchGpsc() {
       sourceId: "gpsc",
       source: "Gujarat Public Service Commission",
       url: href,
-    });
+    })];
   });
   return {
     exams,
@@ -157,11 +170,12 @@ async function fetchEmploymentNews() {
   const posts = [...response.text.matchAll(/RepDetails_Label4_\d+"[^>]*>([\s\S]*?)<\/span>/g)].map((match) => decode(match[1]));
   const methods = [...response.text.matchAll(/RepDetails_Label5_\d+"[^>]*>([\s\S]*?)<\/span>/g)].map((match) => decode(match[1]));
   const dates = [...response.text.matchAll(/RepDetails_Label6_\d+"[^>]*>([\s\S]*?)<\/span>/g)].map((match) => decode(match[1]));
-  const exams = orgs.slice(0, 8).map((org, index) => {
+  const exams = orgs.flatMap((org, index) => {
     const dateMatch = (dates[index] || "").match(/(\d{1,2})\/(\d{1,2})\/(\d{4})/);
+    if (dateMatch && !dateIsOpen(dateMatch[1], dateMatch[2], dateMatch[3])) return [];
     const method = methods[index] ? ` Appointment method on the listing: ${methods[index]}.` : "";
     const name = `${posts[index] || "Recruitment"}, ${org}`;
-    return examRecord({
+    return [examRecord({
       name,
       qualification: `See the official notice.${method}`,
       date: dateMatch ? formatParts(dateMatch[1], dateMatch[2], dateMatch[3]) : "See the official notice",
@@ -169,7 +183,7 @@ async function fetchEmploymentNews() {
       sourceId: "employment-news",
       source: "Employment News",
       url: pageUrl,
-    });
+    })];
   }).filter((exam) => exam.name.trim() !== ",");
   return {
     exams,
@@ -268,7 +282,6 @@ async function fetchPib() {
       url: link || response.url,
       sample: false,
     });
-    if (notices.length === 6) break;
   }
   const languageNote = response.url.includes("Lang=2")
     ? "The official feed redirected to Hindi from this network."
@@ -299,7 +312,7 @@ async function fetchMppsc() {
     }))
     .filter((item) => /\/uploads\/advertisement\//i.test(item.href) && item.text.length > 20)
     .filter((item) => !/answer key|provisional answer/i.test(`${item.href} ${item.text}`));
-  const exams = links.slice(0, 6).map((item) => examRecord({
+  const exams = links.map((item) => examRecord({
     name: item.text,
     qualification: "See the official advertisement",
     date: datedLabel(item.href, item.text),
@@ -328,9 +341,10 @@ async function fetchUppsc() {
     return { exams: [], source: sourceResult("uppsc", "UPPSC", pageUrl, false, 0, `HTTP ${response.status}`) };
   }
   const rows = [...response.text.matchAll(/>\s*CLICK HERE TO APPLY FOR\s*([^<]{8,350})<\/a>[\s\S]{0,400}?Visible upto\s*:\s*(\d{1,2})\/(\d{1,2})\/(\d{4})/gi)];
-  const exams = rows.slice(0, 6).map((row) => {
+  const exams = rows.flatMap((row) => {
+    if (!dateIsOpen(row[2], row[3], row[4])) return [];
     const name = decode(row[1]).replace(/\.\s*$/, "");
-    return examRecord({
+    return [examRecord({
       name: `UPPSC ${name}`,
       qualification: "See the official advertisement",
       date: `Shown on the UPPSC board until ${formatParts(row[2], row[3], row[4])}. Confirm the last date on the notice.`,
@@ -338,7 +352,7 @@ async function fetchUppsc() {
       sourceId: "uppsc",
       source: "Uttar Pradesh Public Service Commission",
       url: pageUrl,
-    });
+    })];
   });
   return {
     exams,
@@ -425,11 +439,13 @@ function listingCenter(title, state) {
   }
   if (/vidhan sabha/i.test(title)) return "Bihar Vidhan Sabha";
   if (/bank of maharashtra/i.test(title)) return "Bank of Maharashtra";
-  return state;
+  if (state && state !== "National") return state;
+  const head = title.replace(/\s+online form[\s\S]*$/i, "").replace(/\s+\d{4}\s*$/, "").trim();
+  return head.slice(0, 64) || "National";
 }
 
 function listingDeadline(title) {
-  const match = title.match(/Last Date\s*:\s*(\d{1,2})\/(\d{1,2})\/(\d{4})/i)
+  const match = title.match(/Last Date\s*:?\s*(\d{1,2})\/(\d{1,2})\/(\d{4})/i)
     || title.match(/Last\s*:\s*(\d{1,2})\/(\d{1,2})\/(\d{4})/i);
   if (!match) return null;
   const day = Number(match[1]);
@@ -454,9 +470,9 @@ async function fetchRoundup() {
   const picked = [];
   const seen = new Set();
   for (const title of titles) {
-    const state = listingState(title);
+    const state = listingState(title) || "National";
     const deadline = listingDeadline(title);
-    if (!state || !deadline || deadline.date < today) continue;
+    if (!/online form|apply online/i.test(title) || !deadline || deadline.date < today) continue;
     const name = title
       .replace(/\s*\|.*$/, "")
       .replace(/\s*last date\s*:.*$/i, "")
@@ -468,12 +484,8 @@ async function fetchRoundup() {
     seen.add(key);
     picked.push({ title, name, state, deadline, center: listingCenter(title, state) });
   }
-  const perState = new Map();
   const exams = [];
   for (const item of picked.sort((a, b) => a.deadline.date - b.deadline.date)) {
-    const count = perState.get(item.state) || 0;
-    if (count >= 8) continue;
-    perState.set(item.state, count + 1);
     exams.push(examRecord({
       name: item.name,
       qualification: "See the official advertisement",
@@ -492,7 +504,7 @@ async function fetchRoundup() {
       "",
       exams.length > 0,
       exams.length,
-      "Open online forms for the five states whose listed last date is still ahead. The roundup site is not linked from the shop pages.",
+      "Every online form whose printed last date is still ahead. The roundup site is not linked from the shop pages.",
     ),
   };
 }
@@ -767,14 +779,12 @@ async function main() {
   const mpsc = await noteMpsc();
 
   const freshExams = jobs.flatMap((job) => job.exams || []);
-  const failedIds = new Set(jobs.filter((job) => !job.source?.ok).map((job) => job.source.id));
-  const kept = (previous.exams || []).filter((exam) => !exam.sample && failedIds.has(examSourceId(exam)) && !freshExams.some((item) => item.name === exam.name));
-  let exams = [...freshExams, ...kept].map((exam) => (
-    /sarkariresult\.com|majhinaukri\.in/i.test(exam.url || "") ? { ...exam, url: "" } : exam
-  ));
+  const merged = mergeExams(previous.exams || [], freshExams);
+  let exams = merged.exams;
   if (exams.length === 0) exams = sampleExams;
 
-  const notices = pib.notices || [];
+  const notices = pib.source?.ok ? mergeNamed(previous.schemes?.notices, pib.notices) : (previous.schemes?.notices || []);
+  const portals = mergePortals(previous.schemes?.portals, [sanman.portal, ikhedut.portal].filter(Boolean));
   const ticker = tickerFrom(exams, notices);
   const sources = [...jobs.map((job) => job.source), pib.source, sanman.source, ikhedut.source, rrb, mpsc.source, ...skippedSources()].filter(Boolean);
   const updates = {
@@ -783,7 +793,7 @@ async function main() {
     schemes: {
       states: ["Gujarat", "Maharashtra", "Uttar Pradesh", "Bihar", "Madhya Pradesh"],
       groups: schemeGroups,
-      portals: [sanman.portal, ikhedut.portal].filter(Boolean),
+      portals,
       notices,
     },
     coverage: coverageFrom(sources, exams),
@@ -794,10 +804,91 @@ async function main() {
   await writeFile(outPath, `${JSON.stringify(updates, null, 2)}\n`);
   const real = exams.filter((exam) => !exam.sample).length;
   console.log(`Wrote ${outPath}`);
-  console.log(`Exams: ${exams.length} (${real} fetched). Scheme notices: ${notices.length}.`);
+  console.log(`Exams: ${exams.length} (${real} on the list, ${merged.added} new). Scheme notices: ${notices.length}.`);
   for (const source of updates.sources) {
     console.log(`${source.ok ? "ok" : "skip"} ${source.name}: ${source.count} — ${source.note}`);
   }
+}
+
+function applicationDeadline(exam) {
+  const date = exam.date || "";
+  const named = date.match(/(?:Last date|until) (\d{1,2}) ([A-Za-z]+) (\d{4})/)
+    || date.match(/^(\d{1,2}) ([A-Za-z]+) (\d{4})/);
+  if (!named) return null;
+  const month = months.findIndex((item) => item.toLowerCase() === named[2].toLowerCase());
+  if (month < 0) return null;
+  const parsed = new Date(Number(named[3]), month, Number(named[1]));
+  if (parsed.getDate() !== Number(named[1])) return null;
+  return parsed;
+}
+
+function examKey(exam) {
+  return `${exam.state || ""}|${exam.name || ""}`.toLowerCase().replace(/\s+/g, " ");
+}
+
+function mergeExams(previous, fresh) {
+  const today = startOfToday();
+  const byKey = new Map();
+  for (const exam of previous) {
+    if (exam.sample) continue;
+    const deadline = applicationDeadline(exam);
+    if (deadline && deadline < today) continue;
+    byKey.set(examKey(exam), exam);
+  }
+  let added = 0;
+  for (const exam of fresh) {
+    const deadline = applicationDeadline(exam);
+    if (deadline && deadline < today) continue;
+    const key = examKey(exam);
+    if (!byKey.has(key)) added += 1;
+    byKey.set(key, { ...exam, url: /sarkariresult\.com|majhinaukri\.in/i.test(exam.url || "") ? "" : exam.url || "" });
+  }
+  return { exams: [...byKey.values()], added };
+}
+
+function mergeNamed(previous, fresh) {
+  const items = [...(previous || [])];
+  for (const item of fresh || []) {
+    if (!items.some((saved) => saved.title === item.title)) items.push(item);
+  }
+  return items;
+}
+
+function schemeKey(item) {
+  return item.replace(/ \(closed on the portal\)$/, "").toLowerCase();
+}
+
+function mergePortals(previousPortals, freshPortals) {
+  const previous = Array.isArray(previousPortals) ? previousPortals : [];
+  const order = [...freshPortals.map((portal) => portal.id), ...previous.map((portal) => portal.id)];
+  const portals = [];
+  for (const id of [...new Set(order)]) {
+    const saved = previous.find((portal) => portal.id === id);
+    const fresh = freshPortals.find((portal) => portal.id === id);
+    if (!fresh) {
+      if (saved) portals.push(saved);
+      continue;
+    }
+    if (!saved) {
+      portals.push(fresh);
+      continue;
+    }
+    const titles = [...new Set([...(saved.groups || []).map((group) => group.title), ...fresh.groups.map((group) => group.title)])];
+    const groups = titles.map((title) => {
+      const savedItems = saved.groups?.find((group) => group.title === title)?.items || [];
+      const freshItems = fresh.groups.find((group) => group.title === title)?.items || [];
+      const items = [];
+      for (const item of [...savedItems, ...freshItems]) {
+        const key = schemeKey(item);
+        const index = items.findIndex((savedItem) => schemeKey(savedItem) === key);
+        if (index === -1) items.push(item);
+        else if (freshItems.includes(item)) items[index] = item;
+      }
+      return { title, items };
+    }).filter((group) => group.items.length);
+    portals.push({ ...fresh, groups });
+  }
+  return portals;
 }
 
 function examSourceId(exam) {

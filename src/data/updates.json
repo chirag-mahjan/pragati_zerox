@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-11T11:58:12.982Z",
+  "fetchedAt": "2026-11-11T13:08:23.520Z",
   "ticker": [
     {
       "text": "Gujarat: GPSC 60/2026-27: Executive Engineer (Civil), Class-1, (GMB) — 20 November 2026",
@@ -284,7 +284,7 @@
     },
     {
       "state": "Madhya Pradesh",
-      "count": 6,
+      "count": 12,
       "ok": true,
       "note": "Latest advertisement PDFs on the public homepage. The date is the notice date printed in the file name, not an invented last date."
     }
@@ -557,72 +557,6 @@
     {
       "action": "Apply At Shop",
       "sample": false,
-      "name": "ACCOUNTANT & OTHERS, MINERAL EXPLORATION AND CONSULTANCY LIMITED",
-      "qualification": "See the official notice. Appointment method on the listing: Recruitment.",
-      "date": "11 October 2026",
-      "state": "National",
-      "sourceId": "employment-news",
-      "source": "Employment News",
-      "url": "https://employmentnews.gov.in/newemp/home.aspx"
-    },
-    {
-      "action": "Apply At Shop",
-      "sample": false,
-      "name": "LECTURER, DNS REGIONAL INSTITUTE OF COOPERATIVE MANAGEMENT",
-      "qualification": "See the official notice. Appointment method on the listing: Recruitment.",
-      "date": "27 September 2026",
-      "state": "National",
-      "sourceId": "employment-news",
-      "source": "Employment News",
-      "url": "https://employmentnews.gov.in/newemp/home.aspx"
-    },
-    {
-      "action": "Apply At Shop",
-      "sample": false,
-      "name": "TEACHING POSITIONS, NALANDA UNIVERSITY",
-      "qualification": "See the official notice. Appointment method on the listing: Recruitment.",
-      "date": "15 September 2026",
-      "state": "National",
-      "sourceId": "employment-news",
-      "source": "Employment News",
-      "url": "https://employmentnews.gov.in/newemp/home.aspx"
-    },
-    {
-      "action": "Apply At Shop",
-      "sample": false,
-      "name": "ENGINEER & OTHERS, RAMAGUNDAM FERTILIZERS AND CHEMICALS LIMITED",
-      "qualification": "See the official notice. Appointment method on the listing: Recruitment.",
-      "date": "24 September 2026",
-      "state": "National",
-      "sourceId": "employment-news",
-      "source": "Employment News",
-      "url": "https://employmentnews.gov.in/newemp/home.aspx"
-    },
-    {
-      "action": "Apply At Shop",
-      "sample": false,
-      "name": "PROFESSOR, NATIONAL INSTITUTE OF PHARMACEUTICAL EDUCATION AND RESEARCH KOLKATA, M/O CHEMICAL AND FERTILIZERS",
-      "qualification": "See the official notice. Appointment method on the listing: Recruitment.",
-      "date": "17 September 2026",
-      "state": "National",
-      "sourceId": "employment-news",
-      "source": "Employment News",
-      "url": "https://employmentnews.gov.in/newemp/home.aspx"
-    },
-    {
-      "action": "Apply At Shop",
-      "sample": false,
-      "name": "YOUNG CONSULTANT (FOREST FIRE RISK MANAGEMENT), NATIONAL DISASTER MANAGEMENT AUTHORITY",
-      "qualification": "See the official notice. Appointment method on the listing: Deputation.",
-      "date": "18 October 2026",
-      "state": "National",
-      "sourceId": "employment-news",
-      "source": "Employment News",
-      "url": "https://employmentnews.gov.in/newemp/home.aspx"
-    },
-    {
-      "action": "Apply At Shop",
-      "sample": false,
       "name": "UPESSC UP Primary Teacher (Super TET) Online Form 2026",
       "qualification": "See the official advertisement",
       "date": "Last date 11 November 2026. Confirm the notice at the shop.",
@@ -718,6 +652,336 @@
       "sourceId": "roundup",
       "source": "Bihar Vidhan Sabha",
       "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "सहायक संचालक/पशु चिकित्‍सा सहायक शल्‍यज्ञ/पशु चिकित्‍सा विस्‍तार अधिकारी परीक्षा - 2026 के पद हेतु साक्षात्‍कार आयोजन संबंधी सूचना, दिनांक 30/10/2026",
+      "qualification": "See the official advertisement",
+      "date": "Notice dated 30 October 2026",
+      "state": "Madhya Pradesh",
+      "sourceId": "mppsc",
+      "source": "Madhya Pradesh Public Service Commission",
+      "url": "https://mppsc.mp.gov.in/uploads/advertisement/Vigyapti_AD_Veterinary_Assistant_Surgeon_VEO_Exam_2026_Dated_30_10_2026.pdf"
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "सहायक प्राध्यापक (वनस्पतिशास्त्र) परीक्षा - 2024 के पद हेतु उम्मीदवारी निरस्त किए आवेदकों से प्राप्त आपत्ति अभ्यावेदनों का निराकरण किए जाने की सूचना, दिनांक 30/10/2026",
+      "qualification": "See the official advertisement",
+      "date": "Notice dated 30 October 2026",
+      "state": "Madhya Pradesh",
+      "sourceId": "mppsc",
+      "source": "Madhya Pradesh Public Service Commission",
+      "url": "https://mppsc.mp.gov.in/uploads/advertisement/Vigyapti_Assistant_Professor_Botany_Exam_2024_Dated_30_10_2026.pdf"
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "जिला लोक स्‍वास्‍थ्‍य नर्स अधिकारी - 2025 के पद हेतु उम्‍मीदवारी निरस्‍त किए जाने संबंधी सूचना, दिनांक 28/10/2026",
+      "qualification": "See the official advertisement",
+      "date": "Notice dated 28 October 2026",
+      "state": "Madhya Pradesh",
+      "sourceId": "mppsc",
+      "source": "Madhya Pradesh Public Service Commission",
+      "url": "https://mppsc.mp.gov.in/uploads/advertisement/Vigyapti_District_Public_Health_Nursing_Officer_2025_Dated_28_10_2026.pdf"
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "Caveat Vigyapti on Written Exam Result - Assistant Town Planner Exam 2026, Dated 27/10/2026",
+      "qualification": "See the official advertisement",
+      "date": "Notice dated 27 October 2026",
+      "state": "Madhya Pradesh",
+      "sourceId": "mppsc",
+      "source": "Madhya Pradesh Public Service Commission",
+      "url": "https://mppsc.mp.gov.in/uploads/advertisement/Caveat_Vigyapti_Written_Exam_Result_Assistant_Town_Planner_Exam_2026_Dated_27_10_2026.pdf"
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "सहायक प्राध्‍यापक (योगिक विज्ञान) परीक्षा - 2025 के पद हेतु उम्‍मीदवारी निरस्‍त किए आवेदक से प्राप्‍त आपत्ति अभ्‍यावेदन का निराकरण किए जाने की सूचना, दिनांक 27/10/2026",
+      "qualification": "See the official advertisement",
+      "date": "Notice dated 27 October 2026",
+      "state": "Madhya Pradesh",
+      "sourceId": "mppsc",
+      "source": "Madhya Pradesh Public Service Commission",
+      "url": "https://mppsc.mp.gov.in/uploads/advertisement/Vigyapti_Assistant_Professor_Yogik_Vigyan_Exam_2025_Dated_27_10_2026.pdf"
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "सहायक प्राध्‍यापक (वनस्‍पतिशास्‍त्र) परीक्षा - 2024 के पद हेतु उम्‍मीदवारी निरस्‍त किए जाने संबंधी सूचना, दिनांक 27/10/2026",
+      "qualification": "See the official advertisement",
+      "date": "Notice dated 27 October 2026",
+      "state": "Madhya Pradesh",
+      "sourceId": "mppsc",
+      "source": "Madhya Pradesh Public Service Commission",
+      "url": "https://mppsc.mp.gov.in/uploads/advertisement/Vigyapti_Assistant_Professor_Botany_Exam_2024_Dated_27_10_2026.pdf"
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "Army 10+2 TES 57th Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 12 November 2026. Confirm the notice at the shop.",
+      "state": "National",
+      "sourceId": "roundup",
+      "source": "Army 10+2 TES 57th",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "ISRO URSC Technician and Driver Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 13 November 2026. Confirm the notice at the shop.",
+      "state": "National",
+      "sourceId": "roundup",
+      "source": "ISRO URSC Technician and Driver",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "Delhi DSSSB Sweeper, Safai Karamchari, Chowkidar Post Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 13 November 2026. Confirm the notice at the shop.",
+      "state": "National",
+      "sourceId": "roundup",
+      "source": "Delhi DSSSB Sweeper, Safai Karamchari, Chowkidar Post",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "Railway RRB NTPC 10+2 Under Graduate Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 13 November 2026. Confirm the notice at the shop.",
+      "state": "National",
+      "sourceId": "roundup",
+      "source": "Railway RRB NTPC 10+2 Under Graduate",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "Supreme Court of India Court Master Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 15 November 2026. Confirm the notice at the shop.",
+      "state": "National",
+      "sourceId": "roundup",
+      "source": "Supreme Court of India Court Master",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "CWC Assistant Manager and Junior Executive Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 15 November 2026. Confirm the notice at the shop.",
+      "state": "National",
+      "sourceId": "roundup",
+      "source": "CWC Assistant Manager and Junior Executive",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "National Insurance NICL Graduate Apprentice Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 18 November 2026. Confirm the notice at the shop.",
+      "state": "National",
+      "sourceId": "roundup",
+      "source": "National Insurance NICL Graduate Apprentice",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "PGCIL Engineer Trainee Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 18 November 2026. Confirm the notice at the shop.",
+      "state": "National",
+      "sourceId": "roundup",
+      "source": "PGCIL Engineer Trainee",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "AFMS Medical Officer Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 18 November 2026. Confirm the notice at the shop.",
+      "state": "National",
+      "sourceId": "roundup",
+      "source": "AFMS Medical Officer",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "NPCIL Various Trade Apprentice Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 18 November 2026. Confirm the notice at the shop.",
+      "state": "National",
+      "sourceId": "roundup",
+      "source": "NPCIL Various Trade Apprentice",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "BHEL Artisan Various Trade Post Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 18 November 2026. Confirm the notice at the shop.",
+      "state": "National",
+      "sourceId": "roundup",
+      "source": "BHEL Artisan Various Trade Post",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "RITES Assistant Manager Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 20 November 2026. Confirm the notice at the shop.",
+      "state": "National",
+      "sourceId": "roundup",
+      "source": "RITES Assistant Manager",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "ONGC Various Trade Apprentice Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 20 November 2026. Confirm the notice at the shop.",
+      "state": "National",
+      "sourceId": "roundup",
+      "source": "ONGC Various Trade Apprentice",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "Dr. RMLIMS Non Teaching Various Post Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 20 November 2026. Confirm the notice at the shop.",
+      "state": "National",
+      "sourceId": "roundup",
+      "source": "Dr. RMLIMS Non Teaching Various Post",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "Supreme Court of India Senior Personal Assistant Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 20 November 2026. Confirm the notice at the shop.",
+      "state": "National",
+      "sourceId": "roundup",
+      "source": "Supreme Court of India Senior Personal Assistant",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "AEES Teaching Various Post Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 22 November 2026. Confirm the notice at the shop.",
+      "state": "National",
+      "sourceId": "roundup",
+      "source": "AEES Teaching Various Post",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "NWR RRC Jaipur Apprentices Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 22 November 2026. Confirm the notice at the shop.",
+      "state": "National",
+      "sourceId": "roundup",
+      "source": "NWR RRC Jaipur Apprentices",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "Hindustan Copper Limited HCL Apprentice Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 24 November 2026. Confirm the notice at the shop.",
+      "state": "National",
+      "sourceId": "roundup",
+      "source": "Hindustan Copper Limited HCL Apprentice",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "Supreme Court of India Court Assistant Technical Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 24 November 2026. Confirm the notice at the shop.",
+      "state": "National",
+      "sourceId": "roundup",
+      "source": "Supreme Court of India Court Assistant Technical",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "BHU Non Teaching Various Post Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 25 November 2026. Confirm the notice at the shop.",
+      "state": "National",
+      "sourceId": "roundup",
+      "source": "BHU Non Teaching Various Post",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "Indian Bank Apprentice Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 25 November 2026. Confirm the notice at the shop.",
+      "state": "National",
+      "sourceId": "roundup",
+      "source": "Indian Bank Apprentice",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "Railway RRB Station Master Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 25 November 2026. Confirm the notice at the shop.",
+      "state": "National",
+      "sourceId": "roundup",
+      "source": "Railway RRB Station Master",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "Supreme Court of India Junior Court Attendant Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 25 November 2026. Confirm the notice at the shop.",
+      "state": "National",
+      "sourceId": "roundup",
+      "source": "Supreme Court of India Junior Court Attendant",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "Railway RRB Ministerial and Isolated Post CEN 09/2026 Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 4 December 2026. Confirm the notice at the shop.",
+      "state": "National",
+      "sourceId": "roundup",
+      "source": "Railway RRB Ministerial and Isolated Post CEN 09/2026",
+      "url": ""
     }
   ],
   "sources": [
@@ -742,7 +1006,7 @@
       "name": "MPPSC",
       "url": "https://mppsc.mp.gov.in/",
       "ok": true,
-      "count": 6,
+      "count": 12,
       "note": "Latest advertisement PDFs on the public homepage. The date is the notice date printed in the file name, not an invented last date."
     },
     {
@@ -766,7 +1030,7 @@
       "name": "Employment News",
       "url": "https://employmentnews.gov.in/newemp/home.aspx",
       "ok": true,
-      "count": 8,
+      "count": 2,
       "note": "Public job-highlights table only. The paid e-paper is not copied."
     },
     {
@@ -774,8 +1038,8 @@
       "name": "Recruitment roundup",
       "url": "",
       "ok": true,
-      "count": 9,
-      "note": "Open online forms for the five states whose listed last date is still ahead. The roundup site is not linked from the shop pages."
+      "count": 33,
+      "note": "Every online form whose printed last date is still ahead. The roundup site is not linked from the shop pages."
     },
     {
       "id": "majhi",
