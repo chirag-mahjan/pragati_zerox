@@ -42,7 +42,7 @@ const sampleExams = [
   { name: "GSSSB Clerk & Assistant", qualification: "12th Pass / Graduate", date: "January 05, 2027", source: "Sample layout", url: "" },
   { name: "Indian Railways (RRB)", qualification: "10th / ITI / Diploma", date: "December 28, 2026", source: "Sample layout", url: "" },
   { name: "Gujarat Police Bharti", qualification: "12th Pass", date: "January 20, 2027", source: "Sample layout", url: "" },
-].map((exam) => ({ ...exam, action: "Apply At Shop", sample: true }));
+].map((exam) => ({ ...exam, state: "Gujarat", sourceId: "sample", action: "Apply At Shop", sample: true }));
 
 const sampleTicker = [
   { text: "PM Shram Yogi Maandhan Yojana", source: "Sample", url: "", sample: true },
@@ -74,6 +74,24 @@ function qualificationFrom(title) {
   const match = title.match(/Class-\s*\d+/i);
   if (!match) return "See the official advertisement";
   return `${match[0].replace(/\s+/, "")} post. Other conditions are in the official advertisement.`;
+}
+
+function stateFromTitle(title) {
+  const checks = [
+    [/gujarat|gpsc|gsssb/i, "Gujarat"],
+    [/maharashtra/i, "Maharashtra"],
+    [/uttar pradesh|uppsc/i, "Uttar Pradesh"],
+    [/bihar|bpsc/i, "Bihar"],
+    [/madhya pradesh|mppsc/i, "Madhya Pradesh"],
+  ];
+  for (const [pattern, state] of checks) {
+    if (pattern.test(title)) return state;
+  }
+  return "National";
+}
+
+function examRecord(fields) {
+  return { action: "Apply At Shop", sample: false, ...fields };
 }
 
 async function grab(url, options = {}) {
@@ -108,15 +126,15 @@ async function fetchGpsc() {
     const name = decode(row[3]);
     const href = row[2].startsWith("http") ? row[2] : new URL(row[2], pageUrl).href;
     const dateMatch = decode(row[5]).match(/(\d{1,2})-(\d{1,2})-(\d{4})(?:\s+(.+))?/);
-    return {
+    return examRecord({
       name: `GPSC ${decode(row[1])}: ${name}`,
       qualification: qualificationFrom(name),
       date: dateMatch ? formatParts(dateMatch[1], dateMatch[2], dateMatch[3], dateMatch[4] || "") : "See the official advertisement",
-      action: "Apply At Shop",
-      sample: false,
+      state: "Gujarat",
+      sourceId: "gpsc",
       source: "Gujarat Public Service Commission",
       url: href,
-    };
+    });
   });
   return {
     exams,
@@ -137,15 +155,16 @@ async function fetchEmploymentNews() {
   const exams = orgs.slice(0, 8).map((org, index) => {
     const dateMatch = (dates[index] || "").match(/(\d{1,2})\/(\d{1,2})\/(\d{4})/);
     const method = methods[index] ? ` Appointment method on the listing: ${methods[index]}.` : "";
-    return {
-      name: `${posts[index] || "Recruitment"}, ${org}`,
+    const name = `${posts[index] || "Recruitment"}, ${org}`;
+    return examRecord({
+      name,
       qualification: `See the official notice.${method}`,
       date: dateMatch ? formatParts(dateMatch[1], dateMatch[2], dateMatch[3]) : "See the official notice",
-      action: "Apply At Shop",
-      sample: false,
+      state: stateFromTitle(`${name} ${org}`),
+      sourceId: "employment-news",
       source: "Employment News",
       url: pageUrl,
-    };
+    });
   }).filter((exam) => exam.name.trim() !== ",");
   return {
     exams,
@@ -208,15 +227,15 @@ async function fetchGsssb() {
   const exams = rows.slice(0, 8).map((row) => {
     const published = typeof row.publishDate === "string" ? row.publishDate : "";
     const dateMatch = published.match(/(\d{1,2})\/(\d{1,2})\/(\d{4})/);
-    return {
+    return examRecord({
       name: `GSSSB ${row.advertisementNo || ""}: ${decode(String(row.examName || "Advertisement"))}`.replace(/\s+/g, " ").trim(),
       qualification: "See the official advertisement",
       date: dateMatch ? `Published ${formatParts(dateMatch[1], dateMatch[2], dateMatch[3])}. Last date is on the notice.` : "See the official advertisement",
-      action: "Apply At Shop",
-      sample: false,
+      state: "Gujarat",
+      sourceId: "gsssb",
       source: "Gujarat Subordinate Service Selection Board",
       url: pageUrl,
-    };
+    });
   });
   return {
     exams,
@@ -239,6 +258,7 @@ async function fetchPib() {
     if (!title || title === "Press Information Bureau" || !keyword.test(title)) continue;
     notices.push({
       title,
+      state: stateFromTitle(title),
       source: "Press Information Bureau",
       url: link || response.url,
       sample: false,
@@ -252,6 +272,136 @@ async function fetchPib() {
     notices,
     source: sourceResult("pib", "Press Information Bureau", response.url || pageUrl, true, notices.length, languageNote),
   };
+}
+
+function datedLabel(href, text) {
+  const named = `${href} ${text}`.match(/Dated[_\s-]*(\d{1,2})[_\-./](\d{1,2})[_\-./](\d{4})/i)
+    || text.match(/(\d{1,2})[./](\d{1,2})[./](\d{4})/);
+  if (!named) return "See the official notice";
+  return `Notice dated ${formatParts(named[1], named[2], named[3])}`;
+}
+
+async function fetchMppsc() {
+  const pageUrl = "https://mppsc.mp.gov.in/";
+  const response = await grab(pageUrl);
+  if (!response.ok) {
+    return { exams: [], source: sourceResult("mppsc", "MPPSC", pageUrl, false, 0, `HTTP ${response.status}`) };
+  }
+  const links = [...response.text.matchAll(/<a[^>]+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi)]
+    .map((match) => ({
+      href: match[1],
+      text: decode(match[2]),
+    }))
+    .filter((item) => /\/uploads\/advertisement\//i.test(item.href) && item.text.length > 20)
+    .filter((item) => !/answer key|provisional answer/i.test(`${item.href} ${item.text}`));
+  const exams = links.slice(0, 6).map((item) => examRecord({
+    name: item.text,
+    qualification: "See the official advertisement",
+    date: datedLabel(item.href, item.text),
+    state: "Madhya Pradesh",
+    sourceId: "mppsc",
+    source: "Madhya Pradesh Public Service Commission",
+    url: item.href.startsWith("http") ? item.href : new URL(item.href, pageUrl).href,
+  }));
+  return {
+    exams,
+    source: sourceResult(
+      "mppsc",
+      "MPPSC",
+      pageUrl,
+      exams.length > 0,
+      exams.length,
+      "Latest advertisement PDFs on the public homepage. The date is the notice date printed in the file name, not an invented last date.",
+    ),
+  };
+}
+
+async function fetchUppsc() {
+  const pageUrl = "https://uppsc.up.nic.in/";
+  const response = await grab(pageUrl);
+  if (!response.ok) {
+    return { exams: [], source: sourceResult("uppsc", "UPPSC", pageUrl, false, 0, `HTTP ${response.status}`) };
+  }
+  const rows = [...response.text.matchAll(/>\s*CLICK HERE TO APPLY FOR\s*([^<]{8,350})<\/a>[\s\S]{0,400}?Visible upto\s*:\s*(\d{1,2})\/(\d{1,2})\/(\d{4})/gi)];
+  const exams = rows.slice(0, 6).map((row) => {
+    const name = decode(row[1]).replace(/\.\s*$/, "");
+    return examRecord({
+      name: `UPPSC ${name}`,
+      qualification: "See the official advertisement",
+      date: `Shown on the UPPSC board until ${formatParts(row[2], row[3], row[4])}. Confirm the last date on the notice.`,
+      state: "Uttar Pradesh",
+      sourceId: "uppsc",
+      source: "Uttar Pradesh Public Service Commission",
+      url: pageUrl,
+    });
+  });
+  return {
+    exams,
+    source: sourceResult(
+      "uppsc",
+      "UPPSC",
+      pageUrl,
+      exams.length > 0,
+      exams.length,
+      exams.length ? "Live advertisement lines on the public homepage" : "Homepage loaded, but no live advertisement line was found",
+    ),
+  };
+}
+
+async function fetchBpsc() {
+  const pageUrl = "https://bpsc.bihar.gov.in/";
+  try {
+    const response = await grab(pageUrl);
+    return {
+      exams: [],
+      source: sourceResult(
+        "bpsc",
+        "BPSC",
+        pageUrl,
+        false,
+        0,
+        response.ok
+          ? "The official host responded, but this run did not find a public notice table in the first HTML page. No Bihar row was invented."
+          : `HTTP ${response.status}. The online application portal is a login page, so it was not used.`,
+      ),
+    };
+  } catch (error) {
+    return {
+      exams: [],
+      source: sourceResult(
+        "bpsc",
+        "BPSC",
+        pageUrl,
+        false,
+        0,
+        `${error.message}. Earlier checks of bpsc.bih.nic.in also failed to connect, and onlinebpsc.bihar.gov.in is a login portal. No Bihar row was invented.`,
+      ),
+    };
+  }
+}
+
+async function noteMpsc() {
+  const pageUrl = "https://mpsc.gov.in/";
+  try {
+    const response = await grab(pageUrl);
+    const hasTable = /<a[^>]+href="[^"]*advertisement[^"]*"/i.test(response.text);
+    if (response.ok && hasTable) {
+      return { exams: [], source: sourceResult("mpsc", "MPSC", pageUrl, false, 0, "A new advertisement link appeared in the HTML. The parser does not read it yet, so no Maharashtra row was invented.") };
+    }
+    return {
+      exams: [],
+      source: sourceResult(
+        "mpsc",
+        "MPSC",
+        pageUrl,
+        false,
+        0,
+        "The public site is a JavaScript app. Its content API refuses a read unless a CRC header matches, and that check is not bypassed. No Maharashtra row was invented.",
+      ),
+    };
+  } catch (error) {
+    return { exams: [], source: sourceResult("mpsc", "MPSC", pageUrl, false, 0, error.message) };
+  }
 }
 
 async function noteEmptyRrb() {
@@ -301,19 +451,54 @@ function skippedSources() {
   ];
 }
 
+function tickerLine(exam) {
+  const shortDate = exam.date.startsWith("See") || exam.date.startsWith("Shown") || exam.date.startsWith("Notice dated") || exam.date.startsWith("Published")
+    ? ""
+    : ` — ${exam.date.replace(/\s+\d{1,2}:\d{2}\s*(AM|PM)/i, "")}`;
+  const state = exam.state ? `${exam.state}: ` : "";
+  return { text: `${state}${exam.name}${shortDate}`.slice(0, 180), source: exam.source, url: exam.url, sample: false };
+}
+
 function tickerFrom(exams, notices) {
   const lines = [];
+  const used = new Set();
+  const order = ["Gujarat", "Maharashtra", "Uttar Pradesh", "Bihar", "Madhya Pradesh", "National"];
+  for (const state of order) {
+    const exam = exams.find((item) => !item.sample && item.state === state);
+    if (!exam || used.has(exam.name)) continue;
+    used.add(exam.name);
+    lines.push(tickerLine(exam));
+  }
   for (const exam of exams) {
-    if (exam.sample) continue;
-    const shortDate = exam.date.startsWith("See") ? "" : ` — ${exam.date.replace(/\s+\d{1,2}:\d{2}\s*(AM|PM)/i, "")}`;
-    lines.push({ text: `${exam.name}${shortDate}`.slice(0, 180), source: exam.source, url: exam.url, sample: false });
-    if (lines.length === 8) break;
+    if (lines.length === 8 || exam.sample || used.has(exam.name)) continue;
+    used.add(exam.name);
+    lines.push(tickerLine(exam));
   }
   for (const notice of notices) {
     if (lines.length === 10) break;
     lines.push({ text: notice.title.slice(0, 180), source: notice.source, url: notice.url, sample: false });
   }
   return lines;
+}
+
+function coverageFrom(sources, exams) {
+  const plan = [
+    { state: "Gujarat", ids: ["gpsc", "gsssb"] },
+    { state: "Maharashtra", ids: ["mpsc"] },
+    { state: "Uttar Pradesh", ids: ["uppsc"] },
+    { state: "Bihar", ids: ["bpsc"] },
+    { state: "Madhya Pradesh", ids: ["mppsc"] },
+  ];
+  return plan.map(({ state, ids }) => {
+    const related = sources.filter((source) => ids.includes(source.id));
+    const count = exams.filter((exam) => !exam.sample && exam.state === state).length;
+    return {
+      state,
+      count,
+      ok: count > 0,
+      note: related.map((source) => source.note).filter(Boolean).join(" "),
+    };
+  });
 }
 
 async function main() {
@@ -334,10 +519,14 @@ async function main() {
   };
 
   jobs.push(await run("gpsc", fetchGpsc));
-  jobs.push(await run("employment-news", fetchEmploymentNews));
   jobs.push(await run("gsssb", fetchGsssb));
+  jobs.push(await run("mppsc", fetchMppsc));
+  jobs.push(await run("uppsc", fetchUppsc));
+  jobs.push(await run("bpsc", fetchBpsc));
+  jobs.push(await run("employment-news", fetchEmploymentNews));
   const pib = await run("pib", fetchPib);
   const rrb = await noteEmptyRrb();
+  const mpsc = await noteMpsc();
 
   const freshExams = jobs.flatMap((job) => job.exams || []);
   const failedIds = new Set(jobs.filter((job) => !job.source?.ok).map((job) => job.source.id));
@@ -347,12 +536,18 @@ async function main() {
 
   const notices = pib.notices || [];
   const ticker = tickerFrom(exams, notices);
+  const sources = [...jobs.map((job) => job.source), pib.source, rrb, mpsc.source, ...skippedSources()].filter(Boolean);
   const updates = {
     fetchedAt: new Date().toISOString(),
     ticker: ticker.length ? ticker : sampleTicker,
-    schemes: { groups: schemeGroups, notices },
+    schemes: {
+      states: ["Gujarat", "Maharashtra", "Uttar Pradesh", "Bihar", "Madhya Pradesh"],
+      groups: schemeGroups,
+      notices,
+    },
+    coverage: coverageFrom(sources, exams),
     exams,
-    sources: [...jobs.map((job) => job.source), pib.source, rrb, ...skippedSources()].filter(Boolean),
+    sources,
   };
 
   await writeFile(outPath, `${JSON.stringify(updates, null, 2)}\n`);
@@ -365,10 +560,13 @@ async function main() {
 }
 
 function examSourceId(exam) {
+  if (exam.sourceId) return exam.sourceId;
   const source = exam.source || "";
-  if (source.includes("Public Service")) return "gpsc";
+  if (source.includes("Gujarat Public Service")) return "gpsc";
   if (source.includes("Employment News")) return "employment-news";
   if (source.includes("Subordinate")) return "gsssb";
+  if (source.includes("Madhya Pradesh")) return "mppsc";
+  if (source.includes("Uttar Pradesh")) return "uppsc";
   return "";
 }
 

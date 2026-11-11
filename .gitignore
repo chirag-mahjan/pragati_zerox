@@ -4,4 +4,5 @@ dist/
 scripts/_probe.mjs
 scripts/_probe2.mjs
 scripts/_probe3.mjs
+scripts/_probe-states.mjs
 scripts/_probe-out/

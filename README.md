@@ -19,7 +19,9 @@ Pages: `/`, `/services`, `/government-schemes`, `/exam-notifications`, `/contact
 npm run update
 ```
 
-That runs `scripts/fetch-updates.mjs` and rewrites `src/data/updates.json`. Phone, hours, and address stay in `src/data/site.ts`. See [UPDATES.md](UPDATES.md) for the sources and a daily schedule.
+That runs `scripts/fetch-updates.mjs` and rewrites `src/data/updates.json`. Phone, hours, and address stay in `src/data/site.ts`.
+
+Every morning, `scripts/daily-update.ps1` fetches the five-state notices and rebuilds `dist`. The laptop has to be on. A page someone already has open does not phone the government sites itself. See [UPDATES.md](UPDATES.md).
 
 ## Build
 

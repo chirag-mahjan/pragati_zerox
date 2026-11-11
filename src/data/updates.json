@@ -1,52 +1,52 @@
 {
-  "fetchedAt": "2026-11-11T08:29:23.855Z",
+  "fetchedAt": "2026-11-11T08:44:19.777Z",
   "ticker": [
     {
-      "text": "GPSC 60/2026-27: Executive Engineer (Civil), Class-1, (GMB) — 20 November 2026",
+      "text": "Gujarat: GPSC 60/2026-27: Executive Engineer (Civil), Class-1, (GMB) — 20 November 2026",
       "source": "Gujarat Public Service Commission",
       "url": "https://gpsc.gujarat.gov.in/AdvertisementDetail?no=2385&tab=Advertisement",
       "sample": false
     },
     {
-      "text": "GPSC 61/2026-27: Executive Engineer (Mechanical), Class-1, GMB — 20 November 2026",
+      "text": "Uttar Pradesh: UPPSC ADVT.NO. A-5/E-1/2026,ASSISTANT ARCHITECT PLANNER EXAMINATION-2026 / SPORTS OFFICER EXAMINATION-2026 / PROGRAMMER GRADE-2 EXAMINATION-2026",
+      "source": "Uttar Pradesh Public Service Commission",
+      "url": "https://uppsc.up.nic.in/",
+      "sample": false
+    },
+    {
+      "text": "Madhya Pradesh: सहायक प्राध्‍यापक (भौतिकशास्‍त्र) परीक्षा - 2024 के पद हेतु उम्‍मीदवारी निरस्‍त किए जाने संबंधी सूचना, दिनांक 05/11/2026",
+      "source": "Madhya Pradesh Public Service Commission",
+      "url": "https://mppsc.mp.gov.in/uploads/advertisement/Vigyapti_Candidature_Rejection_Assistant_Professor_Physics_Exam_2024_Dated_05_11_20261.pdf",
+      "sample": false
+    },
+    {
+      "text": "National: TGT (COMPUTER SCIENCE) & OTHERS, SAINIK SCHOOL NAGROTA, SAINIK SCHOOLS SOCIETY, MINISTRY OF DEFENCE — 21 November 2026",
+      "source": "Employment News",
+      "url": "https://employmentnews.gov.in/newemp/home.aspx",
+      "sample": false
+    },
+    {
+      "text": "Gujarat: GPSC 61/2026-27: Executive Engineer (Mechanical), Class-1, GMB — 20 November 2026",
       "source": "Gujarat Public Service Commission",
       "url": "https://gpsc.gujarat.gov.in/AdvertisementDetail?no=2386&tab=Advertisement",
       "sample": false
     },
     {
-      "text": "GPSC 62/2026-27: Deputy Executive Engineer (Civil), Class-2, Sports Authority Of Gujarat — 20 November 2026",
+      "text": "Gujarat: GPSC 62/2026-27: Deputy Executive Engineer (Civil), Class-2, Sports Authority Of Gujarat — 20 November 2026",
       "source": "Gujarat Public Service Commission",
       "url": "https://gpsc.gujarat.gov.in/AdvertisementDetail?no=2387&tab=Advertisement",
       "sample": false
     },
     {
-      "text": "GPSC 63/2026-27: Assistant Engineer (Civil), Class-2, Sports Authority Of Gujarat — 20 November 2026",
+      "text": "Gujarat: GPSC 63/2026-27: Assistant Engineer (Civil), Class-2, Sports Authority Of Gujarat — 20 November 2026",
       "source": "Gujarat Public Service Commission",
       "url": "https://gpsc.gujarat.gov.in/AdvertisementDetail?no=2388&tab=Advertisement",
       "sample": false
     },
     {
-      "text": "GPSC 64/2026-27: Assistant Engineer (Electrical), Class-2, Sports Authority Of Gujarat — 20 November 2026",
+      "text": "Gujarat: GPSC 64/2026-27: Assistant Engineer (Electrical), Class-2, Sports Authority Of Gujarat — 20 November 2026",
       "source": "Gujarat Public Service Commission",
       "url": "https://gpsc.gujarat.gov.in/AdvertisementDetail?no=2389&tab=Advertisement",
-      "sample": false
-    },
-    {
-      "text": "GPSC 65/2026-27: Assistant Engineer (Electrical), Class-2, (GMB) — 20 November 2026",
-      "source": "Gujarat Public Service Commission",
-      "url": "https://gpsc.gujarat.gov.in/AdvertisementDetail?no=2390&tab=Advertisement",
-      "sample": false
-    },
-    {
-      "text": "TGT (COMPUTER SCIENCE) & OTHERS, SAINIK SCHOOL NAGROTA, SAINIK SCHOOLS SOCIETY, MINISTRY OF DEFENCE — 21 November 2026",
-      "source": "Employment News",
-      "url": "https://employmentnews.gov.in/newemp/home.aspx",
-      "sample": false
-    },
-    {
-      "text": "LOWER DIVISION CLERK, INSTITUTE OF HOTEL MANAGEMENT AND CATERING TECHNOLOGY, MINISTRY OF TOURISM — 30 November 2026",
-      "source": "Employment News",
-      "url": "https://employmentnews.gov.in/newemp/home.aspx",
       "sample": false
     },
     {
@@ -63,6 +63,13 @@
     }
   ],
   "schemes": {
+    "states": [
+      "Gujarat",
+      "Maharashtra",
+      "Uttar Pradesh",
+      "Bihar",
+      "Madhya Pradesh"
+    ],
     "groups": [
       {
         "id": "health",
@@ -110,216 +117,382 @@
     "notices": [
       {
         "title": "चिकित्सा उपकरणों के उत्पादन से जुड़ी प्रोत्साहन योजना के तहत नए आवेदन आमंत्रित",
+        "state": "National",
         "source": "Press Information Bureau",
         "url": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2334792",
         "sample": false
       },
       {
         "title": "सूक्ष्म, लघु और मध्यम उद्यम मंत्रालय (एमएसएमई) ने एससी/एसटी सूक्ष्म और लघु उद्यमों से खरीद बढ़ाने के लिए सीपीएसई के साथ एक गोलमेज चर्चा का आयोजन किया",
+        "state": "National",
         "source": "Press Information Bureau",
         "url": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2334795",
         "sample": false
       }
     ]
   },
+  "coverage": [
+    {
+      "state": "Gujarat",
+      "count": 14,
+      "ok": true,
+      "note": "Open recruitment table Public notification search, first page"
+    },
+    {
+      "state": "Maharashtra",
+      "count": 0,
+      "ok": false,
+      "note": "The public site is a JavaScript app. Its content API refuses a read unless a CRC header matches, and that check is not bypassed. No Maharashtra row was invented."
+    },
+    {
+      "state": "Uttar Pradesh",
+      "count": 2,
+      "ok": true,
+      "note": "Live advertisement lines on the public homepage"
+    },
+    {
+      "state": "Bihar",
+      "count": 0,
+      "ok": false,
+      "note": "fetch failed. Earlier checks of bpsc.bih.nic.in also failed to connect, and onlinebpsc.bihar.gov.in is a login portal. No Bihar row was invented."
+    },
+    {
+      "state": "Madhya Pradesh",
+      "count": 6,
+      "ok": true,
+      "note": "Latest advertisement PDFs on the public homepage. The date is the notice date printed in the file name, not an invented last date."
+    }
+  ],
   "exams": [
     {
+      "action": "Apply At Shop",
+      "sample": false,
       "name": "GPSC 60/2026-27: Executive Engineer (Civil), Class-1, (GMB)",
       "qualification": "Class-1 post. Other conditions are in the official advertisement.",
       "date": "20 November 2026 11:59 PM",
-      "action": "Apply At Shop",
-      "sample": false,
+      "state": "Gujarat",
+      "sourceId": "gpsc",
       "source": "Gujarat Public Service Commission",
       "url": "https://gpsc.gujarat.gov.in/AdvertisementDetail?no=2385&tab=Advertisement"
     },
     {
+      "action": "Apply At Shop",
+      "sample": false,
       "name": "GPSC 61/2026-27: Executive Engineer (Mechanical), Class-1, GMB",
       "qualification": "Class-1 post. Other conditions are in the official advertisement.",
       "date": "20 November 2026 11:59 PM",
-      "action": "Apply At Shop",
-      "sample": false,
+      "state": "Gujarat",
+      "sourceId": "gpsc",
       "source": "Gujarat Public Service Commission",
       "url": "https://gpsc.gujarat.gov.in/AdvertisementDetail?no=2386&tab=Advertisement"
     },
     {
+      "action": "Apply At Shop",
+      "sample": false,
       "name": "GPSC 62/2026-27: Deputy Executive Engineer (Civil), Class-2, Sports Authority Of Gujarat",
       "qualification": "Class-2 post. Other conditions are in the official advertisement.",
       "date": "20 November 2026 11:59 PM",
-      "action": "Apply At Shop",
-      "sample": false,
+      "state": "Gujarat",
+      "sourceId": "gpsc",
       "source": "Gujarat Public Service Commission",
       "url": "https://gpsc.gujarat.gov.in/AdvertisementDetail?no=2387&tab=Advertisement"
     },
     {
+      "action": "Apply At Shop",
+      "sample": false,
       "name": "GPSC 63/2026-27: Assistant Engineer (Civil), Class-2, Sports Authority Of Gujarat",
       "qualification": "Class-2 post. Other conditions are in the official advertisement.",
       "date": "20 November 2026 11:59 PM",
-      "action": "Apply At Shop",
-      "sample": false,
+      "state": "Gujarat",
+      "sourceId": "gpsc",
       "source": "Gujarat Public Service Commission",
       "url": "https://gpsc.gujarat.gov.in/AdvertisementDetail?no=2388&tab=Advertisement"
     },
     {
+      "action": "Apply At Shop",
+      "sample": false,
       "name": "GPSC 64/2026-27: Assistant Engineer (Electrical), Class-2, Sports Authority Of Gujarat",
       "qualification": "Class-2 post. Other conditions are in the official advertisement.",
       "date": "20 November 2026 11:59 PM",
-      "action": "Apply At Shop",
-      "sample": false,
+      "state": "Gujarat",
+      "sourceId": "gpsc",
       "source": "Gujarat Public Service Commission",
       "url": "https://gpsc.gujarat.gov.in/AdvertisementDetail?no=2389&tab=Advertisement"
     },
     {
+      "action": "Apply At Shop",
+      "sample": false,
       "name": "GPSC 65/2026-27: Assistant Engineer (Electrical), Class-2, (GMB)",
       "qualification": "Class-2 post. Other conditions are in the official advertisement.",
       "date": "20 November 2026 11:59 PM",
-      "action": "Apply At Shop",
-      "sample": false,
+      "state": "Gujarat",
+      "sourceId": "gpsc",
       "source": "Gujarat Public Service Commission",
       "url": "https://gpsc.gujarat.gov.in/AdvertisementDetail?no=2390&tab=Advertisement"
     },
     {
-      "name": "TGT (COMPUTER SCIENCE) & OTHERS, SAINIK SCHOOL NAGROTA, SAINIK SCHOOLS SOCIETY, MINISTRY OF DEFENCE",
-      "qualification": "See the official notice. Appointment method on the listing: Recruitment.",
-      "date": "21 November 2026",
       "action": "Apply At Shop",
       "sample": false,
-      "source": "Employment News",
-      "url": "https://employmentnews.gov.in/newemp/home.aspx"
-    },
-    {
-      "name": "LOWER DIVISION CLERK, INSTITUTE OF HOTEL MANAGEMENT AND CATERING TECHNOLOGY, MINISTRY OF TOURISM",
-      "qualification": "See the official notice. Appointment method on the listing: Recruitment.",
-      "date": "30 November 2026",
-      "action": "Apply At Shop",
-      "sample": false,
-      "source": "Employment News",
-      "url": "https://employmentnews.gov.in/newemp/home.aspx"
-    },
-    {
-      "name": "ACCOUNTANT & OTHERS, MINERAL EXPLORATION AND CONSULTANCY LIMITED",
-      "qualification": "See the official notice. Appointment method on the listing: Recruitment.",
-      "date": "11 October 2026",
-      "action": "Apply At Shop",
-      "sample": false,
-      "source": "Employment News",
-      "url": "https://employmentnews.gov.in/newemp/home.aspx"
-    },
-    {
-      "name": "LECTURER, DNS REGIONAL INSTITUTE OF COOPERATIVE MANAGEMENT",
-      "qualification": "See the official notice. Appointment method on the listing: Recruitment.",
-      "date": "27 September 2026",
-      "action": "Apply At Shop",
-      "sample": false,
-      "source": "Employment News",
-      "url": "https://employmentnews.gov.in/newemp/home.aspx"
-    },
-    {
-      "name": "TEACHING POSITIONS, NALANDA UNIVERSITY",
-      "qualification": "See the official notice. Appointment method on the listing: Recruitment.",
-      "date": "15 September 2026",
-      "action": "Apply At Shop",
-      "sample": false,
-      "source": "Employment News",
-      "url": "https://employmentnews.gov.in/newemp/home.aspx"
-    },
-    {
-      "name": "ENGINEER & OTHERS, RAMAGUNDAM FERTILIZERS AND CHEMICALS LIMITED",
-      "qualification": "See the official notice. Appointment method on the listing: Recruitment.",
-      "date": "24 September 2026",
-      "action": "Apply At Shop",
-      "sample": false,
-      "source": "Employment News",
-      "url": "https://employmentnews.gov.in/newemp/home.aspx"
-    },
-    {
-      "name": "PROFESSOR, NATIONAL INSTITUTE OF PHARMACEUTICAL EDUCATION AND RESEARCH KOLKATA, M/O CHEMICAL AND FERTILIZERS",
-      "qualification": "See the official notice. Appointment method on the listing: Recruitment.",
-      "date": "17 September 2026",
-      "action": "Apply At Shop",
-      "sample": false,
-      "source": "Employment News",
-      "url": "https://employmentnews.gov.in/newemp/home.aspx"
-    },
-    {
-      "name": "YOUNG CONSULTANT (FOREST FIRE RISK MANAGEMENT), NATIONAL DISASTER MANAGEMENT AUTHORITY",
-      "qualification": "See the official notice. Appointment method on the listing: Deputation.",
-      "date": "18 October 2026",
-      "action": "Apply At Shop",
-      "sample": false,
-      "source": "Employment News",
-      "url": "https://employmentnews.gov.in/newemp/home.aspx"
-    },
-    {
       "name": "GSSSB 468/202627: ગુજરાત ગૌણ સેવા, વર્ગ -૩ (ગૃપ-A તથા ગૃપ-B)",
       "qualification": "See the official advertisement",
       "date": "Published 4 November 2026. Last date is on the notice.",
-      "action": "Apply At Shop",
-      "sample": false,
+      "state": "Gujarat",
+      "sourceId": "gsssb",
       "source": "Gujarat Subordinate Service Selection Board",
       "url": "https://gsssb.gujarat.gov.in/Notification"
     },
     {
+      "action": "Apply At Shop",
+      "sample": false,
       "name": "GSSSB 441/202627: મલ્ટી પર્પઝ હેલ્થ વર્કર (પુરૂષ), વર્ગ-૩",
       "qualification": "See the official advertisement",
       "date": "Published 4 November 2026. Last date is on the notice.",
-      "action": "Apply At Shop",
-      "sample": false,
+      "state": "Gujarat",
+      "sourceId": "gsssb",
       "source": "Gujarat Subordinate Service Selection Board",
       "url": "https://gsssb.gujarat.gov.in/Notification"
     },
     {
+      "action": "Apply At Shop",
+      "sample": false,
       "name": "GSSSB 467/202627: સર્વેયર",
       "qualification": "See the official advertisement",
       "date": "Published 30 October 2026. Last date is on the notice.",
-      "action": "Apply At Shop",
-      "sample": false,
+      "state": "Gujarat",
+      "sourceId": "gsssb",
       "source": "Gujarat Subordinate Service Selection Board",
       "url": "https://gsssb.gujarat.gov.in/Notification"
     },
     {
+      "action": "Apply At Shop",
+      "sample": false,
       "name": "GSSSB 466/202627: ફુડ સેફટી ઓફિસર, વર્ગ-૩ (PwD SRD)",
       "qualification": "See the official advertisement",
       "date": "Published 27 October 2026. Last date is on the notice.",
-      "action": "Apply At Shop",
-      "sample": false,
+      "state": "Gujarat",
+      "sourceId": "gsssb",
       "source": "Gujarat Subordinate Service Selection Board",
       "url": "https://gsssb.gujarat.gov.in/Notification"
     },
     {
+      "action": "Apply At Shop",
+      "sample": false,
       "name": "GSSSB 465/202627: ફુડ સેફટી ઓફિસર, વર્ગ-૩",
       "qualification": "See the official advertisement",
       "date": "Published 27 October 2026. Last date is on the notice.",
-      "action": "Apply At Shop",
-      "sample": false,
+      "state": "Gujarat",
+      "sourceId": "gsssb",
       "source": "Gujarat Subordinate Service Selection Board",
       "url": "https://gsssb.gujarat.gov.in/Notification"
     },
     {
+      "action": "Apply At Shop",
+      "sample": false,
       "name": "GSSSB 464/202627: અધિક મદદનીશ ઇજનેર (યાંત્રિક), વર્ગ-૩ (PwD SRD)",
       "qualification": "See the official advertisement",
       "date": "Published 26 October 2026. Last date is on the notice.",
-      "action": "Apply At Shop",
-      "sample": false,
+      "state": "Gujarat",
+      "sourceId": "gsssb",
       "source": "Gujarat Subordinate Service Selection Board",
       "url": "https://gsssb.gujarat.gov.in/Notification"
     },
     {
+      "action": "Apply At Shop",
+      "sample": false,
       "name": "GSSSB 463/202627: અધિક મદદનીશ ઇજનેર (યાંત્રિક), વર્ગ-૩",
       "qualification": "See the official advertisement",
       "date": "Published 26 October 2026. Last date is on the notice.",
-      "action": "Apply At Shop",
-      "sample": false,
+      "state": "Gujarat",
+      "sourceId": "gsssb",
       "source": "Gujarat Subordinate Service Selection Board",
       "url": "https://gsssb.gujarat.gov.in/Notification"
     },
     {
+      "action": "Apply At Shop",
+      "sample": false,
       "name": "GSSSB 383/202526: સર્વેયર, વર્ગ-૩",
       "qualification": "See the official advertisement",
       "date": "Published 23 October 2026. Last date is on the notice.",
-      "action": "Apply At Shop",
-      "sample": false,
+      "state": "Gujarat",
+      "sourceId": "gsssb",
       "source": "Gujarat Subordinate Service Selection Board",
       "url": "https://gsssb.gujarat.gov.in/Notification"
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "सहायक प्राध्‍यापक (भौतिकशास्‍त्र) परीक्षा - 2024 के पद हेतु उम्‍मीदवारी निरस्‍त किए जाने संबंधी सूचना, दिनांक 05/11/2026",
+      "qualification": "See the official advertisement",
+      "date": "Notice dated 5 November 2026",
+      "state": "Madhya Pradesh",
+      "sourceId": "mppsc",
+      "source": "Madhya Pradesh Public Service Commission",
+      "url": "https://mppsc.mp.gov.in/uploads/advertisement/Vigyapti_Candidature_Rejection_Assistant_Professor_Physics_Exam_2024_Dated_05_11_20261.pdf"
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "Recruitment Advertisement for Law Officer Exam 2026 (Madhya Pradesh Public Service Commission - Government of Madhya Pradesh) (Advt. No./14/2026), Dated 04/11/2026",
+      "qualification": "See the official advertisement",
+      "date": "Notice dated 4 November 2026",
+      "state": "Madhya Pradesh",
+      "sourceId": "mppsc",
+      "source": "Madhya Pradesh Public Service Commission",
+      "url": "https://mppsc.mp.gov.in/uploads/advertisement/Advt_Law_Officer_Exam_2026_Dated_04_11_2026.pdf"
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "सहायक प्राध्‍यापक (भौतिकशास्‍त्र) परीक्षा - 2024 के पद हेतु साक्षात्‍कार आयोजन संबंधी सूचना, दिनांक 03/11/2026",
+      "qualification": "See the official advertisement",
+      "date": "Notice dated 3 November 2026",
+      "state": "Madhya Pradesh",
+      "sourceId": "mppsc",
+      "source": "Madhya Pradesh Public Service Commission",
+      "url": "https://mppsc.mp.gov.in/uploads/advertisement/Vigyapti_Assistant_Professor_Physics_Exam_2024_Dated_03_11_2026.pdf"
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "सहायक प्राध्‍यापक (वनस्‍पतिशास्‍त्र) परीक्षा - 2024 के पद हेतु उम्‍मीदवारी निरस्‍त किए आवेदकों से प्राप्‍त आपत्ति अभ्‍यावेदनों का निराकरण किए जाने की सूचना, दिनांक 03/11/2026",
+      "qualification": "See the official advertisement",
+      "date": "Notice dated 3 November 2026",
+      "state": "Madhya Pradesh",
+      "sourceId": "mppsc",
+      "source": "Madhya Pradesh Public Service Commission",
+      "url": "https://mppsc.mp.gov.in/uploads/advertisement/Vigyapti_Assistant_Professor_Botany_Exam_2024_Dated_03_11_2026.pdf"
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "राज्‍य सेवा परीक्षा - 2019 में न्‍यायालयीन आदेश के परिपालन में साक्षात्‍कार आयोजन की सूूचना संबंधी सूचना पत्र दिनांक 17.10.2023 की निरस्‍ती के संबंध में, दिनांक 03/11/2026",
+      "qualification": "See the official advertisement",
+      "date": "Notice dated 3 November 2026",
+      "state": "Madhya Pradesh",
+      "sourceId": "mppsc",
+      "source": "Madhya Pradesh Public Service Commission",
+      "url": "https://mppsc.mp.gov.in/uploads/advertisement/Vigyapti_State_Service_Exam_2019_Dated_03_11_2026.pdf"
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "पशु चिकित्‍सा सहायक शल्‍यज्ञ/पशु चिकित्‍सा विस्‍तार अधिकारी परीक्षा - 2026 के पद हेतु उम्‍मीदवारी निरस्‍त किए जाने संबंधी सूचना, दिनांक 30/10/2026",
+      "qualification": "See the official advertisement",
+      "date": "Notice dated 30 October 2026",
+      "state": "Madhya Pradesh",
+      "sourceId": "mppsc",
+      "source": "Madhya Pradesh Public Service Commission",
+      "url": "https://mppsc.mp.gov.in/uploads/advertisement/Vigyapti_Veterinary_Assistant_Surgeon_VEO_Exam_2026_Dated_30_10_2026.pdf"
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "UPPSC ADVT.NO. A-5/E-1/2026,ASSISTANT ARCHITECT PLANNER EXAMINATION-2026 / SPORTS OFFICER EXAMINATION-2026 / PROGRAMMER GRADE-2 EXAMINATION-2026",
+      "qualification": "See the official advertisement",
+      "date": "Shown on the UPPSC board until 11 December 2026. Confirm the last date on the notice.",
+      "state": "Uttar Pradesh",
+      "sourceId": "uppsc",
+      "source": "Uttar Pradesh Public Service Commission",
+      "url": "https://uppsc.up.nic.in/"
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "UPPSC ADVT.NO. A-4/E-1/2026,SAMIKSHA ADHIKARI/SAHAYAK SAMIKSHA ADHIKARI ETC.(GEN. / SPL. RECTT.) EXAM.-2026",
+      "qualification": "See the official advertisement",
+      "date": "Shown on the UPPSC board until 3 December 2026. Confirm the last date on the notice.",
+      "state": "Uttar Pradesh",
+      "sourceId": "uppsc",
+      "source": "Uttar Pradesh Public Service Commission",
+      "url": "https://uppsc.up.nic.in/"
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "TGT (COMPUTER SCIENCE) & OTHERS, SAINIK SCHOOL NAGROTA, SAINIK SCHOOLS SOCIETY, MINISTRY OF DEFENCE",
+      "qualification": "See the official notice. Appointment method on the listing: Recruitment.",
+      "date": "21 November 2026",
+      "state": "National",
+      "sourceId": "employment-news",
+      "source": "Employment News",
+      "url": "https://employmentnews.gov.in/newemp/home.aspx"
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "LOWER DIVISION CLERK, INSTITUTE OF HOTEL MANAGEMENT AND CATERING TECHNOLOGY, MINISTRY OF TOURISM",
+      "qualification": "See the official notice. Appointment method on the listing: Recruitment.",
+      "date": "30 November 2026",
+      "state": "National",
+      "sourceId": "employment-news",
+      "source": "Employment News",
+      "url": "https://employmentnews.gov.in/newemp/home.aspx"
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "ACCOUNTANT & OTHERS, MINERAL EXPLORATION AND CONSULTANCY LIMITED",
+      "qualification": "See the official notice. Appointment method on the listing: Recruitment.",
+      "date": "11 October 2026",
+      "state": "National",
+      "sourceId": "employment-news",
+      "source": "Employment News",
+      "url": "https://employmentnews.gov.in/newemp/home.aspx"
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "LECTURER, DNS REGIONAL INSTITUTE OF COOPERATIVE MANAGEMENT",
+      "qualification": "See the official notice. Appointment method on the listing: Recruitment.",
+      "date": "27 September 2026",
+      "state": "National",
+      "sourceId": "employment-news",
+      "source": "Employment News",
+      "url": "https://employmentnews.gov.in/newemp/home.aspx"
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "TEACHING POSITIONS, NALANDA UNIVERSITY",
+      "qualification": "See the official notice. Appointment method on the listing: Recruitment.",
+      "date": "15 September 2026",
+      "state": "National",
+      "sourceId": "employment-news",
+      "source": "Employment News",
+      "url": "https://employmentnews.gov.in/newemp/home.aspx"
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "ENGINEER & OTHERS, RAMAGUNDAM FERTILIZERS AND CHEMICALS LIMITED",
+      "qualification": "See the official notice. Appointment method on the listing: Recruitment.",
+      "date": "24 September 2026",
+      "state": "National",
+      "sourceId": "employment-news",
+      "source": "Employment News",
+      "url": "https://employmentnews.gov.in/newemp/home.aspx"
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "PROFESSOR, NATIONAL INSTITUTE OF PHARMACEUTICAL EDUCATION AND RESEARCH KOLKATA, M/O CHEMICAL AND FERTILIZERS",
+      "qualification": "See the official notice. Appointment method on the listing: Recruitment.",
+      "date": "17 September 2026",
+      "state": "National",
+      "sourceId": "employment-news",
+      "source": "Employment News",
+      "url": "https://employmentnews.gov.in/newemp/home.aspx"
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "YOUNG CONSULTANT (FOREST FIRE RISK MANAGEMENT), NATIONAL DISASTER MANAGEMENT AUTHORITY",
+      "qualification": "See the official notice. Appointment method on the listing: Deputation.",
+      "date": "18 October 2026",
+      "state": "National",
+      "sourceId": "employment-news",
+      "source": "Employment News",
+      "url": "https://employmentnews.gov.in/newemp/home.aspx"
     }
   ],
   "sources": [
@@ -332,20 +505,44 @@
       "note": "Open recruitment table"
     },
     {
-      "id": "employment-news",
-      "name": "Employment News",
-      "url": "https://employmentnews.gov.in/newemp/home.aspx",
-      "ok": true,
-      "count": 8,
-      "note": "Public job-highlights table only. The paid e-paper is not copied."
-    },
-    {
       "id": "gsssb",
       "name": "GSSSB",
       "url": "https://gsssb.gujarat.gov.in/Notification",
       "ok": true,
       "count": 8,
       "note": "Public notification search, first page"
+    },
+    {
+      "id": "mppsc",
+      "name": "MPPSC",
+      "url": "https://mppsc.mp.gov.in/",
+      "ok": true,
+      "count": 6,
+      "note": "Latest advertisement PDFs on the public homepage. The date is the notice date printed in the file name, not an invented last date."
+    },
+    {
+      "id": "uppsc",
+      "name": "UPPSC",
+      "url": "https://uppsc.up.nic.in/",
+      "ok": true,
+      "count": 2,
+      "note": "Live advertisement lines on the public homepage"
+    },
+    {
+      "id": "bpsc",
+      "name": "BPSC",
+      "url": "https://bpsc.bihar.gov.in/",
+      "ok": false,
+      "count": 0,
+      "note": "fetch failed. Earlier checks of bpsc.bih.nic.in also failed to connect, and onlinebpsc.bihar.gov.in is a login portal. No Bihar row was invented."
+    },
+    {
+      "id": "employment-news",
+      "name": "Employment News",
+      "url": "https://employmentnews.gov.in/newemp/home.aspx",
+      "ok": true,
+      "count": 8,
+      "note": "Public job-highlights table only. The paid e-paper is not copied."
     },
     {
       "id": "pib",
@@ -362,6 +559,14 @@
       "ok": false,
       "count": 0,
       "note": "The public Mumbai notice endpoint returned an empty body, so no railway row was imported. rrbcdg.gov.in did not connect on an earlier check."
+    },
+    {
+      "id": "mpsc",
+      "name": "MPSC",
+      "url": "https://mpsc.gov.in/",
+      "ok": false,
+      "count": 0,
+      "note": "The public site is a JavaScript app. Its content API refuses a read unless a CRC header matches, and that check is not bypassed. No Maharashtra row was invented."
     },
     {
       "id": "gprb",

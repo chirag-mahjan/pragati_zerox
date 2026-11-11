@@ -540,10 +540,38 @@ a {
   overflow-x: auto;
 }
 
+.coverage {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.55rem;
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.coverage li {
+  background: var(--card);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 0.7rem 0.75rem;
+}
+
+.coverage strong {
+  display: block;
+  color: var(--navy);
+}
+
+.coverage span {
+  display: block;
+  margin-top: 0.2rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 46rem;
+  min-width: 52rem;
 }
 
 th,
@@ -750,6 +778,7 @@ th {
   .hero-grid,
   .tiles,
   .tiles.three,
+  .coverage,
   .group ul,
   .notice-list,
   .contact-grid,

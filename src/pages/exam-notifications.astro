@@ -6,13 +6,14 @@ import updates from "../data/updates.json";
 
 const hasSample = updates.exams.some((exam) => exam.sample);
 const readFrom = updates.sources.filter((source) => source.ok && source.count > 0);
+const coverage = updates.coverage ?? [];
 ---
 
 <Base title="Exam Notifications" description="Exam notices for visitors of Pragati Digital & Xerox Center. Apply at the shop.">
   <header class="page-intro">
     <div class="wrap">
       <h1>Exam Notifications</h1>
-      <p>Read the notice, then apply with us at the shop. There is no online form on this site.</p>
+      <p>Notices are read for Gujarat, Maharashtra, Uttar Pradesh, Bihar, and Madhya Pradesh. Apply with us at the shop. There is no online form on this site.</p>
     </div>
   </header>
   <div class="page">
@@ -25,10 +26,23 @@ const readFrom = updates.sources.filter((source) => source.ok && source.count > 
           </p>
         )
       }
+      {
+        coverage.length > 0 && (
+          <ul class="coverage">
+            {coverage.map((item) => (
+              <li>
+                <strong>{item.state}</strong>
+                <span>{item.ok ? `${item.count} notices on the last check` : "No public list on the last check"}</span>
+              </li>
+            ))}
+          </ul>
+        )
+      }
       <div class="table-wrap" style="margin-top: 1rem">
         <table>
           <thead>
             <tr>
+              <th>State</th>
               <th>Title</th>
               <th>Qualification</th>
               <th>Last date</th>
@@ -39,6 +53,7 @@ const readFrom = updates.sources.filter((source) => source.ok && source.count > 
             {
               updates.exams.map((exam) => (
                 <tr>
+                  <td>{exam.state || "—"}</td>
                   <td>
                     {exam.name}
                     {exam.sample && <span class="sample-tag">sample</span>}
