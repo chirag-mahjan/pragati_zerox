@@ -177,14 +177,41 @@ a {
   gap: 0.35rem;
 }
 
-.lang-switch a {
+.lang-switch button {
   border: 1px solid var(--gold);
   border-radius: 999px;
   padding: 0.18rem 0.55rem;
+  background: transparent;
+  color: white;
+  font: inherit;
+  font-weight: 700;
   text-transform: none;
   letter-spacing: 0;
   font-size: 0.78rem;
   line-height: 1.2;
+  cursor: pointer;
+}
+
+.lang-switch button[aria-pressed="true"] {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.google-translate-host {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+iframe.skiptranslate,
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
 }
 
 .hero {
