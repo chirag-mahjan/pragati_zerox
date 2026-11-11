@@ -469,6 +469,51 @@ a {
   padding: 1.5rem 0 3rem;
 }
 
+.portals {
+  display: grid;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.portal {
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  border-top: 6px solid var(--gold);
+}
+
+.portal summary {
+  cursor: pointer;
+  padding: 0.95rem 1rem;
+  color: var(--navy);
+  font-weight: 800;
+  font-size: 1.15rem;
+}
+
+.portal-body {
+  padding: 0 1rem 1rem;
+}
+
+.portal-body p {
+  margin: 0 0 0.8rem;
+  color: var(--muted);
+}
+
+.portal-body h3 {
+  margin: 0.8rem 0 0.4rem;
+  color: var(--navy);
+  font-size: 0.95rem;
+}
+
+.portal-body ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.portal-body li {
+  margin: 0.25rem 0;
+}
+
 .groups {
   display: grid;
   gap: 1rem;

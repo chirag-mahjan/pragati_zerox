@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-11T10:57:46.440Z",
+  "fetchedAt": "2026-11-11T11:58:12.982Z",
   "ticker": [
     {
       "text": "Gujarat: GPSC 60/2026-27: Executive Engineer (Civil), Class-1, (GMB) — 20 November 2026",
@@ -87,14 +87,6 @@
         ]
       },
       {
-        "id": "portals",
-        "title": "Portals",
-        "items": [
-          "Sanman Portal",
-          "iKhedut"
-        ]
-      },
-      {
         "id": "family",
         "title": "Family",
         "items": [
@@ -124,6 +116,127 @@
           "Atal Pension Yojana",
           "PMSBY",
           "PMJJBY"
+        ]
+      }
+    ],
+    "portals": [
+      {
+        "id": "sanman",
+        "title": "Sanman Portal",
+        "groups": [
+          {
+            "title": "Building and other construction workers",
+            "items": [
+              "Education assistance",
+              "Maternity assistance before delivery",
+              "Medical assistance claim",
+              "Skilled worker assistance",
+              "Funeral assistance",
+              "Pradhan Mantri Jeevan Jyoti Bima Yojana",
+              "Occupational disease assistance",
+              "Special coaching",
+              "Nanaji Deshmukh housing scheme",
+              "Accidental death assistance",
+              "Medical assistance",
+              "Maternity assistance and Mukhyamantri Bhagyalakshmi Bond",
+              "PhD assistance",
+              "Housing subsidy (closed on the portal)"
+            ]
+          },
+          {
+            "title": "Labour welfare board",
+            "items": [
+              "Maternity assistance and Beti Protsahan",
+              "Laptop purchase assistance",
+              "Worker cycle subsidy",
+              "Women worker marriage assistance",
+              "Worker accidental death assistance",
+              "Worker accident assistance",
+              "Worker home-loan interest subsidy",
+              "Worker home-town scheme",
+              "Worker full medical checkup",
+              "Education award, standard 12",
+              "Education award, standard 10",
+              "Higher education assistance",
+              "Worker funeral assistance"
+            ]
+          },
+          {
+            "title": "Rural workers welfare board",
+            "items": [
+              "Funeral assistance for unorganized workers",
+              "Silicosis assistance",
+              "Portable housing for unorganized salt-industry workers"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ikhedut",
+        "title": "iKhedut",
+        "note": "Open components from the public scheme file, grouped by department.",
+        "groups": [
+          {
+            "title": "Gujarat Organic Products Certification Agency (GOPCA)",
+            "items": [
+              "Residue testing/Namuna Chakasni assistance for organic farming"
+            ]
+          },
+          {
+            "title": "Horticulture",
+            "items": [
+              "AREA EXPANSION PROGRAMME OF FRUIT CROPS THROUGH MULTI-LAYERED PLANTATION",
+              "PROGRAM TO OBTAIN QUALITY PRODUCE THROUGH FIELD COVER IN FRUIT CROPS",
+              "TO PROMOTE RHIZOMATIC (GINGER, TURMERIC) CROPS PROGRAMME",
+              "HARVESTING EQUIPMENT (NMEO-OP)",
+              "REJUVENATION OF OLD ORCHARDS (MANGO & LEMON)",
+              "MANGO & GUAVA – FRUIT PRODUCTIVITY ENHANCEMENT PROGRAMME",
+              "MAINTENANCE AND INPUT COSTS FOR INTERCROPPING IN OIL PALM",
+              "TO PROMOTE NATURAL FARMING IN VEGETABLE CROPS"
+            ]
+          },
+          {
+            "title": "Agriculture",
+            "items": [
+              "Certified seed Distribution",
+              "Demonstration",
+              "Registration, inspection, certification, transportation fees Assistance for organic farming",
+              "Input Sahay for organic farming",
+              "Assistance in certified seeds under NMEO (Oilseeds) Scheme"
+            ]
+          },
+          {
+            "title": "Fisheries",
+            "items": [
+              "Construction of Plant/storage of minimum 50 tonne capacity (PMMSY)",
+              "Subsidy on purchase of shrimp seed and feed (Brackishwater)",
+              "Comprehensive package- Assistance for associated equipment and materials to obtain brackish water",
+              "Subsidy on seaweed culture (Raft/Tube net)",
+              "Wooden Boat Replacement scheme for IBM Boats (Marine State)",
+              "Assistance for underprivileged women in fish selling tools (Inland Scheme- 101/02, FSH-2) (State)",
+              "Boat-Net subsidy (Inland Scheme- 101/02, FSH-2) (State)",
+              "Fish seed stocking subsidy (Inland Scheme - 101/02, FSH-2) (State)",
+              "Insulated Box purchase subsidy (Inland Scheme- 101/02, FSH-2) (State)",
+              "Fish seed rearing by Tribal Fishermen (Inland Scheme- 796/02, FSH-2) (State)",
+              "Subsidy to Fishery Co-operative Societies, Private Units, Entrepreneurs and others for establishment of Fish Processing Units (Marine State)"
+            ]
+          },
+          {
+            "title": "Registrar of Co-Operative Societies, Gujarat State, Gandhinagar",
+            "items": [
+              "Scheme to provide interest subsidy and capital subsidy on loans for construction of godowns 25%",
+              "Scheme to provide interest subsidy and capital subsidy on loans for construction of godowns 73%"
+            ]
+          },
+          {
+            "title": "Animal Husbandry",
+            "items": [
+              "Scheme to give subsidy on purchase of 2 indigenous cow for natural farming purpose to Schedule Tribe beneficiary",
+              "STATEWIDE INTENSIVE CASTRATION SCHEME",
+              "Scheme to give subsidy on purchase of 2 indigenous cow for natural farming purpose to general category beneficiary",
+              "Scheme to give subsidy on purchase of 2 indigenous cow for natural farming purpose to Schedule Caste beneficiary"
+            ]
+          }
         ]
       }
     ],
@@ -679,6 +792,22 @@
       "ok": true,
       "count": 2,
       "note": "The official feed redirected to Hindi from this network."
+    },
+    {
+      "id": "sanman",
+      "name": "Sanman Portal",
+      "url": "",
+      "ok": true,
+      "count": 30,
+      "note": "Scheme names from the three public board tables. The portal is not linked from this page."
+    },
+    {
+      "id": "ikhedut",
+      "name": "iKhedut",
+      "url": "",
+      "ok": true,
+      "count": 31,
+      "note": "English component names from the public scheme file the portal page loads."
     },
     {
       "id": "rrb",

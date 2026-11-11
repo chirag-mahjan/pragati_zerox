@@ -14,9 +14,33 @@ import updates from "../data/updates.json";
   </header>
   <div class="page">
     <div class="wrap">
+      <div class="portals">
+        {
+          (updates.schemes.portals ?? []).map((portal) => (
+            <details class="portal" id={portal.id}>
+              <summary>{portal.title}</summary>
+              <div class="portal-body">
+                {portal.note && <p>{portal.note}</p>}
+                {
+                  portal.groups.map((group) => (
+                    <div>
+                      <h3>{group.title}</h3>
+                      <ul>
+                        {group.items.map((item) => (
+                          <li>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))
+                }
+              </div>
+            </details>
+          ))
+        }
+      </div>
       <div class="groups">
         {
-          updates.schemes.groups.map((group) => (
+          updates.schemes.groups.filter((group) => group.id !== "portals").map((group) => (
             <section class="group" id={group.id}>
               <h2>{group.title}</h2>
               <ul>

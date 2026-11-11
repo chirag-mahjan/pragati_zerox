@@ -14,7 +14,6 @@ const months = [
 const schemeGroups = [
   { id: "health", title: "Health", items: ["Ayushman card activation and printing"] },
   { id: "labor", title: "Labor", items: ["E-Shram card registration", "PF work"] },
-  { id: "portals", title: "Portals", items: ["Sanman Portal", "iKhedut"] },
   { id: "family", title: "Family", items: ["New ration card", "Duplicate ration card"] },
   {
     id: "certificates",
@@ -61,6 +60,7 @@ function decode(value) {
     .replace(/&amp;/g, "&")
     .replace(/&quot;/g, '"')
     .replace(/&#39;|&apos;/g, "'")
+    .replace(/&#x([0-9a-f]+);/gi, (_, hex) => String.fromCodePoint(parseInt(hex, 16)))
     .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number(code)))
     .replace(/<[^>]+>/g, " ")
     .replace(/\s+/g, " ")
@@ -523,6 +523,121 @@ async function fetchMajhi() {
   }
 }
 
+const sanmanNames = {
+  "શિક્ષણ સહાય": "Education assistance",
+  "પ્રસૂતિ સહાય યોજના (પ્રસૂતિ પહેલા)": "Maternity assistance before delivery",
+  "તબીબી સહાય યોજના(ક્લેમ)": "Medical assistance claim",
+  "કુશળ શ્રમિક સહાય યોજના": "Skilled worker assistance",
+  "અંત્યેષ્ઠી સહાય યોજના": "Funeral assistance",
+  "પ્રધાનમંત્રી જીવન જ્યોત બીમા યોજના": "Pradhan Mantri Jeevan Jyoti Bima Yojana",
+  "વ્યવસાયિક રોગોમાં સહાય યોજના": "Occupational disease assistance",
+  "વિશિષ્ટ કોચિગ યોજના": "Special coaching",
+  "નાનાજી દેશમુખ આવાસ યોજના": "Nanaji Deshmukh housing scheme",
+  "અકસ્માત મૃત્યુ સહાય યોજના": "Accidental death assistance",
+  "તબીબી સહાય યોજના": "Medical assistance",
+  "પ્રસુતિ સહાય યોજના અને મુખ્યમંત્રી ભાગ્યલક્ષ્મી બોન્ડ યોજના": "Maternity assistance and Mukhyamantri Bhagyalakshmi Bond",
+  "પી.એચ.ડી યોજના": "PhD assistance",
+  "હાઉસીંગ સબસીડી યોજના": "Housing subsidy",
+  "પ્રસુતિ સહાય અને બેટી પ્રોત્સાહન યોજના": "Maternity assistance and Beti Protsahan",
+  "લેપટોપ ખરીદ સહાય યોજના": "Laptop purchase assistance",
+  "શ્રમયોગી સાઇકલ સબસીડી સહાય યોજના": "Worker cycle subsidy",
+  "મહિલા શ્રમયોગી લગ્ન સહાય યોજના": "Women worker marriage assistance",
+  "શ્રમયોગી અકસ્માત મૃત્યુ સહાય યોજના": "Worker accidental death assistance",
+  "શ્રમયોગી અકસ્માત સહાય યોજના": "Worker accident assistance",
+  "શ્રમયોગી હોમ લોન વ્યાજ સબસીડી": "Worker home-loan interest subsidy",
+  "શ્રમયોગી હોમ ટાઉન યોજના": "Worker home-town scheme",
+  "શ્રમયોગી સંપૂર્ણ તબીબી તપાસ સહાય યોજના": "Worker full medical checkup",
+  "શૈક્ષણિક પુરસ્કાર યોજના (ધોરણ :૧૨)": "Education award, standard 12",
+  "શૈક્ષણિક પુરસ્કાર યોજના (ધોરણ :૧૦)": "Education award, standard 10",
+  "ઉચ્ચ્તર શિક્ષણ સહાય યોજના": "Higher education assistance",
+  "શ્રમયોગી અંત્યેષ્ઠી સહાય યોજના": "Worker funeral assistance",
+  "અસંગઠિત શ્રમયોગીઓ માટે મરણોત્તર ક્રિયા (અંત્યેષ્ઠિ) સહાય યોજના": "Funeral assistance for unorganized workers",
+  "સિલિકોસીસ સહાય યોજના": "Silicosis assistance",
+};
+
+function englishScheme(name) {
+  if (sanmanNames[name]) return sanmanNames[name];
+  const salt = "મીઠાઉદ્યોગ સાથે સંકળાયેલા અસંગઠિત શ્રમયોગીઓને પોર્ટેબલ આવાસ";
+  if (name.startsWith(salt)) return "Portable housing for unorganized salt-industry workers";
+  return name;
+}
+
+function sanmanRows(html) {
+  return [...html.matchAll(/<tr[\s\S]*?<\/tr>/gi)]
+    .map((row) => decode(row[0]))
+    .map((row) => {
+      const match = row.match(/^(\d+)\s+([\s\S]+?)\s+(ઓપન|બંધ)$/);
+      if (!match) return null;
+      const closed = match[3] === "બંધ";
+      const label = englishScheme(match[2].trim());
+      return closed ? `${label} (closed on the portal)` : label;
+    })
+    .filter(Boolean);
+}
+
+async function fetchSanman() {
+  const boards = [
+    ["https://sanman.gujarat.gov.in/Home/BOCWScheme", "Building and other construction workers"],
+    ["https://sanman.gujarat.gov.in/Home/GLWBScheme", "Labour welfare board"],
+    ["https://sanman.gujarat.gov.in/Home/GRWWBScheme", "Rural workers welfare board"],
+  ];
+  const groups = [];
+  for (const [url, title] of boards) {
+    const response = await grab(url);
+    if (!response.ok) {
+      return { portal: null, source: sourceResult("sanman", "Sanman Portal", "", false, 0, `HTTP ${response.status}`) };
+    }
+    const items = sanmanRows(response.text);
+    if (items.length) groups.push({ title, items });
+  }
+  const count = groups.reduce((sum, group) => sum + group.items.length, 0);
+  return {
+    portal: {
+      id: "sanman",
+      title: "Sanman Portal",
+      groups,
+    },
+    source: sourceResult("sanman", "Sanman Portal", "", count > 0, count, "Scheme names from the three public board tables. The portal is not linked from this page."),
+  };
+}
+
+async function fetchIkhedut() {
+  const fileUrl = "https://ikhedut.gujarat.gov.in/site/scheme.json";
+  const response = await grab(fileUrl);
+  if (!response.ok) {
+    return { portal: null, source: sourceResult("ikhedut", "iKhedut", "", false, 0, `HTTP ${response.status}`) };
+  }
+  let rows = [];
+  try {
+    rows = JSON.parse(response.text).scheme || [];
+  } catch {
+    return { portal: null, source: sourceResult("ikhedut", "iKhedut", "", false, 0, "The public scheme file was not valid JSON.") };
+  }
+  const groups = [];
+  for (const row of rows) {
+    if (Number(row.componentheaderlanguageid) !== 1 || Number(row.departmentlanguageid) !== 1) continue;
+    const title = decode(String(row.departmentname || "")).trim() || "Other";
+    const name = decode(String(row.componentname || "")).trim();
+    if (!name) continue;
+    let group = groups.find((item) => item.title === title);
+    if (!group) {
+      group = { title, items: [] };
+      groups.push(group);
+    }
+    if (!group.items.includes(name)) group.items.push(name);
+  }
+  const count = groups.reduce((sum, group) => sum + group.items.length, 0);
+  return {
+    portal: {
+      id: "ikhedut",
+      title: "iKhedut",
+      note: "Open components from the public scheme file, grouped by department.",
+      groups,
+    },
+    source: sourceResult("ikhedut", "iKhedut", "", count > 0, count, "English component names from the public scheme file the portal page loads."),
+  };
+}
+
 async function noteEmptyRrb() {
   const pageUrl = "https://rrb.indianrailways.gov.in/mumbai/whatsNew?contentType=page";
   try {
@@ -646,6 +761,8 @@ async function main() {
   jobs.push(await run("roundup", fetchRoundup));
   jobs.push(await run("majhi", fetchMajhi));
   const pib = await run("pib", fetchPib);
+  const sanman = await run("sanman", fetchSanman);
+  const ikhedut = await run("ikhedut", fetchIkhedut);
   const rrb = await noteEmptyRrb();
   const mpsc = await noteMpsc();
 
@@ -659,13 +776,14 @@ async function main() {
 
   const notices = pib.notices || [];
   const ticker = tickerFrom(exams, notices);
-  const sources = [...jobs.map((job) => job.source), pib.source, rrb, mpsc.source, ...skippedSources()].filter(Boolean);
+  const sources = [...jobs.map((job) => job.source), pib.source, sanman.source, ikhedut.source, rrb, mpsc.source, ...skippedSources()].filter(Boolean);
   const updates = {
     fetchedAt: new Date().toISOString(),
     ticker: ticker.length ? ticker : sampleTicker,
     schemes: {
       states: ["Gujarat", "Maharashtra", "Uttar Pradesh", "Bihar", "Madhya Pradesh"],
       groups: schemeGroups,
+      portals: [sanman.portal, ikhedut.portal].filter(Boolean),
       notices,
     },
     coverage: coverageFrom(sources, exams),

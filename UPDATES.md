@@ -26,6 +26,8 @@ States watched: Gujarat, Maharashtra, Uttar Pradesh, Bihar, and Madhya Pradesh. 
 | UPPSC live advertisements | `https://uppsc.up.nic.in/` | Uttar Pradesh. Live advertisement lines on the public homepage, with the board’s “visible upto” date |
 | Employment News job highlights | `https://employmentnews.gov.in/newemp/home.aspx` | National, unless the title names one of the five states. Official public table only |
 | Press Information Bureau RSS | `https://pib.gov.in/RssMain.aspx?ModId=6&Lang=1&Regid=3` | Official feed, published for reuse. Only items whose title matches a scheme keyword are kept |
+| Sanman Portal boards | `https://sanman.gujarat.gov.in/Home/BOCWScheme`, `GLWBScheme`, `GRWWBScheme` | Gujarat labour welfare scheme names from the three public tables. English names are stored. A row marked closed stays in the list with that note. The schemes page does not link the portal |
+| iKhedut scheme file | `https://ikhedut.gujarat.gov.in/site/scheme.json` | The same public file the portal page loads. English component names, grouped by department. The inner application API is not called |
 
 Each kept row stores the source name and URL.
 
