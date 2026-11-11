@@ -231,9 +231,11 @@ a {
   place-items: center;
 }
 
-.hero-visual svg {
-  width: min(100%, 460px);
+.hero-visual img {
+  width: min(100%, 520px);
   height: auto;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
 }
 
 .band {
