@@ -1,5 +1,6 @@
 ---
-import { site, nav } from "../data/site";
+import { nav } from "../data/site";
+import Icon from "./Icon.astro";
 
 const path = Astro.url.pathname.replace(/\/$/, "") || "/";
 ---
@@ -8,10 +9,10 @@ const path = Astro.url.pathname.replace(/\/$/, "") || "/";
 <header class="site-header">
   <div class="wrap header-bar">
     <a class="lockup" href="/">
-      <span class="lockup-mark" aria-hidden="true">P</span>
+      <span class="lockup-mark" aria-hidden="true"><Icon name="print" /></span>
       <span>
-        <span class="lockup-name">{site.lockupTop}</span>
-        <span class="lockup-sub">{site.lockupBottom}</span>
+        <span class="lockup-name">PRAGATI</span>
+        <span class="lockup-sub">XEROX & GOVT. SCHEMES CENTER</span>
       </span>
     </a>
     <input class="nav-toggle" id="nav-toggle" type="checkbox" />
@@ -19,7 +20,7 @@ const path = Astro.url.pathname.replace(/\/$/, "") || "/";
     <ul class="nav-links">
       {
         nav.map((item) => {
-          const current = (item.href === "/" ? path === "/" : path === item.href) ? "page" : undefined;
+          const current = item.href === "/" && path === "/" ? "page" : item.href === path ? "page" : undefined;
           return (
             <li>
               <a href={item.href} aria-current={current}>
@@ -30,6 +31,5 @@ const path = Astro.url.pathname.replace(/\/$/, "") || "/";
         })
       }
     </ul>
-    <a class="call-now" href={site.phoneTel}>{site.callLabel}</a>
   </div>
 </header>

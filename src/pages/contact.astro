@@ -3,13 +3,15 @@ import Base from "../layouts/Base.astro";
 import { site } from "../data/site";
 ---
 
-<Base title="Contact Us" description="Call or visit Pragati Digital & Xerox Center at Rohini Park, Andada.">
-  <div class="wrap">
-    <header class="page-head">
-      <h1>Contact Us</h1>
+<Base title="Contact" description="Call or visit Pragati Digital & Xerox Center at Rohini Park, Andada.">
+  <header class="page-intro">
+    <div class="wrap">
+      <h1>Contact</h1>
       <p class="tagline" lang="gu">{site.tagline}</p>
-    </header>
-    <div class="contact-grid">
+    </div>
+  </header>
+  <div class="page">
+    <div class="wrap contact-grid">
       <section class="contact-card">
         <h2>Visit or call</h2>
         <dl class="facts">
@@ -33,7 +35,12 @@ import { site } from "../data/site";
       <aside class="contact-card">
         <h2>{site.name}</h2>
         <p>Bring your papers to the counter. We print, type, and help with scheme and exam forms in the shop.</p>
-        <p>A map pin is not shown until the shop confirms the exact location.</p>
+        <div class="map-card" style="margin-top: 1rem; color: white">
+          <div>
+            <div class="map-pin" aria-hidden="true"></div>
+            <strong>{site.location}</strong>
+          </div>
+        </div>
       </aside>
     </div>
   </div>

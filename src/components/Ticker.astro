@@ -7,20 +7,18 @@ const items = updates.ticker.length
 const loop = [...items, ...items];
 ---
 
-<div class="ticker" aria-label="Live updates">
-  <div class="wrap ticker-inner">
-    <div class="ticker-label">LIVE UPDATES</div>
-    <div class="ticker-window">
-      <div class="ticker-track">
-        {
-          loop.map((item) => (
-            <span>
-              {item.url ? <a href={item.url}>{item.text}</a> : item.text}
-              {item.sample ? " (sample)" : ""}
-            </span>
-          ))
-        }
-      </div>
+<div class="live-bar" aria-label="Live updates">
+  <div class="live-label">Live updates</div>
+  <div class="ticker-window">
+    <div class="ticker-track">
+      {
+        loop.map((item) => (
+          <span>
+            {item.url ? <a href={item.url}>{item.text}</a> : item.text}
+            {item.sample ? " (sample)" : ""}
+          </span>
+        ))
+      }
     </div>
   </div>
 </div>

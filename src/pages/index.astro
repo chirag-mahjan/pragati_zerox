@@ -1,48 +1,124 @@
 ---
 import Base from "../layouts/Base.astro";
-import { site, homeCategories } from "../data/site";
+import Icon from "../components/Icon.astro";
+import Ticker from "../components/Ticker.astro";
+import { site, printTiles, schemeTiles, digitalTiles } from "../data/site";
 ---
 
 <Base title={site.name}>
-  <div class="wrap">
-    <section class="hero">
+  <section class="hero">
+    <div class="wrap hero-grid">
       <div>
-        <h1>Your One-Stop Digital & Document Service Hub</h1>
-        <p class="lede">
-          Quick, accurate, and reliable services for all your printing, registration, and scheme application needs in Andada.
-        </p>
-        <div class="actions">
-          <a class="button" href="/services">Browse Services</a>
-          <a class="button secondary" href="/government-schemes">View Latest Schemes</a>
-        </div>
+        <h1>Pragati Xerox &<br />Govt. Schemes Center</h1>
+        <p class="lede">{site.heroSub}</p>
+        <a class="button" href="/services">Explore Services</a>
       </div>
-      <figure class="shop-photo">
-        <svg viewBox="0 0 320 220" aria-hidden="true">
-          <rect x="36" y="48" width="248" height="128" rx="10" fill="#14365f" stroke="#d4a017" stroke-width="4" />
-          <rect x="58" y="68" width="150" height="70" rx="4" fill="#0c2340" stroke="#f8e7b8" stroke-width="3" />
-          <rect x="222" y="78" width="40" height="18" rx="3" fill="#d4a017" />
-          <rect x="70" y="154" width="70" height="36" fill="#f4f0e6" />
-          <rect x="148" y="160" width="70" height="8" fill="#0f6e6b" />
-          <circle cx="250" cy="128" r="10" fill="none" stroke="#d4a017" stroke-width="3" />
+      <div class="hero-visual">
+        <svg viewBox="0 0 520 420" role="img" aria-label="Shop photo">
+          <rect width="520" height="420" fill="#f3f6f4" />
+          <ellipse cx="330" cy="360" rx="150" ry="18" fill="#d9e3ea" />
+          <rect x="250" y="168" width="190" height="120" rx="10" fill="#f7f9fb" stroke="#c5d0da" stroke-width="3" />
+          <rect x="268" y="186" width="120" height="70" rx="4" fill="#e7eef3" />
+          <path d="M268 168 L310 128 H430 L388 168 Z" fill="#ffffff" stroke="#c5d0da" stroke-width="3" />
+          <rect x="300" y="288" width="90" height="16" rx="2" fill="#d5dee6" />
+          <rect x="318" y="304" width="54" height="36" fill="#fff" stroke="#d5dee6" />
+          <circle cx="188" cy="168" r="36" fill="#f0c7a4" />
+          <path d="M158 162c6-28 54-28 60 2-16-10-44-8-60-2z" fill="#1d2430" />
+          <path d="M176 180c8 8 22 8 30 0" fill="none" stroke="#c4896a" stroke-width="2" />
+          <circle cx="176" cy="164" r="2.5" fill="#243140" />
+          <circle cx="202" cy="164" r="2.5" fill="#243140" />
+          <path d="M150 210h78l18 78H214l-10-46-28 46h-28l20-46-18 8z" fill="#0b2748" />
+          <path d="M168 214h42l6 16H176z" fill="#14a3a1" />
+          <rect x="214" y="248" width="46" height="14" rx="6" fill="#f0c7a4" />
+          <rect x="156" y="286" width="22" height="54" rx="8" fill="#10243f" />
+          <rect x="196" y="286" width="22" height="54" rx="8" fill="#10243f" />
         </svg>
-        <figcaption>Shop photo</figcaption>
-      </figure>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section class="section" aria-labelledby="categories-title">
-      <h2 id="categories-title">What we help with</h2>
-      <div class="cards">
+  <section class="band">
+    <div class="wrap">
+      <h2>Digital Xerox & Printing</h2>
+      <div class="tiles">
         {
-          homeCategories.map((category) => (
-            <article class:list={["card", category.tone]}>
-              <span class="seal">{category.seal}</span>
-              <h2>{category.title}</h2>
-              <p>{category.text}</p>
-              <a class="more" href={category.href}>READ MORE</a>
+          printTiles.map((tile) => (
+            <article class="tile">
+              <div class:list={["tile-icon", tile.tone]}><Icon name={tile.icon} /></div>
+              <h3>{tile.title}</h3>
+              <p>{tile.text}</p>
+              <a class:list={["more", tile.tone]} href={tile.href}>Read more</a>
             </article>
           ))
         }
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
+
+  <section class="seal-band">
+    <div class="wrap">
+      <h2>Popular Services</h2>
+      <div class="seals">
+        <div class="medal gold"><span>Popular<br />services</span></div>
+        <div class="medal teal"><span>Government<br />services</span></div>
+        <div class="medal navy"><span>More<br />services</span></div>
+      </div>
+      <Ticker />
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <h2>Government Schemes Hub</h2>
+      <div class="tiles three">
+        {
+          schemeTiles.map((tile) => (
+            <article class="tile">
+              <div class:list={["tile-icon", tile.tone]}><Icon name={tile.icon} /></div>
+              <h3>{tile.title}</h3>
+              <p>{tile.text}</p>
+              <a class:list={["more", tile.tone]} href={tile.href}>Read more</a>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <h2>Digital Services</h2>
+      <div class="tiles three">
+        {
+          digitalTiles.map((tile) => (
+            <article class="tile">
+              <div class:list={["tile-icon", tile.tone]}><Icon name={tile.icon} /></div>
+              <h3>{tile.title}</h3>
+              <p>{tile.text}</p>
+              <a class:list={["more", tile.tone]} href={tile.href}>Read more</a>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="band about" id="about">
+    <div class="wrap">
+      <div class="about-card">
+        <div>
+          <h2>About</h2>
+          <p>
+            Pragati Digital & Xerox Center at Rohini Park, Andada handles printing, typing, scheme forms, and exam applications in the shop.
+          </p>
+          <p class="tagline" lang="gu">{site.tagline}</p>
+        </div>
+        <div>
+          <p><a href={site.phoneTel}>{site.callLabel}</a></p>
+          <p>{site.location}</p>
+          <p>{site.hoursLong}</p>
+        </div>
+      </div>
+    </div>
+  </section>
 </Base>

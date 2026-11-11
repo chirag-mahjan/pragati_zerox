@@ -1,19 +1,25 @@
 ---
 import Base from "../layouts/Base.astro";
+import Icon from "../components/Icon.astro";
 import { serviceGroups } from "../data/site";
 ---
 
 <Base title="Xerox & Digital Services" description="Printing, typing, tickets, SIM, and bill payment at Pragati Digital & Xerox Center.">
-  <div class="wrap">
-    <header class="page-head">
+  <header class="page-intro">
+    <div class="wrap">
       <h1>Xerox & Digital Services</h1>
-      <p>The full list is on this page. Come to the shop, or call, and we will do the work with you.</p>
-    </header>
-    <div class="groups">
+      <p>Copies, cards, typing, tickets, and bill payments. The full list is here. Come to the shop or call, and we do the work with you.</p>
+    </div>
+  </header>
+  <div class="page">
+    <div class="wrap groups">
       {
         serviceGroups.map((group) => (
-          <section class:list={["group", group.tone]} id={group.id}>
-            <h2>{group.title}</h2>
+          <section class="group" id={group.id}>
+            <div class="group-head">
+              <div class:list={["tile-icon", group.tone]}><Icon name={group.icon} /></div>
+              <h2>{group.title}</h2>
+            </div>
             <ul>
               {group.items.map((item) => (
                 <li>{item}</li>

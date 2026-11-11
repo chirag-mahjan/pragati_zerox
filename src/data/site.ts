@@ -2,6 +2,8 @@ export const site = {
   name: "PRAGATI DIGITAL & XEROX CENTER",
   lockupTop: "PRAGATI",
   lockupBottom: "XEROX & GOVT. SCHEMES CENTER",
+  heroTitle: "Pragati Xerox & Govt. Schemes Center",
+  heroSub: "Your trusted partner for all digital services & government applications",
   phoneDisplay: "9016769144",
   phoneTel: "tel:+919016769144",
   callLabel: "Call Now 9016769144",
@@ -15,10 +17,20 @@ export const site = {
 
 export const nav = [
   { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
-  { href: "/government-schemes", label: "Government Schemes" },
+  { href: "/services", label: "Xerox & Printing" },
+  { href: "/government-schemes", label: "Govt. Schemes" },
+  { href: "/services#digital", label: "Digital Services" },
+  { href: "/#about", label: "About" },
+  { href: "/contact", label: "Contact" },
+];
+
+export const quickLinks = [
+  { href: "/", label: "Home" },
+  { href: "/services", label: "Xerox & Printing" },
+  { href: "/government-schemes", label: "Govt. Schemes" },
+  { href: "/services#digital", label: "Digital Services" },
   { href: "/exam-notifications", label: "Exam Notifications" },
-  { href: "/contact", label: "Contact Us" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export const serviceGroups = [
@@ -26,6 +38,7 @@ export const serviceGroups = [
     id: "printing",
     title: "Printing, Copying & Finishing",
     tone: "teal",
+    icon: "print",
     items: [
       "B&W xerox",
       "Color xerox",
@@ -43,17 +56,14 @@ export const serviceGroups = [
     id: "writing",
     title: "Writing & Document Creation",
     tone: "gold",
-    items: [
-      "Gujarati typing",
-      "English typing",
-      "Biodata writing",
-      "Resume writing",
-    ],
+    icon: "form",
+    items: ["Gujarati typing", "English typing", "Biodata writing", "Resume writing"],
   },
   {
-    id: "travel",
+    id: "digital",
     title: "Travel, Telecom & Utilities",
     tone: "teal",
+    icon: "plane",
     items: [
       "Railway tickets",
       "Bus tickets",
@@ -66,33 +76,21 @@ export const serviceGroups = [
   },
 ];
 
-export const homeCategories = [
-  {
-    title: "Document & Print Hub",
-    text: "Xerox, color copies, lamination, binding, and card printing.",
-    href: "/services#printing",
-    seal: "popular",
-    tone: "teal",
-  },
-  {
-    title: "Government Schemes",
-    text: "Ayushman, E-Shram, ration card, certificates, and business forms.",
-    href: "/government-schemes",
-    seal: "government",
-    tone: "gold",
-  },
-  {
-    title: "Exam & Career Notifications",
-    text: "Current GPSC, GSSSB, railway, and other public exam notices.",
-    href: "/exam-notifications",
-    seal: "popular",
-    tone: "teal",
-  },
-  {
-    title: "Telecom & Travel Booking",
-    text: "Tickets, SIM work, recharges, scanning, and bill payments.",
-    href: "/services#travel",
-    seal: "more services",
-    tone: "gold",
-  },
+export const printTiles = [
+  { icon: "print", tone: "teal", title: "Xerox & Printing", text: "B&W and color copies, scanning", href: "/services#printing" },
+  { icon: "card", tone: "gold", title: "PVC Card Print", text: "Aadhaar, voter ID", href: "/services#printing" },
+  { icon: "scan", tone: "teal", title: "Document Scan", text: "Scan and email", href: "/services#digital" },
+  { icon: "form", tone: "gold", title: "Document Card", text: "Scheme forms and applications", href: "/government-schemes" },
+];
+
+export const schemeTiles = [
+  { icon: "card", tone: "gold", title: "Ayushman Card", text: "Scheme forms", href: "/government-schemes#health" },
+  { icon: "id", tone: "gold", title: "E-Shram Card", text: "Benefit forms", href: "/government-schemes#labor" },
+  { icon: "form", tone: "gold", title: "Income Certificates", text: "Apply and forms", href: "/government-schemes#certificates" },
+];
+
+export const digitalTiles = [
+  { icon: "form", tone: "teal", title: "Online Applications", text: "Exam forms at the shop", href: "/exam-notifications" },
+  { icon: "shield", tone: "teal", title: "Vehicle Insurance", text: "Insurance forms", href: "/government-schemes#business" },
+  { icon: "plane", tone: "teal", title: "Booking", text: "Rail and air tickets", href: "/services#digital" },
 ];
