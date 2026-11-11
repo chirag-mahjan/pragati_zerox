@@ -1,12 +1,34 @@
 ---
 import Base from "../layouts/Base.astro";
 import Ticker from "../components/Ticker.astro";
+import Outbound from "../components/Outbound.astro";
 import { site } from "../data/site";
 import updates from "../data/updates.json";
 
 const hasSample = updates.exams.some((exam) => exam.sample);
 const readFrom = updates.sources.filter((source) => source.ok && source.count > 0);
 const coverage = updates.coverage ?? [];
+const pageSize = 8;
+
+const centerNames: Record<string, string> = {
+  gpsc: "GPSC",
+  gsssb: "GSSSB",
+  mppsc: "MPPSC",
+  uppsc: "UPPSC",
+  "employment-news": "Employment News",
+  sample: "Sample",
+};
+
+function centerName(exam: { sourceId?: string; source?: string }) {
+  return centerNames[exam.sourceId || ""] || exam.source || "Notice";
+}
+
+const stateChoices = ["Gujarat", "Maharashtra", "Uttar Pradesh", "Bihar", "Madhya Pradesh", "National"];
+const states = [
+  ...stateChoices,
+  ...new Set(updates.exams.map((exam) => exam.state).filter((state) => state && !stateChoices.includes(state))),
+];
+const centers = [...new Set(updates.exams.map((exam) => centerName(exam)))].sort((a, b) => a.localeCompare(b));
 ---
 
 <Base title="Exam Notifications" description="Exam notices for visitors of Pragati Digital & Xerox Center. Apply at the shop.">
@@ -38,27 +60,54 @@ const coverage = updates.coverage ?? [];
           </ul>
         )
       }
-      <div class="table-wrap" style="margin-top: 1rem">
+      <div class="exam-tools">
+        <label>
+          State
+          <select id="exam-state">
+            <option value="">All states</option>
+            {states.map((state) => <option value={state}>{state}</option>)}
+          </select>
+        </label>
+        <label>
+          Center
+          <select id="exam-center">
+            <option value="">All centers</option>
+            {centers.map((center) => <option value={center}>{center}</option>)}
+          </select>
+        </label>
+        <label>
+          Sort
+          <select id="exam-sort">
+            <option value="state">State, then center</option>
+            <option value="center">Center, then state</option>
+          </select>
+        </label>
+      </div>
+      <p class="exam-summary" id="exam-summary"></p>
+      <p class="sample-note" id="exam-empty" hidden>No notices for that state and center.</p>
+      <div class="table-wrap" id="exam-table" style="margin-top: 1rem">
         <table>
           <thead>
             <tr>
               <th>State</th>
+              <th>Center</th>
               <th>Title</th>
               <th>Qualification</th>
               <th>Last date</th>
               <th>Apply At Shop</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="exam-rows">
             {
               updates.exams.map((exam) => (
-                <tr>
+                <tr data-state={exam.state || ""} data-center={centerName(exam)} data-title={exam.name}>
                   <td>{exam.state || "—"}</td>
+                  <td>{centerName(exam)}</td>
                   <td>
                     {exam.name}
                     {exam.sample && <span class="sample-tag">sample</span>}
                     {exam.url ? (
-                      <a class="source-link" href={exam.url}>{exam.source}</a>
+                      <Outbound class="source-link" href={exam.url}>{exam.source}</Outbound>
                     ) : (
                       <span class="source-link">{exam.source}</span>
                     )}
@@ -78,6 +127,7 @@ const coverage = updates.coverage ?? [];
           </tbody>
         </table>
       </div>
+      <nav class="pager" id="exam-pager" aria-label="Exam notice pages"></nav>
       <p class="source-line">
         {
           readFrom.length
@@ -90,3 +140,87 @@ const coverage = updates.coverage ?? [];
     </div>
   </div>
 </Base>
+
+<script define:vars={{ pageSize }}>
+  const body = document.querySelector("#exam-rows");
+  const table = document.querySelector("#exam-table");
+  const stateSel = document.querySelector("#exam-state");
+  const centerSel = document.querySelector("#exam-center");
+  const sortSel = document.querySelector("#exam-sort");
+  const pager = document.querySelector("#exam-pager");
+  const empty = document.querySelector("#exam-empty");
+  const summary = document.querySelector("#exam-summary");
+  if (!body || !table || !stateSel || !centerSel || !sortSel || !pager || !empty || !summary) return;
+  const rows = [...body.querySelectorAll("tr")];
+  let page = 1;
+
+  function render() {
+    const state = stateSel.value;
+    const center = centerSel.value;
+    const sort = sortSel.value;
+    const matched = rows.filter((row) => {
+      return (state === "" || row.dataset.state === state) && (center === "" || row.dataset.center === center);
+    });
+    matched.sort((a, b) => {
+      const primary = sort === "center" ? "center" : "state";
+      const secondary = sort === "center" ? "state" : "center";
+      const first = (a.dataset[primary] || "").localeCompare(b.dataset[primary] || "", undefined, { sensitivity: "base" });
+      if (first) return first;
+      const second = (a.dataset[secondary] || "").localeCompare(b.dataset[secondary] || "", undefined, { sensitivity: "base" });
+      if (second) return second;
+      return (a.dataset.title || "").localeCompare(b.dataset.title || "", undefined, { sensitivity: "base" });
+    });
+    const pages = Math.max(1, Math.ceil(matched.length / pageSize));
+    if (page > pages) page = pages;
+    const start = (page - 1) * pageSize;
+    const visible = new Set(matched.slice(start, start + pageSize));
+    for (const row of rows) body.appendChild(row);
+    for (const row of matched) body.appendChild(row);
+    for (const row of rows) row.hidden = !visible.has(row);
+    empty.hidden = matched.length !== 0;
+    table.hidden = matched.length === 0;
+    const from = matched.length ? start + 1 : 0;
+    const to = Math.min(start + pageSize, matched.length);
+    summary.textContent = matched.length ? `Showing ${from}–${to} of ${matched.length}` : "";
+    pager.replaceChildren();
+    if (matched.length > pageSize) {
+      const prev = document.createElement("button");
+      prev.type = "button";
+      prev.textContent = "Previous";
+      prev.disabled = page === 1;
+      prev.addEventListener("click", () => {
+        page -= 1;
+        render();
+      });
+      pager.appendChild(prev);
+      for (let number = 1; number <= pages; number += 1) {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = String(number);
+        if (number === page) button.setAttribute("aria-current", "page");
+        button.addEventListener("click", () => {
+          page = number;
+          render();
+        });
+        pager.appendChild(button);
+      }
+      const next = document.createElement("button");
+      next.type = "button";
+      next.textContent = "Next";
+      next.disabled = page === pages;
+      next.addEventListener("click", () => {
+        page += 1;
+        render();
+      });
+      pager.appendChild(next);
+    }
+  }
+
+  for (const control of [stateSel, centerSel, sortSel]) {
+    control.addEventListener("change", () => {
+      page = 1;
+      render();
+    });
+  }
+  render();
+</script>

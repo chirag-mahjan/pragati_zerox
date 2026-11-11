@@ -431,7 +431,7 @@ a {
   display: flex;
   gap: 2.2rem;
   width: max-content;
-  animation: ticker 46s linear infinite;
+  animation: ticker 96s linear infinite;
 }
 
 .ticker-track a,
@@ -571,7 +571,7 @@ a {
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 52rem;
+  min-width: 62rem;
 }
 
 th,
@@ -620,6 +620,83 @@ th {
 
 .apply-box strong {
   color: var(--navy);
+}
+
+.primary-tag {
+  display: inline-block;
+  margin-left: 0.35rem;
+  background: var(--gold);
+  color: var(--navy);
+  border-radius: 999px;
+  padding: 0.05rem 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.exam-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: 1rem 0 0.4rem;
+}
+
+.exam-tools label {
+  display: grid;
+  gap: 0.25rem;
+  color: var(--navy);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.exam-tools select {
+  min-width: 12rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  color: var(--navy);
+  font: inherit;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  padding: 0.45rem 0.6rem;
+}
+
+.exam-summary {
+  margin: 0.6rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.pager {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.8rem;
+}
+
+.pager button {
+  border: 0;
+  border-radius: 8px;
+  background: var(--navy);
+  color: white;
+  font: inherit;
+  font-weight: 700;
+  padding: 0.4rem 0.75rem;
+  cursor: pointer;
+}
+
+.pager button[aria-current="page"] {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.pager button:disabled {
+  opacity: 0.45;
+  cursor: default;
 }
 
 .contact-grid {
@@ -706,7 +783,7 @@ th {
 }
 
 .map-card {
-  height: 140px;
+  min-height: 140px;
   border-radius: 10px;
   background:
     linear-gradient(rgb(255 255 255 / 8%) 1px, transparent 1px),
@@ -717,6 +794,20 @@ th {
   place-items: center;
   text-align: center;
   padding: 0.8rem;
+  color: white;
+  text-decoration: none;
+}
+
+a.map-card:hover {
+  outline: 3px solid var(--gold);
+}
+
+.map-open {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 800;
 }
 
 .map-pin {

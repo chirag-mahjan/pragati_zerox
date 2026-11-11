@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
+import Outbound from "../components/Outbound.astro";
 import { site } from "../data/site";
 import updates from "../data/updates.json";
 ---
@@ -34,7 +35,7 @@ import updates from "../data/updates.json";
             <ul class="notice-list">
               {updates.schemes.notices.map((notice) => (
                 <li>
-                  <a href={notice.url}>{notice.title}</a>
+                  <Outbound href={notice.url}>{notice.title}</Outbound>
                   <span class="source-link">{notice.source}</span>
                 </li>
               ))}

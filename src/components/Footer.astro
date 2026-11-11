@@ -6,18 +6,23 @@ import { site, quickLinks } from "../data/site";
   <div class="wrap footer-grid">
     <div>
       <h2>Contact</h2>
-      <p><a href={site.phoneTel}>{site.phoneDisplay}</a></p>
+      <p>
+        <a href={site.phoneTel}>{site.phoneDisplay}</a>
+        <span class="primary-tag">Primary</span>
+      </p>
+      <p><a href={site.phoneAltTel}>{site.phoneAltDisplay}</a></p>
       <p>{site.hours}</p>
       <p class="tagline" lang="gu">{site.tagline}</p>
     </div>
     <div>
       <h2>Location</h2>
-      <div class="map-card">
+      <a class="map-card" href={site.mapUrl} target="_blank" rel="noopener noreferrer">
         <div>
           <div class="map-pin" aria-hidden="true"></div>
           <strong>{site.location}</strong>
+          <span class="map-open">Open map</span>
         </div>
-      </div>
+      </a>
     </div>
     <div>
       <h2>Quick links</h2>

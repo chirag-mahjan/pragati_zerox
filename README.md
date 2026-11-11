@@ -1,6 +1,6 @@
 # PRAGATI DIGITAL & XEROX CENTER
 
-View-only site for the shop at Rohini Park, Andada. Visitors can read services, schemes, and exam notices, then call or walk in. There is no application form, payment, or customer account.
+View-only site for the shop at Shop 8, Rohini Park, Andada, Ankleshwar, Bharuch, Gujarat, 393010. Visitors can read services, schemes, and exam notices, then call or walk in. There is no application form, payment, or customer account.
 
 ## Run it on this laptop
 

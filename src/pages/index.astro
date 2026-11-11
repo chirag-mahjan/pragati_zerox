@@ -109,13 +109,17 @@ import { site, printTiles, schemeTiles, digitalTiles } from "../data/site";
         <div>
           <h2>About</h2>
           <p>
-            Pragati Digital & Xerox Center at Rohini Park, Andada handles printing, typing, scheme forms, and exam applications in the shop.
+            Pragati Digital & Xerox Center is run by {site.owners.join(" and ")}. The shop handles printing, typing, scheme forms, and exam applications.
           </p>
+          <p>{site.location}</p>
           <p class="tagline" lang="gu">{site.tagline}</p>
         </div>
         <div>
-          <p><a href={site.phoneTel}>{site.callLabel}</a></p>
-          <p>{site.location}</p>
+          <p>
+            <a href={site.phoneTel}>{site.phoneDisplay}</a>
+            <span class="primary-tag">Primary</span>
+          </p>
+          <p><a href={site.phoneAltTel}>{site.phoneAltDisplay}</a></p>
           <p>{site.hoursLong}</p>
         </div>
       </div>

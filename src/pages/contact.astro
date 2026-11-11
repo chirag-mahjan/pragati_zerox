@@ -3,7 +3,7 @@ import Base from "../layouts/Base.astro";
 import { site } from "../data/site";
 ---
 
-<Base title="Contact" description="Call or visit Pragati Digital & Xerox Center at Rohini Park, Andada.">
+<Base title="Contact" description="Call or visit Pragati Digital & Xerox Center at Shop 8, Rohini Park, Andada.">
   <header class="page-intro">
     <div class="wrap">
       <h1>Contact</h1>
@@ -16,11 +16,22 @@ import { site } from "../data/site";
         <h2>Visit or call</h2>
         <dl class="facts">
           <div>
-            <dt>Phone</dt>
-            <dd><a href={site.phoneTel}>{site.phoneDisplay}</a></dd>
+            <dt>Names</dt>
+            <dd>{site.owners.join(", ")}</dd>
           </div>
           <div>
-            <dt>Location</dt>
+            <dt>Primary phone</dt>
+            <dd>
+              <a href={site.phoneTel}>{site.phoneDisplay}</a>
+              <span class="primary-tag">Primary</span>
+            </dd>
+          </div>
+          <div>
+            <dt>Phone</dt>
+            <dd><a href={site.phoneAltTel}>{site.phoneAltDisplay}</a></dd>
+          </div>
+          <div>
+            <dt>Address</dt>
             <dd>{site.location}</dd>
           </div>
           <div>
@@ -35,12 +46,13 @@ import { site } from "../data/site";
       <aside class="contact-card">
         <h2>{site.name}</h2>
         <p>Bring your papers to the counter. We print, type, and help with scheme and exam forms in the shop.</p>
-        <div class="map-card" style="margin-top: 1rem; color: white">
+        <a class="map-card" href={site.mapUrl} target="_blank" rel="noopener noreferrer" style="margin-top: 1rem">
           <div>
             <div class="map-pin" aria-hidden="true"></div>
             <strong>{site.location}</strong>
+            <span class="map-open">Open map</span>
           </div>
-        </div>
+        </a>
       </aside>
     </div>
   </div>
