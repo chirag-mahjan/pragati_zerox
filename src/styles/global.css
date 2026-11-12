@@ -393,6 +393,10 @@ body {
   margin: 0 auto 1.5rem;
 }
 
+a.medal {
+  text-decoration: none;
+}
+
 .medal {
   width: 100%;
   aspect-ratio: 1;

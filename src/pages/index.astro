@@ -41,9 +41,9 @@ import { site, printTiles, schemeTiles, digitalTiles } from "../data/site";
     <div class="wrap">
       <h2>Popular Services</h2>
       <div class="seals">
-        <div class="medal gold"><span>Loan<br />services</span></div>
-        <div class="medal teal"><span>CSC<br />services</span></div>
-        <div class="medal navy"><span>Gov<br />services</span></div>
+        <a class="medal gold" href="/services#loans"><span>Loan<br />services</span></a>
+        <a class="medal teal" href="/services#digital"><span>CSC<br />services</span></a>
+        <a class="medal navy" href="/government-schemes"><span>Gov<br />services</span></a>
       </div>
       <Ticker />
     </div>
@@ -91,7 +91,7 @@ import { site, printTiles, schemeTiles, digitalTiles } from "../data/site";
         <div>
           <h2>About</h2>
           <p>
-            Pragati Digital & Xerox Center is run by {site.owners.join(" and ")}. The shop handles printing, typing, scheme forms, and exam applications.
+            Pragati Digital & Xerox Center is a CSC, run by {site.owners.join(" and ")}. The shop handles printing, typing, CSC applications, scheme forms, and exam applications.
           </p>
           <p>{site.location}</p>
           <p class="tagline" lang="gu">{site.tagline}</p>

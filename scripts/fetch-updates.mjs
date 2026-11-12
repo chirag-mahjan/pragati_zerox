@@ -27,17 +27,7 @@ const schemeGroups = [
   {
     id: "business",
     title: "Business",
-    items: [
-      "GST registration and filing",
-      "UDYAM / MSME",
-      "FSSAI",
-      "Driving licence form assistance",
-      "Vehicle insurance",
-      "All types of insurance",
-      "Atal Pension Yojana",
-      "PMSBY",
-      "PMJJBY",
-    ],
+    items: ["UDYAM / MSME", "FSSAI", "Vehicle insurance"],
   },
 ];
 
@@ -613,40 +603,47 @@ async function fetchSanman() {
   };
 }
 
-async function fetchIkhedut() {
-  const fileUrl = "https://ikhedut.gujarat.gov.in/site/scheme.json";
-  const response = await grab(fileUrl);
-  if (!response.ok) {
-    return { portal: null, source: sourceResult("ikhedut", "iKhedut", "", false, 0, `HTTP ${response.status}`) };
-  }
-  let rows = [];
-  try {
-    rows = JSON.parse(response.text).scheme || [];
-  } catch {
-    return { portal: null, source: sourceResult("ikhedut", "iKhedut", "", false, 0, "The public scheme file was not valid JSON.") };
-  }
-  const groups = [];
-  for (const row of rows) {
-    if (Number(row.componentheaderlanguageid) !== 1 || Number(row.departmentlanguageid) !== 1) continue;
-    const title = decode(String(row.departmentname || "")).trim() || "Other";
-    const name = decode(String(row.componentname || "")).trim();
-    if (!name) continue;
-    let group = groups.find((item) => item.title === title);
-    if (!group) {
-      group = { title, items: [] };
-      groups.push(group);
-    }
-    if (!group.items.includes(name)) group.items.push(name);
-  }
-  const count = groups.reduce((sum, group) => sum + group.items.length, 0);
+const ikhedutGroups = [
+  {
+    title: "Agriculture",
+    items: ["Tractor", "Rotavator", "Plough", "Thresher", "Tarpaulin", "Crop storage structure", "Seeds", "Fertilizer", "Crop protection equipment"],
+  },
+  {
+    title: "Horticulture",
+    items: ["Fruit, vegetable, and flower cultivation", "Greenhouse", "Net house", "Plastic mulching", "Cold storage", "Pack house"],
+  },
+  {
+    title: "Animal husbandry",
+    items: ["Purchase of milch animals for a dairy farm", "Cattle shed", "Chaff cutter", "Milking machine", "Fodder seed", "Livestock insurance"],
+  },
+  {
+    title: "Fisheries",
+    items: ["Fishing boat", "Fishing net", "Ice box", "Aerators", "Construction of a new fish pond"],
+  },
+  {
+    title: "Soil and water conservation",
+    items: ["Farm pond", "Underground tank", "Check-dam repair", "Land improvement"],
+  },
+  {
+    title: "Gujarat Agro Industries Corporation",
+    items: ["Solar pump", "Agro processing units", "Equipment for value addition of farm produce"],
+  },
+  {
+    title: "Forest department",
+    items: ["Tree planting on farm boundaries", "Bamboo cultivation", "Assistance for growing medicinal plants"],
+  },
+];
+
+function fetchIkhedut() {
+  const count = ikhedutGroups.reduce((sum, group) => sum + group.items.length, 0);
   return {
     portal: {
       id: "ikhedut",
       title: "iKhedut",
-      note: "Open components from the public scheme file, grouped by department.",
-      groups,
+      note: "The portal gives farmers a subsidy for equipment and infrastructure under these departments.",
+      groups: ikhedutGroups,
     },
-    source: sourceResult("ikhedut", "iKhedut", "", count > 0, count, "English component names from the public scheme file the portal page loads."),
+    source: sourceResult("ikhedut", "iKhedut", "", true, count, "Shop list of iKhedut subsidy help, written in English. The daily job keeps this list."),
   };
 }
 
@@ -867,6 +864,10 @@ function mergePortals(previousPortals, freshPortals) {
     const fresh = freshPortals.find((portal) => portal.id === id);
     if (!fresh) {
       if (saved) portals.push(saved);
+      continue;
+    }
+    if (id === "ikhedut") {
+      portals.push(fresh);
       continue;
     }
     if (!saved) {

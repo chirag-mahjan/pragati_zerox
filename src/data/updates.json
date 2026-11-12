@@ -107,15 +107,9 @@
         "id": "business",
         "title": "Business",
         "items": [
-          "GST registration and filing",
           "UDYAM / MSME",
           "FSSAI",
-          "Driving licence form assistance",
-          "Vehicle insurance",
-          "All types of insurance",
-          "Atal Pension Yojana",
-          "PMSBY",
-          "PMJJBY"
+          "Vehicle insurance"
         ]
       }
     ],
@@ -174,67 +168,77 @@
       {
         "id": "ikhedut",
         "title": "iKhedut",
-        "note": "Open components from the public scheme file, grouped by department.",
+        "note": "The portal gives farmers a subsidy for equipment and infrastructure under these departments.",
         "groups": [
           {
-            "title": "Gujarat Organic Products Certification Agency (GOPCA)",
+            "title": "Agriculture",
             "items": [
-              "Residue testing/Namuna Chakasni assistance for organic farming"
+              "Tractor",
+              "Rotavator",
+              "Plough",
+              "Thresher",
+              "Tarpaulin",
+              "Crop storage structure",
+              "Seeds",
+              "Fertilizer",
+              "Crop protection equipment"
             ]
           },
           {
             "title": "Horticulture",
             "items": [
-              "AREA EXPANSION PROGRAMME OF FRUIT CROPS THROUGH MULTI-LAYERED PLANTATION",
-              "PROGRAM TO OBTAIN QUALITY PRODUCE THROUGH FIELD COVER IN FRUIT CROPS",
-              "TO PROMOTE RHIZOMATIC (GINGER, TURMERIC) CROPS PROGRAMME",
-              "HARVESTING EQUIPMENT (NMEO-OP)",
-              "REJUVENATION OF OLD ORCHARDS (MANGO & LEMON)",
-              "MANGO & GUAVA – FRUIT PRODUCTIVITY ENHANCEMENT PROGRAMME",
-              "MAINTENANCE AND INPUT COSTS FOR INTERCROPPING IN OIL PALM",
-              "TO PROMOTE NATURAL FARMING IN VEGETABLE CROPS"
+              "Fruit, vegetable, and flower cultivation",
+              "Greenhouse",
+              "Net house",
+              "Plastic mulching",
+              "Cold storage",
+              "Pack house"
             ]
           },
           {
-            "title": "Agriculture",
+            "title": "Animal husbandry",
             "items": [
-              "Certified seed Distribution",
-              "Demonstration",
-              "Registration, inspection, certification, transportation fees Assistance for organic farming",
-              "Input Sahay for organic farming",
-              "Assistance in certified seeds under NMEO (Oilseeds) Scheme"
+              "Purchase of milch animals for a dairy farm",
+              "Cattle shed",
+              "Chaff cutter",
+              "Milking machine",
+              "Fodder seed",
+              "Livestock insurance"
             ]
           },
           {
             "title": "Fisheries",
             "items": [
-              "Construction of Plant/storage of minimum 50 tonne capacity (PMMSY)",
-              "Subsidy on purchase of shrimp seed and feed (Brackishwater)",
-              "Comprehensive package- Assistance for associated equipment and materials to obtain brackish water",
-              "Subsidy on seaweed culture (Raft/Tube net)",
-              "Wooden Boat Replacement scheme for IBM Boats (Marine State)",
-              "Assistance for underprivileged women in fish selling tools (Inland Scheme- 101/02, FSH-2) (State)",
-              "Boat-Net subsidy (Inland Scheme- 101/02, FSH-2) (State)",
-              "Fish seed stocking subsidy (Inland Scheme - 101/02, FSH-2) (State)",
-              "Insulated Box purchase subsidy (Inland Scheme- 101/02, FSH-2) (State)",
-              "Fish seed rearing by Tribal Fishermen (Inland Scheme- 796/02, FSH-2) (State)",
-              "Subsidy to Fishery Co-operative Societies, Private Units, Entrepreneurs and others for establishment of Fish Processing Units (Marine State)"
+              "Fishing boat",
+              "Fishing net",
+              "Ice box",
+              "Aerators",
+              "Construction of a new fish pond"
             ]
           },
           {
-            "title": "Registrar of Co-Operative Societies, Gujarat State, Gandhinagar",
+            "title": "Soil and water conservation",
             "items": [
-              "Scheme to provide interest subsidy and capital subsidy on loans for construction of godowns 25%",
-              "Scheme to provide interest subsidy and capital subsidy on loans for construction of godowns 73%"
+              "Farm pond",
+              "Underground tank",
+              "Check-dam repair",
+              "Land improvement"
             ]
           },
           {
-            "title": "Animal Husbandry",
+            "title": "Gujarat Agro Industries Corporation",
             "items": [
-              "Scheme to give subsidy on purchase of 2 indigenous cow for natural farming purpose to Schedule Tribe beneficiary",
-              "STATEWIDE INTENSIVE CASTRATION SCHEME",
-              "Scheme to give subsidy on purchase of 2 indigenous cow for natural farming purpose to general category beneficiary",
-              "Scheme to give subsidy on purchase of 2 indigenous cow for natural farming purpose to Schedule Caste beneficiary"
+              "Solar pump",
+              "Agro processing units",
+              "Equipment for value addition of farm produce"
+            ]
+          },
+          {
+            "title": "Forest department",
+            "items": [
+              "Tree planting on farm boundaries",
+              "Bamboo cultivation",
+              "Assistance for growing medicinal plants"
             ]
           }
         ]
@@ -1070,8 +1074,8 @@
       "name": "iKhedut",
       "url": "",
       "ok": true,
-      "count": 31,
-      "note": "English component names from the public scheme file the portal page loads."
+      "count": 36,
+      "note": "Shop list of iKhedut subsidy help, written in English. The daily job keeps this list."
     },
     {
       "id": "rrb",
