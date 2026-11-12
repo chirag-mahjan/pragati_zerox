@@ -246,10 +246,20 @@ body {
 }
 
 .hero .lede {
-  margin: 0 0 1.4rem;
+  margin: 0 0 1rem;
   max-width: 28rem;
   color: var(--muted);
   font-size: 1.02rem;
+}
+
+.csc-logo {
+  display: block;
+  width: min(100%, 220px);
+  height: auto;
+  margin: 0 0 1.15rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 22px rgb(11 31 58 / 8%);
 }
 
 .button {
