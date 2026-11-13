@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-11T13:08:23.520Z",
+  "fetchedAt": "2026-11-13T05:53:13.627Z",
   "ticker": [
     {
       "text": "Gujarat: GPSC 60/2026-27: Executive Engineer (Civil), Class-1, (GMB) — 20 November 2026",
@@ -115,57 +115,6 @@
     ],
     "portals": [
       {
-        "id": "sanman",
-        "title": "Sanman Portal",
-        "groups": [
-          {
-            "title": "Building and other construction workers",
-            "items": [
-              "Education assistance",
-              "Maternity assistance before delivery",
-              "Medical assistance claim",
-              "Skilled worker assistance",
-              "Funeral assistance",
-              "Pradhan Mantri Jeevan Jyoti Bima Yojana",
-              "Occupational disease assistance",
-              "Special coaching",
-              "Nanaji Deshmukh housing scheme",
-              "Accidental death assistance",
-              "Medical assistance",
-              "Maternity assistance and Mukhyamantri Bhagyalakshmi Bond",
-              "PhD assistance",
-              "Housing subsidy (closed on the portal)"
-            ]
-          },
-          {
-            "title": "Labour welfare board",
-            "items": [
-              "Maternity assistance and Beti Protsahan",
-              "Laptop purchase assistance",
-              "Worker cycle subsidy",
-              "Women worker marriage assistance",
-              "Worker accidental death assistance",
-              "Worker accident assistance",
-              "Worker home-loan interest subsidy",
-              "Worker home-town scheme",
-              "Worker full medical checkup",
-              "Education award, standard 12",
-              "Education award, standard 10",
-              "Higher education assistance",
-              "Worker funeral assistance"
-            ]
-          },
-          {
-            "title": "Rural workers welfare board",
-            "items": [
-              "Funeral assistance for unorganized workers",
-              "Silicosis assistance",
-              "Portable housing for unorganized salt-industry workers"
-            ]
-          }
-        ]
-      },
-      {
         "id": "ikhedut",
         "title": "iKhedut",
         "note": "The portal gives farmers a subsidy for equipment and infrastructure under these departments.",
@@ -242,6 +191,57 @@
             ]
           }
         ]
+      },
+      {
+        "id": "sanman",
+        "title": "Sanman Portal",
+        "groups": [
+          {
+            "title": "Building and other construction workers",
+            "items": [
+              "Education assistance",
+              "Maternity assistance before delivery",
+              "Medical assistance claim",
+              "Skilled worker assistance",
+              "Funeral assistance",
+              "Pradhan Mantri Jeevan Jyoti Bima Yojana",
+              "Occupational disease assistance",
+              "Special coaching",
+              "Nanaji Deshmukh housing scheme",
+              "Accidental death assistance",
+              "Medical assistance",
+              "Maternity assistance and Mukhyamantri Bhagyalakshmi Bond",
+              "PhD assistance",
+              "Housing subsidy (closed on the portal)"
+            ]
+          },
+          {
+            "title": "Labour welfare board",
+            "items": [
+              "Maternity assistance and Beti Protsahan",
+              "Laptop purchase assistance",
+              "Worker cycle subsidy",
+              "Women worker marriage assistance",
+              "Worker accidental death assistance",
+              "Worker accident assistance",
+              "Worker home-loan interest subsidy",
+              "Worker home-town scheme",
+              "Worker full medical checkup",
+              "Education award, standard 12",
+              "Education award, standard 10",
+              "Higher education assistance",
+              "Worker funeral assistance"
+            ]
+          },
+          {
+            "title": "Rural workers welfare board",
+            "items": [
+              "Funeral assistance for unorganized workers",
+              "Silicosis assistance",
+              "Portable housing for unorganized salt-industry workers"
+            ]
+          }
+        ]
       }
     ],
     "notices": [
@@ -258,6 +258,13 @@
         "source": "Press Information Bureau",
         "url": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2335024",
         "sample": false
+      },
+      {
+        "title": "केंद्रीय पर्यावरण मंत्री ने लीडआईटी के उद्योग सदस्यों और परियोजना के भागीदारों से बातचीत की",
+        "state": "National",
+        "source": "Press Information Bureau",
+        "url": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2335563",
+        "sample": false
       }
     ]
   },
@@ -266,7 +273,7 @@
       "state": "Gujarat",
       "count": 14,
       "ok": true,
-      "note": "Open recruitment table Public notification search, first page"
+      "note": "fetch failed fetch failed"
     },
     {
       "state": "Maharashtra",
@@ -276,7 +283,7 @@
     },
     {
       "state": "Uttar Pradesh",
-      "count": 9,
+      "count": 8,
       "ok": true,
       "note": "Live advertisement lines on the public homepage"
     },
@@ -290,7 +297,7 @@
       "state": "Madhya Pradesh",
       "count": 12,
       "ok": true,
-      "note": "Latest advertisement PDFs on the public homepage. The date is the notice date printed in the file name, not an invented last date."
+      "note": "fetch failed"
     }
   ],
   "exams": [
@@ -561,17 +568,6 @@
     {
       "action": "Apply At Shop",
       "sample": false,
-      "name": "UPESSC UP Primary Teacher (Super TET) Online Form 2026",
-      "qualification": "See the official advertisement",
-      "date": "Last date 11 November 2026. Confirm the notice at the shop.",
-      "state": "Uttar Pradesh",
-      "sourceId": "roundup",
-      "source": "UPESSC",
-      "url": ""
-    },
-    {
-      "action": "Apply At Shop",
-      "sample": false,
       "name": "UP Bulandshahar ECCE Educator Online Form 2026",
       "qualification": "See the official advertisement",
       "date": "Last date 18 November 2026. Confirm the notice at the shop.",
@@ -722,17 +718,6 @@
       "sourceId": "mppsc",
       "source": "Madhya Pradesh Public Service Commission",
       "url": "https://mppsc.mp.gov.in/uploads/advertisement/Vigyapti_Assistant_Professor_Botany_Exam_2024_Dated_27_10_2026.pdf"
-    },
-    {
-      "action": "Apply At Shop",
-      "sample": false,
-      "name": "Army 10+2 TES 57th Online Form 2026",
-      "qualification": "See the official advertisement",
-      "date": "Last date 12 November 2026. Confirm the notice at the shop.",
-      "state": "National",
-      "sourceId": "roundup",
-      "source": "Army 10+2 TES 57th",
-      "url": ""
     },
     {
       "action": "Apply At Shop",
@@ -991,27 +976,27 @@
   "sources": [
     {
       "id": "gpsc",
-      "name": "GPSC",
-      "url": "https://gpsc.gujarat.gov.in/RecruitmentOpen",
-      "ok": true,
-      "count": 6,
-      "note": "Open recruitment table"
+      "name": "gpsc",
+      "url": "",
+      "ok": false,
+      "count": 0,
+      "note": "fetch failed"
     },
     {
       "id": "gsssb",
-      "name": "GSSSB",
-      "url": "https://gsssb.gujarat.gov.in/Notification",
-      "ok": true,
-      "count": 8,
-      "note": "Public notification search, first page"
+      "name": "gsssb",
+      "url": "",
+      "ok": false,
+      "count": 0,
+      "note": "fetch failed"
     },
     {
       "id": "mppsc",
-      "name": "MPPSC",
-      "url": "https://mppsc.mp.gov.in/",
-      "ok": true,
-      "count": 12,
-      "note": "Latest advertisement PDFs on the public homepage. The date is the notice date printed in the file name, not an invented last date."
+      "name": "mppsc",
+      "url": "",
+      "ok": false,
+      "count": 0,
+      "note": "fetch failed"
     },
     {
       "id": "uppsc",
@@ -1041,9 +1026,9 @@
       "id": "roundup",
       "name": "Recruitment roundup",
       "url": "",
-      "ok": true,
-      "count": 33,
-      "note": "Every online form whose printed last date is still ahead. The roundup site is not linked from the shop pages."
+      "ok": false,
+      "count": 0,
+      "note": "HTTP 403. No link to the roundup is published."
     },
     {
       "id": "majhi",
@@ -1058,16 +1043,16 @@
       "name": "Press Information Bureau",
       "url": "https://www.pib.gov.in/RssMain.aspx?ModId=6&Lang=2&Regid=3&reg=48",
       "ok": true,
-      "count": 2,
+      "count": 1,
       "note": "The official feed redirected to Hindi from this network."
     },
     {
       "id": "sanman",
-      "name": "Sanman Portal",
+      "name": "sanman",
       "url": "",
-      "ok": true,
-      "count": 30,
-      "note": "Scheme names from the three public board tables. The portal is not linked from this page."
+      "ok": false,
+      "count": 0,
+      "note": "fetch failed"
     },
     {
       "id": "ikhedut",
@@ -1083,7 +1068,7 @@
       "url": "https://rrb.indianrailways.gov.in/mumbai",
       "ok": false,
       "count": 0,
-      "note": "The public Mumbai notice endpoint returned an empty body, so no railway row was imported. rrbcdg.gov.in did not connect on an earlier check."
+      "note": "fetch failed"
     },
     {
       "id": "mpsc",
