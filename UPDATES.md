@@ -4,9 +4,11 @@ Phone, hours, and address live in `src/data/site.ts`. They are not written by th
 
 `node scripts/fetch-updates.mjs` reads public pages and writes `src/data/updates.json`. The site renders the ticker, scheme groups, scheme notices, and exam rows from that file. The script replaces sample exam rows when a fetch succeeds. If every exam source fails, the sample rows stay and each one is marked sample.
 
-The first run collects every online form whose printed last date is still ahead, including forms outside the five states. After that, the daily job adds only exams and portal services that were not already on the list, and it drops an exam once that last date has passed. A failed read does not wipe rows already saved. The site does not pull new notices by itself while someone is only looking at a page. A daily job on this computer rewrites `src/data/updates.json`, then rebuilds the static site. The local dev server refreshes when that file changes. A copy already published as plain files changes only after `npm run build`. Nothing is pushed to GitHub by this job, so a public URL stays as it was until someone publishes the new `dist` folder.
+The first run collects every online form whose printed last date is still ahead, including forms outside the five states. After that, the daily job adds only exams and portal services that were not already on the list, and it drops an exam once that last date has passed. A failed read does not wipe rows already saved. The site does not pull new notices by itself while someone is only looking at a page.
 
-`scripts/daily-update.ps1` runs both steps from this folder. The scheduled task **Pragati notice update** on this computer runs it every day at 8:00 AM India time. The next run is 12 November 2026 at 8:00 AM. The computer has to be on and someone has to be logged in, because the task is set to run only when a user is logged on. To run it by hand:
+GitHub Actions runs that fetch every day at 8:00 AM India time, from `.github/workflows/daily-update.yml`. The laptop can be off or out of battery. GitHub may start the job a few minutes after 8:00. When the notice file changes, the action commits it and pushes `main`. A Cloudflare Pages site connected to this repo then rebuilds from that push. To run it by hand, open the Actions tab and run **Daily notice update**.
+
+`scripts/daily-update.ps1` still fetches and rebuilds a local `dist` when someone runs it on this computer. The Windows task **Pragati notice update** is turned off, because it skipped the morning whenever the laptop was on battery or nobody was logged in. To run the local copy by hand:
 
 ```
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts\daily-update.ps1
