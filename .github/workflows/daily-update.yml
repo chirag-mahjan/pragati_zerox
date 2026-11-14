@@ -11,6 +11,8 @@ permissions:
 
 jobs:
   update:
+    # The deploy fork copies this file when it syncs. Only this repo should write notices.
+    if: github.repository == 'mahajan-yogeshree/pragati_zerox'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
