@@ -1,0 +1,29 @@
+name: Publish to deploy fork
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    if: github.repository == 'mahajan-yogeshree/pragati_zerox'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Update the deployed fork
+        env:
+          DEPLOY_FORK_TOKEN: ${{ secrets.DEPLOY_FORK_TOKEN }}
+        run: |
+          if [ -z "$DEPLOY_FORK_TOKEN" ]; then
+            echo "The fork was not updated. Add a repository secret named DEPLOY_FORK_TOKEN."
+            echo "It must be a GitHub token from chirag-mahjan with write access to chirag-mahjan/pragati_zerox."
+            exit 1
+          fi
+          git push --force "https://x-access-token:${DEPLOY_FORK_TOKEN}@github.com/chirag-mahjan/pragati_zerox.git" HEAD:main
