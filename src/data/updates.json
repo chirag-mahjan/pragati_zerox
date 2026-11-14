@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-13T05:53:13.627Z",
+  "fetchedAt": "2026-11-14T02:25:06.845Z",
   "ticker": [
     {
       "text": "Gujarat: GPSC 60/2026-27: Executive Engineer (Civil), Class-1, (GMB) — 20 November 2026",
@@ -265,6 +265,27 @@
         "source": "Press Information Bureau",
         "url": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2335563",
         "sample": false
+      },
+      {
+        "title": "सूक्ष्म, लघु और मध्यम उद्यम मंत्रालय (एमएसएमई) ने विशेष अभियान 6.0 के समापन पर कार्यालयों से बाहर भी स्वच्छता अभियान को आगे बढ़ाया",
+        "state": "National",
+        "source": "Press Information Bureau",
+        "url": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2336098",
+        "sample": false
+      },
+      {
+        "title": "काम करने की सुरक्षित स्थितियों से लेकर बेहतर आजीविका तक: पुडुचेरी से नमस्ते योजना की सफलता की एक कहानी",
+        "state": "National",
+        "source": "Press Information Bureau",
+        "url": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2336017",
+        "sample": false
+      },
+      {
+        "title": "प्रधानमंत्री श्री नरेन्‍द्र मोदी ने बेंगलुरु में 15,600 करोड़ रुपये से अधिक की विभिन्न विकास परियोजनाओं का उद्घाटन किया, उन्हें राष्ट्र को समर्पित किया, आधारशिला रखी और उनकी शुरुआत की",
+        "state": "National",
+        "source": "Press Information Bureau",
+        "url": "https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2335964",
+        "sample": false
       }
     ]
   },
@@ -283,7 +304,7 @@
     },
     {
       "state": "Uttar Pradesh",
-      "count": 8,
+      "count": 9,
       "ok": true,
       "note": "Live advertisement lines on the public homepage"
     },
@@ -722,39 +743,6 @@
     {
       "action": "Apply At Shop",
       "sample": false,
-      "name": "ISRO URSC Technician and Driver Online Form 2026",
-      "qualification": "See the official advertisement",
-      "date": "Last date 13 November 2026. Confirm the notice at the shop.",
-      "state": "National",
-      "sourceId": "roundup",
-      "source": "ISRO URSC Technician and Driver",
-      "url": ""
-    },
-    {
-      "action": "Apply At Shop",
-      "sample": false,
-      "name": "Delhi DSSSB Sweeper, Safai Karamchari, Chowkidar Post Online Form 2026",
-      "qualification": "See the official advertisement",
-      "date": "Last date 13 November 2026. Confirm the notice at the shop.",
-      "state": "National",
-      "sourceId": "roundup",
-      "source": "Delhi DSSSB Sweeper, Safai Karamchari, Chowkidar Post",
-      "url": ""
-    },
-    {
-      "action": "Apply At Shop",
-      "sample": false,
-      "name": "Railway RRB NTPC 10+2 Under Graduate Online Form 2026",
-      "qualification": "See the official advertisement",
-      "date": "Last date 13 November 2026. Confirm the notice at the shop.",
-      "state": "National",
-      "sourceId": "roundup",
-      "source": "Railway RRB NTPC 10+2 Under Graduate",
-      "url": ""
-    },
-    {
-      "action": "Apply At Shop",
-      "sample": false,
       "name": "Supreme Court of India Court Master Online Form 2026",
       "qualification": "See the official advertisement",
       "date": "Last date 15 November 2026. Confirm the notice at the shop.",
@@ -971,6 +959,83 @@
       "sourceId": "roundup",
       "source": "Railway RRB Ministerial and Isolated Post CEN 09/2026",
       "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "Railway RRB NTPC 10+2 Under Graduate Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 15 November 2026. Confirm the notice at the shop.",
+      "state": "National",
+      "sourceId": "roundup",
+      "source": "Railway RRB NTPC 10+2 Under Graduate",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "UPPSC Various Post Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 4 December 2026. Confirm the notice at the shop.",
+      "state": "Uttar Pradesh",
+      "sourceId": "roundup",
+      "source": "UPPSC",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "Exim Bank Management Trainee, Manager Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 11 December 2026. Confirm the notice at the shop.",
+      "state": "National",
+      "sourceId": "roundup",
+      "source": "Exim Bank Management Trainee, Manager",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "Delhi DSSSB JE Electrical, MTS Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 11 December 2026. Confirm the notice at the shop.",
+      "state": "National",
+      "sourceId": "roundup",
+      "source": "Delhi DSSSB JE Electrical, MTS",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "Indian Airforce AFCAT 01/2027 Online Form",
+      "qualification": "See the official advertisement",
+      "date": "Last date 11 December 2026. Confirm the notice at the shop.",
+      "state": "National",
+      "sourceId": "roundup",
+      "source": "Indian Airforce AFCAT 01/2027",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "Railway RRC NR Delhi Apprentices Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 11 December 2026. Confirm the notice at the shop.",
+      "state": "National",
+      "sourceId": "roundup",
+      "source": "Railway RRC NR Delhi Apprentices",
+      "url": ""
+    },
+    {
+      "action": "Apply At Shop",
+      "sample": false,
+      "name": "ASRB ICAR Technical Assistant Online Form 2026",
+      "qualification": "See the official advertisement",
+      "date": "Last date 17 December 2026. Confirm the notice at the shop.",
+      "state": "National",
+      "sourceId": "roundup",
+      "source": "ASRB ICAR Technical Assistant",
+      "url": ""
     }
   ],
   "sources": [
@@ -1026,9 +1091,9 @@
       "id": "roundup",
       "name": "Recruitment roundup",
       "url": "",
-      "ok": false,
-      "count": 0,
-      "note": "HTTP 403. No link to the roundup is published."
+      "ok": true,
+      "count": 35,
+      "note": "Every online form whose printed last date is still ahead. The roundup site is not linked from the shop pages."
     },
     {
       "id": "majhi",
@@ -1043,7 +1108,7 @@
       "name": "Press Information Bureau",
       "url": "https://www.pib.gov.in/RssMain.aspx?ModId=6&Lang=2&Regid=3&reg=48",
       "ok": true,
-      "count": 1,
+      "count": 3,
       "note": "The official feed redirected to Hindi from this network."
     },
     {
