@@ -21,7 +21,7 @@ npm run update
 
 That runs `scripts/fetch-updates.mjs` and rewrites `src/data/updates.json`. Phone, hours, and address stay in `src/data/site.ts`.
 
-Every morning at 8:00 AM India time, GitHub Actions fetches the notices and pushes any change to `main`. The laptop does not have to be on. A Cloudflare Pages site connected to this repo publishes that push. See [UPDATES.md](UPDATES.md).
+The morning Grok bot runs that fetch and pushes any change to `main`. The laptop does not have to be on. The deploy fork copies `main` at 8:45 AM India time, and Cloudflare Pages publishes that copy. See [UPDATES.md](UPDATES.md).
 
 ## Build
 
